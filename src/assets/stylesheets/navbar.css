@@ -1,0 +1,27 @@
+
+.navbarCont {
+    background-color: #F7F4E9;
+}
+
+.titleCont {
+    text-align: center;
+}
+
+.title {
+    color: #e40c2b;
+}
+
+.accountCont {
+    display: flex;
+    justify-content: flex-end;
+    color: #1d1d2c;
+}
+
+.findQuiz {
+    color: #1d1d2c;
+    background-color: #F7F4E9;   
+}
+
+.searchIcon {
+    margin-right: 10px;
+}
