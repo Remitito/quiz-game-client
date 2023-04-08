@@ -19,7 +19,7 @@ export const Navbar = () => {
                 <Row>
                     <Space>
                         <Avatar icon={<UserOutlined/>}/>
-                        <label>Guest User</label>
+                        <label className='accountCont'>Guest User</label>
                     </Space>
                 </Row>
             </Col>
