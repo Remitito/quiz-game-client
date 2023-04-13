@@ -56,16 +56,17 @@
     justify-content: flex-end;
     color: #1d1d2c;
     font-family: "Bebas Neue";
-    font-size: 1.5rem;
+    font-size: 1.7rem;
 }
 
-.findQuiz {
+.findCont {
+    display: flex;
     color: #1d1d2c;
-    background-color: #F7F4E9;  
     font-family: "Bebas Neue";
-    font-size: 1.5rem;
+    font-size: 1.7rem;
 }
 
-.searchIcon {
-    margin-right: 10px;
+
+.navbarIcon:hover {
+    background-color: #1d1d2c;
 }
