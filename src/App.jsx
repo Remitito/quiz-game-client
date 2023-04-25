@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import {decrease, increase} from './slices/testSlice'
 import {Navbar} from './components/Navbar.jsx'
+import {Game} from './components/Game.jsx'
 import store from './store/store'
 import './App.css'
 
@@ -19,7 +20,8 @@ function App() {
       <Header className='navbarWrapper'>
         <Navbar/>
       </Header>
-      <Content>
+      <Content className='contentWrapper'>
+        <Game/>
         {/* <button onClick={() => dispatch(increase())}>Hello</button>
         <button onClick={() => console.log(store.getState())}>SHow store</button> */}
       </Content>

@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=Sigmar&display=swap');
+
+
+
+.mainCont {
+    background-color: #F7F4E9;
+    border-radius: 2rem;
+    color: #1d1d2c;
+    margin-top: 90px;
+}
+
+.powerupsCont {
+    display: flex;
+    flex-direction: row;
+}
+.nonePowerups {
+    margin: auto;
+    font-size: 3rem;
+}
+.nonePowerups:hover {
+    color: #e40c2b;
+}
+.nonePowerupsSelected {
+    margin: auto;
+    font-size: 4rem;
+    color: #e40c2b;
+}
+.somePowerups {
+    margin: auto;
+    font-size: 3rem;
+}
+.somePowerups:hover {
+    color: #3CBCC3;
+}
+.somePowerupsSelected {
+    margin: auto;
+    font-size: 4rem;
+    color: #3CBCC3;
+}
+.allPowerups {
+    margin: auto;
+    font-size: 3rem;
+}
+.allPowerups:hover {
+    color: #438945;
+}
+.allPowerupsSelected {
+    margin: auto;
+    font-size: 4rem;
+    color: #438945;
+}
+
+.sectionName {
+    color: #1d1d2c;
+    font-size: 1.5rem;
+    font-family: 'Sigmar', cursive;
+    font-weight: 100;
+    margin-bottom: 1px;
+}
+
+.sectionRow {
+    display: flex;
+    flex-direction: column;
+    font-size: 1.5rem;
+    font-family: 'Sigmar', cursive;
+    margin: auto;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.startGameButton {
+    background-color: #EBA63F;
+    border-radius: 2rem;
+    box-shadow: 5px 5px #1d1d2c;
+    font-size: 1.5rem;
+    font-family: 'Sigmar', cursive;
+    margin: auto;
+    padding: 15px;
+}
+.startGameButton:hover {
+    border-color: #e40c2b;
+    color: #e40c2b;
+}
+
+.startGameIcon {
+    color: #1d1d2c;
+    font-size: 2rem;
+    margin-right: 10px;
+}
+
+.teamCont {
+    flex-wrap: wrap;
+}
+
+.teamIcon {
+    font-size: 2rem;
+}
+
+.teamOption {
+    border: solid 2px #1d1d2c;
+    font-size: 1.5rem;
+    margin: auto;
+    padding: 6px;
+    width: 35%;
+    text-align: center;
+}
+.teamOption:hover {
+    background-color: #EBA63F;
+}
+.teamOptionSelected {
+    background-color: #EBA63F;
+    border: solid 2px #1d1d2c;
+    font-size: 1.5rem;
+    margin: auto;
+    margin-bottom: 10px;
+    padding: 6px;
+    width: 35%;
+    text-align: center;
+}
