@@ -1,9 +1,8 @@
 import { useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-import {decrease, increase} from './slices/testSlice'
+import store from './store/store'
 import {Navbar} from './components/Navbar.jsx'
 import {Game} from './components/Game.jsx'
-import store from './store/store'
 import './App.css'
 
 import {Layout} from 'antd'
@@ -11,10 +10,6 @@ const {Header, Content} = Layout
 
 
 function App() {
-  const [count, setCount] = useState(0)
-  const counter = useSelector(state => state.counter.value)
-  const dispatch = useDispatch()
-
   return (
     <Layout>
       <Header className='navbarWrapper'>
@@ -22,8 +17,6 @@ function App() {
       </Header>
       <Content className='contentWrapper'>
         <Game/>
-        {/* <button onClick={() => dispatch(increase())}>Hello</button>
-        <button onClick={() => console.log(store.getState())}>SHow store</button> */}
       </Content>
     </Layout>
   )

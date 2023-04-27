@@ -3,11 +3,22 @@ import {Circle, CircleCont, Square, SquareCont} from '../assets/styledComponents
 import '../assets/stylesheets/setup.css'
 import {useState} from 'react'
 import {CheckCircleOutlined, CloseCircleOutlined, QuestionCircleOutlined, RightCircleOutlined, UserOutlined} from '@ant-design/icons'
+import { useSelector, useDispatch } from 'react-redux'
+import { setTeamsAction, setSquaresAction, setPowerupsAction } from '../slices/setupSlice'
+import store from '../store/store'
 
 export const Setup = () => {
     const [teams, setTeams] = useState(2)
     const [squares, setSquares] = useState(20)
-    const [powerupsMode, setPowerupsMode] = useState("all") 
+    const [powerups, setPowerups] = useState("all") 
+    const teamsValue = useSelector(state => state.teams)
+    const dispatch = useDispatch()
+
+    const confirm = () => {
+        dispatch(setTeamsAction(teams))
+        dispatch(setSquaresAction(squares))
+        dispatch(setPowerupsAction(powerups))
+    }
 
     return (
         <Row>
@@ -51,16 +62,16 @@ export const Setup = () => {
                 <Row className='sectionRow'>
                     <h4 className='sectionName'>Powerups:</h4>
                     <div className='powerupsCont'>
-                        <CheckCircleOutlined onClick={() => setPowerupsMode("all")}
-                        className={powerupsMode === "all" ? 'allPowerupsSelected' : 'allPowerups'}/>
-                        <CloseCircleOutlined onClick={() => setPowerupsMode("none")}
-                        className={powerupsMode === "none" ? 'nonePowerupsSelected' : 'nonePowerups'}/>
-                        {/* <QuestionCircleOutlined onClick={() => setPowerupsMode("some")}
-                        className={powerupsMode === "some" ? 'somePowerupsSelected' : 'somePowerups'}/> */}
+                        <CheckCircleOutlined onClick={() => setPowerups("all")} 
+                        className={powerups === "all" ? 'allPowerupsSelected' : 'allPowerups'}/>
+                        <CloseCircleOutlined onClick={() => setPowerups("none")}
+                        className={powerups === "none" ? 'nonePowerupsSelected' : 'nonePowerups'}/>
+                        {/* <QuestionCircleOutlined onClick={() => setpowerups("some")}
+                        className={powerups === "some" ? 'somePowerupsSelected' : 'somePowerups'}/> */}
                     </div>
                 </Row>
                 <Row className='sectionRow'>
-                    <button className='startGameButton'>
+                    <button className='startGameButton' onClick={() => confirm()}>
                         <RightCircleOutlined className='startGameIcon'/>
                         Start Game
                     </button>
