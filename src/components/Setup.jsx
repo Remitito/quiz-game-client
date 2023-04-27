@@ -3,21 +3,21 @@ import {Circle, CircleCont, Square, SquareCont} from '../assets/styledComponents
 import '../assets/stylesheets/setup.css'
 import {useState} from 'react'
 import {CheckCircleOutlined, CloseCircleOutlined, QuestionCircleOutlined, RightCircleOutlined, UserOutlined} from '@ant-design/icons'
-import { useSelector, useDispatch } from 'react-redux'
+import { useDispatch } from 'react-redux'
 import { setTeamsAction, setSquaresAction, setPowerupsAction } from '../slices/setupSlice'
-import store from '../store/store'
+import { setCurrentScreen } from '../slices/gameSlice'
 
 export const Setup = () => {
     const [teams, setTeams] = useState(2)
     const [squares, setSquares] = useState(20)
     const [powerups, setPowerups] = useState("all") 
-    const teamsValue = useSelector(state => state.teams)
     const dispatch = useDispatch()
 
     const confirm = () => {
         dispatch(setTeamsAction(teams))
         dispatch(setSquaresAction(squares))
         dispatch(setPowerupsAction(powerups))
+        dispatch(setCurrentScreen("grid"))
     }
 
     return (
