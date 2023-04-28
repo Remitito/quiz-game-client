@@ -16,7 +16,33 @@ export const CircleCont = styled.div `
     width: 80%;
 `
 
-export const Square = styled.div `
+export const GridSquare = styled.div `
+    background-color: ${props => props.selected ? "#EBA63F" : ""};
+    border: 5px solid #1d1d2c;
+    border-radius: 1rem;
+    font-size: ${props => props.font};
+    margin: auto;
+    margin-bottom: ${props => props.size ===  40 ? "5px" : "15px"};
+    margin-top: ${props => props.size ===  40 ? "5px" : "15px"};
+    padding: ${props => props.size ===  40 ? "5px" : "20px"};
+    text-align: center;
+    :hover {
+        background-color: #EBA63F;
+    }
+    width: 10%;
+    @media screen and (max-width: 1839px) {
+        font-size: 4;
+        width: 15%;
+    }
+`
+
+export const GridSquareCont = styled.div `
+    display: flex;
+    flex-direction: row;
+    margin-top: 5px;
+`
+
+export const SetupSquare = styled.div `
     background-color: ${props => props.selected ? "#EBA63F" : ""};
     border: 2px solid #1d1d2c;
     border-radius: 1rem;
@@ -28,7 +54,7 @@ export const Square = styled.div `
     }
 `
 
-export const SquareCont = styled.div `
+export const SetupSquareCont = styled.div `
     display: flex;
     flex-direction: row;
     margin-top: 5px;

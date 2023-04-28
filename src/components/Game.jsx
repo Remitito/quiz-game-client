@@ -1,5 +1,6 @@
 import {Setup} from './Setup'
 import { Grid } from './Grid';
+import { Scores } from './Scores';
 import { useSelector } from 'react-redux'
 
 export const Game = () => {
@@ -11,7 +12,10 @@ export const Game = () => {
             :
             <>
                 {currentScreen == 'grid' ? 
-                <Grid/>
+                <>
+                    <Scores/>
+                    <Grid/>
+                </>
                 : <></>
                 }    
             </> 

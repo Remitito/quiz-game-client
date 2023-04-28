@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Sigmar&display=swap');
+
+
+.scoresCont {
+    display: flex;
+    flex-direction: row;
+    margin: auto;
+}
+
+.teamCont {
+    background-color: #F7F4E9;
+    border-radius: 2rem;
+    color: #1d1d2c;
+    font-size: 2rem;
+    margin: auto;
+    margin-top: 60px;
+    padding: 20px;
+    text-align: center;
+}
+
+.teamName {
+    font-family: 'Sigmar', cursive;
+    font-size: 3rem;
+}
+
+.teamScore {
+    font-size: 4rem;
+}

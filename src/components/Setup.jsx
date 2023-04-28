@@ -1,5 +1,5 @@
 import {Button, Col, InputNumber, Radio, Row, Slider, ConfigProvider} from 'antd'
-import {Circle, CircleCont, Square, SquareCont} from '../assets/styledComponents/NumberShapes'
+import {Circle, CircleCont, SetupSquare, SetupSquareCont} from '../assets/styledComponents/NumberShapes'
 import '../assets/stylesheets/setup.css'
 import {useState} from 'react'
 import {CheckCircleOutlined, CloseCircleOutlined, QuestionCircleOutlined, RightCircleOutlined, UserOutlined} from '@ant-design/icons'
@@ -53,11 +53,11 @@ export const Setup = () => {
                 </Row>
                 <Row className='sectionRow'>
                         <h4 className='sectionName'>Squares:</h4>
-                        <SquareCont>
-                            <Square selected={squares === 10} onClick={() => setSquares(10)}>10</Square>
-                            <Square selected={squares === 20} onClick={() => setSquares(20)}>20</Square>
-                            <Square selected={squares === 30} onClick={() => setSquares(30)}>30</Square>
-                        </SquareCont>
+                        <SetupSquareCont>
+                            <SetupSquare selected={squares === 10} onClick={() => setSquares(10)}>10</SetupSquare>
+                            <SetupSquare selected={squares === 20} onClick={() => setSquares(20)}>20</SetupSquare>
+                            <SetupSquare selected={squares === 30} onClick={() => setSquares(30)}>30</SetupSquare>
+                        </SetupSquareCont>
                 </Row>
                 <Row className='sectionRow'>
                     <h4 className='sectionName'>Powerups:</h4>

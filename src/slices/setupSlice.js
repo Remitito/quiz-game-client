@@ -4,7 +4,7 @@ export const setupSlice = createSlice({
     name: 'setup',
     initialState: {
         teams: 4,
-        squares: 20,
+        squares: 40,
         powerups: "all"
     },
     reducers: {
