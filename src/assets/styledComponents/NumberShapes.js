@@ -46,7 +46,7 @@ export const SetupSquare = styled.div `
     background-color: ${props => props.selected ? "#EBA63F" : ""};
     border: 2px solid #1d1d2c;
     border-radius: 1rem;
-    font-size: 2rem;
+    font-size: 2.5rem;
     margin: auto;
     padding: 10px;
     :hover {

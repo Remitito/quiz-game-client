@@ -5,7 +5,7 @@ import '../assets/stylesheets/grid.css'
 
 export const Grid = () => {
     const squares = useSelector((state) => state.setup.squares)
-    const fonts = ["5rem", "4rem", "3rem"] 
+    const fonts = ["5rem", "3.5rem", "3rem"] 
     const addGridSquares = () => {
         let squareElements = []
         for(let i = 1; i <= squares; i += 5) { // add them in rows of 5

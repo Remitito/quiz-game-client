@@ -4,8 +4,8 @@ export const setupSlice = createSlice({
     name: 'setup',
     initialState: {
         teams: 4,
-        squares: 40,
-        powerups: "all"
+        squares: 30,
+        goodEvil: "all"
     },
     reducers: {
         setTeamsAction: (state, action) => {
@@ -14,11 +14,11 @@ export const setupSlice = createSlice({
         setSquaresAction: (state, action) => {
             state.squares = action.payload
         },
-        setPowerupsAction: (state, action) => {
-            state.powerups = action.payload
+        setGoodEvilAction: (state, action) => {
+            state.goodEvil = action.payload
         }
     }
 })
 
-export const {setTeamsAction, setSquaresAction, setPowerupsAction} = setupSlice.actions
+export const {setTeamsAction, setSquaresAction, setGoodEvilAction} = setupSlice.actions
 export default setupSlice.reducer

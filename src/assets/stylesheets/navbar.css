@@ -44,6 +44,9 @@
 h1 {
     color: #e40c2b;
     font-family: 'Bruno Ace SC', cursive;
-    font-size: 50px;
+    font-size: 70px;
     font-weight: 900;
+    background-image: repeating-radial-gradient(closest-corner at 20px 30px,#e40c2b, #1d1d2c, #e40c2b);    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
 }
