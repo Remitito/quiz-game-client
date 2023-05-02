@@ -20,7 +20,13 @@
     font-size: 3rem;
     margin: auto;
     padding: 10px;
-    width: 20%;
+    width: 10%;
+}
+@media screen and (max-width: 1839px) {
+    .goodEvilOption, .goodEvilOptionSelected {
+        font-size: 4;
+        width: 20%;
+    }
 }
 .goodEvilOptionSelected {
     background-color: #EBA63F;
@@ -28,6 +34,7 @@
 .goodEvilOption:hover {
     background-color: #EBA63F;
 }
+
 
 
 .goodIcon {

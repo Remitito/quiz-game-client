@@ -8,14 +8,35 @@ import { ImEvil } from "react-icons/im";
 import { useDispatch } from 'react-redux'
 import { setTeamsAction, setSquaresAction, setGoodEvilAction } from '../slices/setupSlice'
 import { setCurrentScreen } from '../slices/gameSlice'
+import { setSquareValues } from '../slices/setupSlice'
 
 export const Setup = () => {
     const [teams, setTeams] = useState(2)
     const [squares, setSquares] = useState(20)
-    const [goodEvil, setGoodEvil] = useState("all") 
+    const [goodEvil, setGoodEvil] = useState("both") 
     const dispatch = useDispatch()
 
+    // decides how many squares are good/evil/questions
+    const assignSquareValues = () => {
+        let squareValues = []
+        // assign equal number of each value
+        for(let i = 0; i < squares; i += 3) {
+            squareValues.push("question")
+            squareValues.push("good")
+            squareValues.push("evil")
+        }
+        // mix up the squares
+        for (var i = squareValues.length - 1; i > 0; i--) {
+            var j = Math.floor(Math.random() * (i + 1));
+            var temp = squareValues[i];
+            squareValues[i] = squareValues[j];
+            squareValues[j] = temp;
+        }
+        dispatch(setSquareValues(squareValues))
+    }
+
     const confirm = () => {
+        assignSquareValues()
         dispatch(setTeamsAction(teams))
         dispatch(setSquaresAction(squares))
         dispatch(setGoodEvilAction(goodEvil))

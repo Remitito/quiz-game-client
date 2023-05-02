@@ -11,12 +11,13 @@ export const Game = () => {
             <Setup/>
             :
             <>
+                <Scores/>
                 {currentScreen == 'grid' ? 
                 <>
-                    <Scores/>
                     <Grid/>
                 </>
-                : <></>
+                : <>
+                </>
                 }    
             </> 
             }

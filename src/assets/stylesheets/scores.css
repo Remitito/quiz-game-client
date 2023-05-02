@@ -7,15 +7,19 @@
     margin: auto;
 }
 
-.teamCont {
-    background-color: #F7F4E9;
+.teamCont, .teamContSelected {
     border-radius: 2rem;
     color: #1d1d2c;
-    font-size: 2rem;
     margin: auto;
     margin-top: 60px;
-    padding: 20px;
     text-align: center;
+}
+.teamCont {
+    padding: 20px;
+}
+.teamContSelected {
+    border: 10px solid #F7F4E9;
+    padding: 30px;
 }
 
 .teamName {
