@@ -22,16 +22,16 @@ export const gameSlice = createSlice({
             state.currentTeam = action.payload
         },
         setTeamOneScore: (state, action) => {
-            state.teamOneScore = action.payload
+            state.teamOneScore += action.payload
         },
         setTeamTwoScore: (state, action) => {
-            state.teamTwoScore = action.payload
+            state.teamTwoScore += action.payload
         },
         setTeamThreeScore: (state, action) => {
-            state.teamThreeScore = action.payload
+            state.teamThreeScore += action.payload
         },
         setTeamFourScore: (state, action) => {
-            state.teamFourScore = action.payload
+            state.teamFourScore += action.payload
         }
     }
 })

@@ -7,96 +7,6 @@
     margin-top: 90px;
 }
 
-
-.goodEvilCont {
-    display: flex;
-    flex-direction: row;
-}
-.goodEvilOption, .goodEvilOptionSelected {
-    border: solid 2px #1d1d2c;
-    border-radius: 2rem;
-    display: flex;
-    flex-wrap: wrap;
-    font-size: 3rem;
-    margin: auto;
-    padding: 10px;
-    width: 10%;
-}
-@media screen and (max-width: 1839px) {
-    .goodEvilOption, .goodEvilOptionSelected {
-        font-size: 4;
-        width: 20%;
-    }
-}
-.goodEvilOptionSelected {
-    background-color: #EBA63F;
-}
-.goodEvilOption:hover {
-    background-color: #EBA63F;
-}
-
-
-
-.goodIcon {
-    color: #438945;
-    font-weight: bolder;
-    margin-bottom: 10px;
-    width: 50%;
-}
-
-.evilIcon {
-    color: #E40C2B;
-    margin-bottom: 10px;
-    width: 50%;
-}
-.tickIcon {
-    color: #438945;
-    width: 50%;
-}
-.crossIcon {
-    color: #E40C2B;
-    width: 50%;
-}
-
-.noneGoodEvil {
-    margin: auto;
-    font-size: 3rem;
-}
-.noneGoodEvil:hover {
-    color: #e40c2b;
-}
-.noneGoodEvilSelected {
-    margin: auto;
-    font-size: 4rem;
-    color: #e40c2b;
-}
-
-.someGoodEvil {
-    margin: auto;
-    font-size: 3rem;
-}
-.someGoodEvil:hover {
-    color: #3CBCC3;
-}
-.someGoodEvilSelected {
-    margin: auto;
-    font-size: 4rem;
-    color: #3CBCC3;
-}
-
-.allGoodEvil {
-    margin: auto;
-    font-size: 3rem;
-}
-.allGoodEvil:hover {
-    color: #438945;
-}
-.allGoodEvilSelected {
-    margin: auto;
-    font-size: 4rem;
-    color: #438945;
-}
-
 .sectionName {
     color: #1d1d2c;
     font-size: 2rem;
@@ -104,6 +14,17 @@
     font-weight: 100;
     margin-bottom: 10px;
     margin-top: 5px;
+}
+
+.specialCont {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.specialOption {
+    height: 100px;
 }
 
 .sectionRow {
@@ -134,6 +55,9 @@
     font-size: 2rem;
     margin-right: 10px;
 }
+
+.switch {
+    }
 
 .teamContainer {
     height: 220px;

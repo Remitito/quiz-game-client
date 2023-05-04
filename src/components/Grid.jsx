@@ -1,6 +1,7 @@
 import { useSelector, useDispatch } from 'react-redux'
-import { GoodEvil } from './GoodEvil'
+import { Bonus } from './Bonus'
 import { Question } from './Question'
+import { Special } from './Special'
 import {Row, Col} from 'antd'
 import { useState } from 'react'
 import { setCurrentSquare } from '../slices/gameSlice'
@@ -19,11 +20,11 @@ export const Grid = () => {
         if(squareValues[squareId] == "question") {
             dispatch(setCurrentSquare("question"))
         }
-        else if(squareValues[squareId] == "good") {
-            dispatch(setCurrentSquare("good"))
+        else if(squareValues[squareId] == "special") {
+            dispatch(setCurrentSquare("special"))
         }
         else {
-            dispatch(setCurrentSquare("evil"))
+            dispatch(setCurrentSquare("bonus"))
         }
     }
 
@@ -65,8 +66,12 @@ export const Grid = () => {
                     <>
                         {currentSquare == "question" ?
                         <Question/>
-                        :
-                        <GoodEvil/> 
+                        : 
+                            <>
+                                {currentSquare == "special" ? 
+                                <Special/> : <Bonus/>
+                                }
+                            </>
                         }
                     </>
                 }

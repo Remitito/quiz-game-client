@@ -1,30 +1,39 @@
-import {Button, Col, InputNumber, Radio, Row, Slider, ConfigProvider} from 'antd'
+import {Button, Col, ConfigProvider, InputNumber, Radio, Row, Slider} from 'antd'
 import {Circle, CircleCont, SetupSquare, SetupSquareCont} from '../assets/styledComponents/NumberShapes'
 import '../assets/stylesheets/setup.css'
 import {useState} from 'react'
-import {CheckCircleOutlined, CloseCircleOutlined, RightCircleOutlined, UserOutlined} from '@ant-design/icons'
-import { VscSmiley } from "react-icons/vsc";
-import { ImEvil } from "react-icons/im";
+import {RightCircleOutlined, UserOutlined} from '@ant-design/icons'
 import { useDispatch } from 'react-redux'
-import { setTeamsAction, setSquaresAction, setGoodEvilAction } from '../slices/setupSlice'
+import { setTeamsAction, setSquaresAction, setBonusSquares, setSpecialQuestions } from '../slices/setupSlice'
 import { setCurrentScreen } from '../slices/gameSlice'
 import { setSquareValues } from '../slices/setupSlice'
+import Toggle from 'react-styled-toggle'
+import { current } from '@reduxjs/toolkit'
 
 export const Setup = () => {
     const [teams, setTeams] = useState(2)
     const [squares, setSquares] = useState(20)
-    const [goodEvil, setGoodEvil] = useState("both") 
+    const [bonusSquares, setBonusSquaresLocal] = useState(true) 
+    const [specialQuestions, setSpecialQuestionsLocal] = useState(true) 
     const dispatch = useDispatch()
 
-    // decides how many squares are good/evil/questions
+    // decides how many squares are special/bonus/question squares
     const assignSquareValues = () => {
         let squareValues = []
-        // assign equal number of each value
-        for(let i = 0; i < squares; i += 3) {
+        let counter = 0
+        while (counter < squares) {
+            if(bonusSquares) {
+                squareValues.push("bonus")
+                counter += 1
+            }
+            if(specialQuestions) {
+                squareValues.push("special")
+                counter += 1
+            }
             squareValues.push("question")
-            squareValues.push("good")
-            squareValues.push("evil")
+            counter += 1
         }
+
         // mix up the squares
         for (var i = squareValues.length - 1; i > 0; i--) {
             var j = Math.floor(Math.random() * (i + 1));
@@ -39,7 +48,8 @@ export const Setup = () => {
         assignSquareValues()
         dispatch(setTeamsAction(teams))
         dispatch(setSquaresAction(squares))
-        dispatch(setGoodEvilAction(goodEvil))
+        dispatch(setSpecialQuestions(specialQuestions))
+        dispatch(setBonusSquares(bonusSquares))
         dispatch(setCurrentScreen("grid"))
     }
 
@@ -83,37 +93,22 @@ export const Setup = () => {
                         </SetupSquareCont>
                 </Row>
                 <Row className='sectionRow'> 
-                    <h4 className='sectionName'>
-                        <label style={{color: "#438945"}}>Good</label> and 
-                        <label style={{color: "#E40C2B"}}> Evil</label> Squares:</h4>
-                    <div className='goodEvilCont'>
-                        <div className={goodEvil === "both" ? 'goodEvilOptionSelected' : 'goodEvilOption'}  
-                        onClick={() => setGoodEvil("both")}>
-                        <VscSmiley className='goodIcon'/>
-                        <ImEvil className='evilIcon'/>
-                        <CheckCircleOutlined className='tickIcon'/>
-                        <CheckCircleOutlined className='tickIcon'/>
+                    <div className='specialCont'>
+                        <div className='specialOption'>
+                            <label>Bonus Squares</label>
+                            <Toggle translate={45} sliderWidth={25} width={80} height={40} 
+                            backgroundColorChecked={"#EBA63F"} backgroundColorUnchecked={"#1d1d2c"}
+                            backgroundColorButton={"#F7F4E9"} checked={bonusSquares} 
+                            onChange={() => setBonusSquaresLocal(currentState => !currentState)}
+                            />
                         </div>
-                        <div className={goodEvil === "good" ? 'goodEvilOptionSelected' : 'goodEvilOption'}  
-                        onClick={() => setGoodEvil("good")}>
-                        <VscSmiley className='goodIcon'/>
-                        <ImEvil className='evilIcon'/>
-                        <CheckCircleOutlined className='tickIcon'/>
-                        <CloseCircleOutlined className='crossIcon'/>
-                        </div>
-                        <div className={goodEvil === "evil" ? 'goodEvilOptionSelected' : 'goodEvilOption'} 
-                        onClick={() => setGoodEvil("evil")}>
-                        <VscSmiley className='goodIcon'/>
-                        <ImEvil className='evilIcon'/>
-                        <CloseCircleOutlined className='crossIcon'/>
-                        <CheckCircleOutlined className='tickIcon'/>
-                        </div>
-                        <div className={goodEvil === "none" ? 'goodEvilOptionSelected' : 'goodEvilOption'} 
-                        onClick={() => setGoodEvil("none")}>
-                        <VscSmiley className='goodIcon'/>
-                        <ImEvil className='evilIcon'/>
-                        <CloseCircleOutlined className='crossIcon'/>
-                        <CloseCircleOutlined className='crossIcon'/>
+                        <div className='specialOption'>
+                            <label>Special Questions</label>
+                            <Toggle translate={45} sliderWidth={25} width={80} height={40} 
+                            backgroundColorChecked={"#EBA63F"} backgroundColorUnchecked={"#1d1d2c"}
+                            backgroundColorButton={"#F7F4E9"} checked={specialQuestions}
+                            onChange={() => setSpecialQuestionsLocal(currentState => !currentState)}
+                            />
                         </div>
                     </div>
                 </Row>

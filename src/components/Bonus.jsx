@@ -1,9 +1,9 @@
 import {Col, Row} from 'antd'
-import '../assets/stylesheets/goodEvil.css'
+import '../assets/stylesheets/bonus.css'
 import { useDispatch, useSelector } from 'react-redux'
 import { setCurrentSquare, setCurrentTeam } from '../slices/gameSlice'
 
-export const GoodEvil = () => {
+export const Bonus = () => {
     const dispatch = useDispatch()
     const currentTeam = useSelector((state) => state.game.currentTeam)
     const goodOrEvil = useSelector((state) => state.game.currentSquare)
@@ -22,9 +22,9 @@ export const GoodEvil = () => {
     return (
         <Row>
             <Col span={5}/>
-            <Col className='mainContEvil' span={14}>
+            <Col span={14}>
                 <Row className='sectionRow'>
-                    <h4 className={`${goodOrEvil}Title`}>Hello</h4>
+                    <h4 className={`${goodOrEvil}Title`}>Bonus</h4>
                     <button className='okayButton' onClick={() => finishTurn()}>
                     OKAY
                     </button>

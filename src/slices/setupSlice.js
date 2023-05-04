@@ -3,15 +3,22 @@ import { createSlice } from "@reduxjs/toolkit";
 export const setupSlice = createSlice({
     name: 'setup',
     initialState: {
+        bonusSquares: true,
         teams: 4,
         questions: [],
         good: [],
         evil: [],
         squareValues: [], // says if the square is good/evil/question
         squares: 30,
-        goodEvil: "both"
+        specialQuestions: true,
     },
     reducers: {
+        setBonusSquares: (state, action) => {
+            state.bonusSquares = action.payload
+        },
+        setSpecialQuestions: (state, action) => {
+            state.specialQuestions = action.payload
+        },
         setSquareValues: (state, action) => {
             state.squareValues = action.payload
         },
@@ -21,11 +28,8 @@ export const setupSlice = createSlice({
         setSquaresAction: (state, action) => {
             state.squares = action.payload
         },
-        setGoodEvilAction: (state, action) => {
-            state.goodEvil = action.payload
-        }
     }
 })
 
-export const {setTeamsAction, setSquaresAction, setGoodEvilAction, setSquareValues} = setupSlice.actions
+export const {setTeamsAction, setSquaresAction, setBonusSquares, setSquareValues, setSpecialQuestions} = setupSlice.actions
 export default setupSlice.reducer
