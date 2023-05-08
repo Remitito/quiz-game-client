@@ -1,34 +1,44 @@
 import {Col, Row} from 'antd'
 import '../assets/stylesheets/bonus.css'
 import { useDispatch, useSelector } from 'react-redux'
-import { setCurrentSquare, setCurrentTeam } from '../slices/gameSlice'
+import { setCurrentScreen, setCurrentSquare, setCurrentTeam, setTeamOneScore, setTeamTwoScore, setTeamThreeScore, setTeamFourScore } from '../slices/gameSlice'
+import { GiveTakePoints } from '../features/bonuses/GiveTakePoints'
 
 export const Bonus = () => {
     const dispatch = useDispatch()
     const currentTeam = useSelector((state) => state.game.currentTeam)
-    const goodOrEvil = useSelector((state) => state.game.currentSquare)
     const numOfTeams = useSelector((state) => state.setup.teams)
 
+    const updateTeamScore = (team, amount) => {
+        const scoreFunctions = [setTeamOneScore(amount), setTeamTwoScore(amount), setTeamThreeScore(amount), setTeamFourScore(amount)]
+        dispatch(scoreFunctions[team])
+    }
+
     const finishTurn = () => {
-        if(numOfTeams === currentTeam) {
+        if(currentTeam + 1 > numOfTeams) {
             dispatch(setCurrentTeam(1))
         }
         else {
             dispatch(setCurrentTeam(currentTeam + 1))
         }
         dispatch(setCurrentSquare("none"))
+        dispatch(setCurrentScreen("grid"))
     }
+
+    const BonusComponents = [
+        <GiveTakePoints points={50} updateTeamScore={updateTeamScore} finishTurn={finishTurn} />,
+        <GiveTakePoints points={30} updateTeamScore={updateTeamScore} finishTurn={finishTurn} />,
+        <GiveTakePoints points={10} updateTeamScore={updateTeamScore} finishTurn={finishTurn} />,
+        <GiveTakePoints points={-50} updateTeamScore={updateTeamScore} finishTurn={finishTurn} />,
+        <GiveTakePoints points={-30} updateTeamScore={updateTeamScore} finishTurn={finishTurn} />,
+        <GiveTakePoints points={-10} updateTeamScore={updateTeamScore} finishTurn={finishTurn} />,
+    ]
 
     return (
         <Row>
             <Col span={5}/>
-            <Col span={14}>
-                <Row className='sectionRow'>
-                    <h4 className={`${goodOrEvil}Title`}>Bonus</h4>
-                    <button className='okayButton' onClick={() => finishTurn()}>
-                    OKAY
-                    </button>
-                </Row>
+            <Col className='bonusCont' span={14}>
+                {BonusComponents[4]}
             </Col>
             <Col span={5}/>
         </Row>

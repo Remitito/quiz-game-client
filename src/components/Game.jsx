@@ -1,6 +1,7 @@
 import {Setup} from './Setup'
 import { Grid } from './Grid';
 import { Scores } from './Scores';
+import { Testing } from './Testing';
 import { useSelector } from 'react-redux'
 
 export const Game = () => {
@@ -17,6 +18,7 @@ export const Game = () => {
                     <Grid/>
                 </>
                 : <>
+                    <Testing/>
                 </>
                 }    
             </> 

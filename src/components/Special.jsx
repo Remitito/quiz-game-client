@@ -9,7 +9,7 @@ export const Special = () => {
     const numOfTeams = useSelector((state) => state.setup.teams)
 
     const finishTurn = () => {
-        if(numOfTeams > currentTeam + 1) {
+        if(currentTeam + 1 > numOfTeams) {
             dispatch(setCurrentTeam(1))
         }
         else {

@@ -3,7 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 export const gameSlice = createSlice({
     name: 'game',
     initialState: {
-        currentScreen: 'setup',
+        currentScreen: 'testing',
         currentSquare: 'none', // shows type of square to load
         currentTeam: 1,
         teamOneScore: 0,
@@ -22,17 +22,34 @@ export const gameSlice = createSlice({
             state.currentTeam = action.payload
         },
         setTeamOneScore: (state, action) => {
-            state.teamOneScore += action.payload
+            if(state.teamOneScore += action.payload > 0) {
+                state.teamOneScore += action.payload
+            }
+            {
+                state.teamOneScore = 0
+            }
         },
         setTeamTwoScore: (state, action) => {
-            state.teamTwoScore += action.payload
-        },
+            if(state.teamTwoScore += action.payload > 0) {
+                state.teamTwoScore += action.payload
+            }
+            {
+                state.teamTwoScore = 0
+            }        },
         setTeamThreeScore: (state, action) => {
-            state.teamThreeScore += action.payload
-        },
+            if(state.teamThreeScore += action.payload > 0) {
+                state.teamThreeScore += action.payload
+            }
+            {
+                state.teamThreeScore = 0
+            }        },
         setTeamFourScore: (state, action) => {
-            state.teamFourScore += action.payload
-        }
+            if(state.teamFourScore += action.payload > 0) {
+                state.teamFourScore += action.payload
+            }
+            {
+                state.teamFourScore = 0
+            }        }
     }
 })
 

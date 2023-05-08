@@ -8,7 +8,7 @@ export const setupSlice = createSlice({
         questions: [],
         good: [],
         evil: [],
-        squareValues: [], // says if the square is good/evil/question
+        squareValues: [], // says if the square is bonus/special
         squares: 30,
         specialQuestions: true,
     },

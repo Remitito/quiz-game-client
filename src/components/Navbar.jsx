@@ -5,11 +5,11 @@ import {UserOutlined, SearchOutlined} from '@ant-design/icons'
 import 'animate.css';
 
 export const Navbar = () => {
-    const teamOneScore = useSelector((state) => state.game.teamOneScore)
+    // const currentTeam = useSelector((state) => state.game.currentTeam)
     return (
         <Row className='navbarCont'>
             <Col span={5} className='findCont'>
-            <label>{teamOneScore}</label>
+            {/* <label>{currentTeam}</label> */}
             <Row>
                 <Space>
                     <Avatar size="large" className="navbarIcon" icon={<SearchOutlined/>}/>
