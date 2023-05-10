@@ -6,8 +6,7 @@ import { GiveTakePoints } from "../features/bonuses/GiveTakePoints";
 export const Testing = () => {
     return (
         <div>
-            <Bonus>
-            </Bonus>
+            <Bonus bonusNumber={1}/>
         </div>
     )
 }

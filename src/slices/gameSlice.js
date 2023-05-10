@@ -3,8 +3,8 @@ import { createSlice } from "@reduxjs/toolkit";
 export const gameSlice = createSlice({
     name: 'game',
     initialState: {
-        currentScreen: 'testing',
-        currentSquare: 'none', // shows type of square to load
+        currentScreen: 'setup',
+        currentSquare: ['none', 0], // e.g. bonus, #4
         currentTeam: 1,
         teamOneScore: 0,
         teamTwoScore: 0,

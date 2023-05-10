@@ -18,15 +18,7 @@ export const Grid = () => {
     const fonts = ["5rem", "3.5rem", "3rem"] 
 
     const loadSquare = (squareId) => {
-        if(squareValues[squareId] == "question") {
-            dispatch(setCurrentSquare("question"))
-        }
-        else if(squareValues[squareId] == "special") {
-            dispatch(setCurrentSquare("special"))
-        }
-        else {
-            dispatch(setCurrentSquare("bonus"))
-        }
+        dispatch(setCurrentSquare(squareValues[squareId]))
         setCompletedSquares(current => [...current, squareId + 1])
     }
 
@@ -65,18 +57,18 @@ export const Grid = () => {
         <Row>
             <Col span={3}/>
             <Col span={18}>
-                {currentSquare == "none" ?
+                {currentSquare[0] == "none" ?
                 <div className='gridCont'>
                     {loadGridSquares()}
                 </div>
                     :
                     <>
-                        {currentSquare == "question" ?
+                        {currentSquare[0] == "question" ?
                         <Question/>
                         : 
                             <>
-                                {currentSquare == "special" ? 
-                                <Special/> : <Bonus/>
+                                {currentSquare[0] == "special" ? 
+                                <Special/> : <Bonus bonusNumber={currentSquare[1]}/>
                                 }
                             </>
                         }
