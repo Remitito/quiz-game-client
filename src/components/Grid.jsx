@@ -73,9 +73,7 @@ export const Grid = () => {
                             </>
                         }
                     </>
-                }
-                    
-                {/* <button onClick={() => console.log(window.innerWidth)}>Width</button> */}
+                }  
             </Col>
             <Col span={3}/>
         </Row>

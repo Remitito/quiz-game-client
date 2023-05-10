@@ -5,7 +5,7 @@ import {useState} from 'react'
 import {RightCircleOutlined, UserOutlined} from '@ant-design/icons'
 import { useDispatch } from 'react-redux'
 import { setTeamsAction, setSquaresAction, setBonusSquares, setSpecialSquares } from '../slices/setupSlice'
-import { shuffleSquares } from './functions/setupFunctions'
+import { assignSquareValues } from './functions/setupFunctions'
 import { setCurrentScreen } from '../slices/gameSlice'
 import { setSquareValues } from '../slices/setupSlice'
 import { Bonus } from './Bonus'
@@ -20,37 +20,9 @@ export const Setup = () => {
     const [specialQuestions, setSpecialSquaresLocal] = useState(true) 
     const dispatch = useDispatch()
 
-    // decides how many squares are special/bonus/question squares
-    const assignSquareValues = () => {
-        let squareValues = []
-        let overallCounter = 0
-        let bonusCounter = 0
-        let specialCounter = 0
-        let questionCounter = 0
-        // Dispatch a collection of indexes for each type of square
-        // When that square is clicked, just pop the index from the store array
-        while (overallCounter < squares) {
-            if(bonusSquares) {
-                squareValues.push(["bonus", bonusCounter])
-                overallCounter += 1
-                bonusCounter += 1
-            }
-            if(specialQuestions) {
-                squareValues.push(["special", specialCounter])
-                overallCounter += 1
-                specialCounter += 1
-            }
-            squareValues.push(["question", questionCounter])
-            overallCounter += 1
-            questionCounter += 1
-        }
-        shuffleSquares(squareValues)
-        console.log(squareValues)
-        dispatch(setSquareValues(squareValues))
-    }
-
     const confirm = () => {
-        assignSquareValues()
+        const squareValues = assignSquareValues(squares, bonusSquares, specialQuestions)
+        dispatch(setSquareValues(squareValues))
         dispatch(setTeamsAction(teams))
         dispatch(setSquaresAction(squares))
         dispatch(setSpecialSquares(specialQuestions))
