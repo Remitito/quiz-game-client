@@ -8,64 +8,49 @@ const shuffleSquares = (squares) => {
     return squares
 }
 
-// combine choose Bonuses / question / specials into one function
+// combine choose Bonuses / question into one function
 
-const assignSquareType = (squares, bonusSquares, specialQuestions) => {
+const assignSquareType = (squares, bonusSquares) => {
     let squareTypes = []
     let overallCounter = 0
     let bonuses = []
-    let specials = []
-    let questions = chooseQuestions()
-    if(bonusSquares) {bonuses = chooseBonuses()}
-    if(specialQuestions) {specials = chooseSpecials()}
+    // get random indexes to refer to different bonuses/questions
+    let questions = chooseInstances(15)
+    if(bonusSquares) {bonuses = chooseInstances(6)}
+    
+    // backup in case bonuses/questions need to be used again e..g on a big grid
+    const questionsBackup = questions
+    const bonusesBackup = bonuses
 
+    // assign square types e.g. bonus with an index for a certain bonus
     while (squareTypes.length < squares) {
         if(bonusSquares) {
+            if(bonuses.length === 1) {
+                bonusesBackup.forEach((bonus) => {
+                    bonuses.push(bonus)
+                    console.log(bonuses)
+                })
+            }
             squareTypes.push(["bonus", bonuses.pop()])
         }
-        if(specialQuestions) {
-            squareTypes.push(["special", specials.pop()])
-        }
+        if(questions.length > 0)
         squareTypes.push(["question", questions.pop()])
     }
     return squareTypes
 }
 
-export const assignSquareValues = (squares, bonusSquares, specialQuestions) => {
-    let squareValues = assignSquareType(squares, bonusSquares, specialQuestions)
+export const assignSquareValues = (squares, bonusSquares) => {
+    let squareValues = assignSquareType(squares, bonusSquares)
     // assignSquareInstance(squareValues)
     return shuffleSquares(squareValues)
 }
 
-
-// decides which bonuses to use by outputting indexes to be used in an array of  
-const chooseBonuses = () => {
-    let bonusIndexes = []
-    while (bonusIndexes.length < 7) {
-        let result = Math.floor(Math.random()*7)+1
-        if(!bonusIndexes.includes(result)) {bonusIndexes.push(result)}
+// decides which # bonus/question it loads
+const chooseInstances = (maximum) => {
+    let indexArray = []
+    while (indexArray.length < maximum) {
+        let result = Math.floor(Math.random()*maximum)+1
+        if(!indexArray.includes(result)) {indexArray.push(result)}
     }
-    return bonusIndexes;
-} 
-
-const chooseQuestions = () => {
-    let questionIndexes = []
-    while (questionIndexes.length < 7) {
-        let result = Math.floor(Math.random()*7)+1
-        if(!questionIndexes.includes(result)){
-            questionIndexes.push(result)
-        }
-    return questionIndexes
-    }
-}
-
-const chooseSpecials = () => {
-    let specialIndexes = []
-    while (specialIndexes.length < 7) {
-        let result = Math.floor(Math.random()*7)+1
-        if(!specialIndexes.includes(result)) {
-            specialIndexes.push(result)
-        }
-    }
-    return specialIndexes
+    return indexArray;
 }

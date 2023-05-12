@@ -4,7 +4,7 @@ import '../assets/stylesheets/setup.css'
 import {useState} from 'react'
 import {RightCircleOutlined, UserOutlined} from '@ant-design/icons'
 import { useDispatch } from 'react-redux'
-import { setTeamsAction, setSquaresAction, setBonusSquares, setSpecialSquares } from '../slices/setupSlice'
+import { setTeamsAction, setSquaresAction, setBonusSquares } from '../slices/setupSlice'
 import { assignSquareValues } from './functions/setupFunctions'
 import { setCurrentScreen } from '../slices/gameSlice'
 import { setSquareValues } from '../slices/setupSlice'
@@ -17,15 +17,13 @@ export const Setup = () => {
     const [teams, setTeams] = useState(2)
     const [squares, setSquares] = useState(20)
     const [bonusSquares, setBonusSquaresLocal] = useState(true) 
-    const [specialQuestions, setSpecialSquaresLocal] = useState(true) 
     const dispatch = useDispatch()
 
     const confirm = () => {
-        const squareValues = assignSquareValues(squares, bonusSquares, specialQuestions)
+        const squareValues = assignSquareValues(squares, bonusSquares)
         dispatch(setSquareValues(squareValues))
         dispatch(setTeamsAction(teams))
         dispatch(setSquaresAction(squares))
-        dispatch(setSpecialSquares(specialQuestions))
         dispatch(setBonusSquares(bonusSquares))
         dispatch(setCurrentScreen("grid"))
     }
@@ -70,21 +68,13 @@ export const Setup = () => {
                         </SetupSquareCont>
                 </Row>
                 <Row className='sectionRow'> 
-                    <div className='specialCont'>
-                        <div className='specialOption'>
-                            <label>Bonus Squares</label>
+                    <div>
+                        <div>
+                        <h4 className='sectionName'>Bonuses:</h4>
                             <Toggle translate={45} sliderWidth={25} width={80} height={40} 
                             backgroundColorChecked={"#EBA63F"} backgroundColorUnchecked={"#1d1d2c"}
                             backgroundColorButton={"#F7F4E9"} checked={bonusSquares} 
                             onChange={() => setBonusSquaresLocal(currentState => !currentState)}
-                            />
-                        </div>
-                        <div className='specialOption'>
-                            <label>Special Questions</label>
-                            <Toggle translate={45} sliderWidth={25} width={80} height={40} 
-                            backgroundColorChecked={"#EBA63F"} backgroundColorUnchecked={"#1d1d2c"}
-                            backgroundColorButton={"#F7F4E9"} checked={specialQuestions}
-                            onChange={() => setSpecialSquaresLocal(currentState => !currentState)}
                             />
                         </div>
                     </div>

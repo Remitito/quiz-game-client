@@ -16,16 +16,6 @@
     margin-top: 5px;
 }
 
-.specialCont {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    margin-top: 20px;
-}
-
-.specialOption {
-    height: 100px;
-}
 
 .sectionRow {
     display: flex;

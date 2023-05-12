@@ -2,7 +2,6 @@ import { useSelector, useDispatch } from 'react-redux'
 import { useState } from 'react'
 import { Bonus } from './Bonus'
 import { Question } from './Question'
-import { Special } from './Special'
 import {Row, Col} from 'antd'
 import { setCurrentSquare } from '../slices/gameSlice'
 import { GridSquareCont, GridSquare } from '../assets/styledComponents/NumberShapes'
@@ -66,11 +65,7 @@ export const Grid = () => {
                         {currentSquare[0] == "question" ?
                         <Question/>
                         : 
-                            <>
-                                {currentSquare[0] == "special" ? 
-                                <Special/> : <Bonus bonusNumber={currentSquare[1]}/>
-                                }
-                            </>
+                        <Bonus bonusNumber={currentSquare[1]}/>
                         }
                     </>
                 }  

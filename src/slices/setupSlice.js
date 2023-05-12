@@ -5,16 +5,12 @@ export const setupSlice = createSlice({
     initialState: {
         bonusSquares: true,
         teams: 4,
-        squareValues: [], // says if the square is bonus/special
+        squareValues: [], // says if the square is bonus
         squares: 30,
-        specialSquares: true,
     },
     reducers: {
         setBonusSquares: (state, action) => { // on or off
             state.bonusSquares = action.payload
-        },
-        setSpecialSquares: (state, action) => { // on or off
-            state.specialSquares = action.payload
         },
         setSquareValues: (state, action) => {
             state.squareValues = action.payload
@@ -28,5 +24,5 @@ export const setupSlice = createSlice({
     }
 })
 
-export const {setTeamsAction, setSquaresAction, setBonusSquares, setSquareValues, setSpecialSquares} = setupSlice.actions
+export const {setTeamsAction, setSquaresAction, setBonusSquares, setSquareValues} = setupSlice.actions
 export default setupSlice.reducer

@@ -2,19 +2,28 @@ import { useDispatch, useSelector } from 'react-redux'
 
 export const GiveTakePoints = ({points, finishTurn, updateTeamScore}) => {
     const teams = useSelector((state) => state.setup.teams)
+    let currentTeam = useSelector((state) => state.game.currentTeam)
     const teamColors = ["#3CBCC3","#EBA63F", "#438945", "#E40C2B"] 
 
     const showTeamOptions = () => {
         let teamElements = []
-        for(let i = 0; i < teams; i ++) {
+        for(let i = 0; i < teams; i ++) { // add teams
             teamElements.push(
-                <div className="bonusTeamOption" id={`team${i}`} style={{backgroundColor: teamColors[i]}}
+                <div className="bonusTeamOption" key={i + 1} style={{backgroundColor: teamColors[i]}}
                 onClick={() => handleTeamClick(i + 1)}>
                     <label className='teamName'>Team {i + 1}</label>
                     <br/>
                 </div>
             )
         }
+        // remove current team from selection
+        let toRemove = 0
+        for(let i = 0; i < teams; i++) {
+            if(teamElements[i].key == currentTeam) {
+                toRemove = i
+            }
+        }
+        teamElements.splice(toRemove, 1)
         return teamElements
     }
 
