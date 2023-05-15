@@ -8,7 +8,6 @@ export const Bonus = ({bonusNumber}) => {
     const dispatch = useDispatch()
     const currentTeam = useSelector((state) => state.game.currentTeam)
     const numOfTeams = useSelector((state) => state.setup.teams)
-    let bonuses = useSelector((state) => state.setup.bonuses)
     
     const updateTeamScore = (team, amount) => {
         const scoreFunctions = [setTeamOneScore(amount), setTeamTwoScore(amount), setTeamThreeScore(amount), setTeamFourScore(amount)]

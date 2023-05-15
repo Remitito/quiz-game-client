@@ -63,7 +63,7 @@ export const Grid = () => {
                     :
                     <>
                         {currentSquare[0] == "question" ?
-                        <Question/>
+                        <Question questionNumber={currentSquare[1]}/>
                         : 
                         <Bonus bonusNumber={currentSquare[1]}/>
                         }
