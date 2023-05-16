@@ -8,6 +8,18 @@
     text-align: center;
 }
 
+.bonusIcon {
+    color: #1d1d2c;
+    font-size: 10rem;
+    margin: auto;
+    margin-bottom: 30px;
+}
+
+.bonusSubCont {
+    display: flex;
+    flex-direction: column;
+}
+
 .bonusTeamsCont {
     margin-bottom: 2px;
     text-align: center;
@@ -31,3 +43,17 @@
     margin-top: 5px;
 }
 
+.okayButton {
+    background-color: #EBA63F;
+    border-radius: 2rem;
+    margin: auto;
+    margin-bottom: 20px;
+    box-shadow: 5px 5px #1d1d2c;
+    font-size: 2.5rem;
+    font-family: 'Sigmar', cursive;
+    padding: 15px;
+    width: 40%;
+}
+.okayButton:hover {
+    color: #e40c2b;
+}

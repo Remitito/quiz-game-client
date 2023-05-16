@@ -19,7 +19,9 @@ export const Navbar = () => {
             </Row>
             </Col>
             <Col className='titleCont' span={14}>
-                <h1 className='animate__animated animate__backInDown'>inQUIZitive</h1>
+                <label style={{color: "#1d1d2c"}}>In</label>
+                <label style={{color: "#E40C2B", fontSize: "90px"}}>QUIZ</label>
+                <label style={{color: "#1d1d2c"}}>itive</label>
             </Col>
             <Col className='accountCont' span={5}>
                 <Row>

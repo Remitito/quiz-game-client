@@ -1,8 +1,11 @@
 import {Col, Row} from 'antd'
 import '../assets/stylesheets/bonus.css'
 import { useDispatch, useSelector } from 'react-redux'
-import { setCurrentScreen, setCurrentSquare, setCurrentTeam, setTeamOneScore, setTeamTwoScore, setTeamThreeScore, setTeamFourScore } from '../slices/gameSlice'
-import { GiveTakePoints } from '../features/bonuses/GiveTakePoints'
+import { setCurrentScreen, setCurrentSquare, setCurrentTeam, addSubtractOneScore, addSubtractTwoScore, addSubtractThreeScore, addSubtractFourScore } from '../slices/gameSlice'
+import { GiveTakePoints } from './bonuses/GiveTakePoints'
+import { ResetScores } from './bonuses/ResetScores'
+import { SkipTurn } from './bonuses/SkipTurn'
+import { PickAgain } from './bonuses/PickAgain'
 
 export const Bonus = ({bonusNumber}) => {
     const dispatch = useDispatch()
@@ -10,7 +13,7 @@ export const Bonus = ({bonusNumber}) => {
     const numOfTeams = useSelector((state) => state.setup.teams)
     
     const updateTeamScore = (team, amount) => {
-        const scoreFunctions = [setTeamOneScore(amount), setTeamTwoScore(amount), setTeamThreeScore(amount), setTeamFourScore(amount)]
+        const scoreFunctions = [addSubtractOneScore(amount), addSubtractTwoScore(amount), addSubtractThreeScore(amount), addSubtractFourScore(amount)]
         dispatch(scoreFunctions[team])
     }
 
@@ -33,13 +36,17 @@ export const Bonus = ({bonusNumber}) => {
         <GiveTakePoints points={-30} updateTeamScore={updateTeamScore} finishTurn={finishTurn} />,
         <GiveTakePoints points={-10} updateTeamScore={updateTeamScore} finishTurn={finishTurn} />,
         <GiveTakePoints points={-1} updateTeamScore={updateTeamScore} finishTurn={finishTurn} />,
+        <ResetScores finishTurn={finishTurn}/>,
+        <SkipTurn finishTurn={finishTurn}/>,
+        <PickAgain/>
     ]
 
     return (
         <Row>
             <Col span={5}/>
             <Col className='bonusCont' span={14}>
-                {bonusComponents[bonusNumber]}
+                {/* {bonusComponents[bonusNumber]} */}
+                {bonusComponents[9]}
             </Col>
             <Col span={5}/>
         </Row>

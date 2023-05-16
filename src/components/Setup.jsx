@@ -4,7 +4,7 @@ import '../assets/stylesheets/setup.css'
 import {useState} from 'react'
 import {RightCircleOutlined, UserOutlined} from '@ant-design/icons'
 import { useDispatch } from 'react-redux'
-import { setTeamsAction, setSquaresAction, setBonusSquares } from '../slices/setupSlice'
+import { addSubtractsAction, setSquaresAction, setBonusSquares } from '../slices/setupSlice'
 import { assignSquareValues } from './functions/setupFunctions'
 import { setCurrentScreen } from '../slices/gameSlice'
 import { setSquareValues } from '../slices/setupSlice'
@@ -14,7 +14,7 @@ import { current } from '@reduxjs/toolkit'
 
 
 export const Setup = () => {
-    const [teams, setTeams] = useState(2)
+    const [teams, addSubtracts] = useState(2)
     const [squares, setSquares] = useState(20)
     const [bonusSquares, setBonusSquaresLocal] = useState(true) 
     const dispatch = useDispatch()
@@ -22,7 +22,7 @@ export const Setup = () => {
     const confirm = () => {
         const squareValues = assignSquareValues(squares, bonusSquares)
         dispatch(setSquareValues(squareValues))
-        dispatch(setTeamsAction(teams))
+        dispatch(addSubtractsAction(teams))
         dispatch(setSquaresAction(squares))
         dispatch(setBonusSquares(bonusSquares))
         dispatch(setCurrentScreen("grid"))
@@ -36,22 +36,22 @@ export const Setup = () => {
                     <h4 className='sectionName' span={7}>Teams:</h4>
                     <div className='teamContainer'>
                         <div className={teams === 1 ? 'teamOptionSelected' : 'teamOption'}
-                        onClick={() => setTeams(1)}>
+                        onClick={() => addSubtracts(1)}>
                             <UserOutlined className='teamIcon'/>
                         </div>
                         <div className={teams === 2 ? 'teamOptionSelected' : 'teamOption'}
-                        onClick={() => setTeams(2)}>
+                        onClick={() => addSubtracts(2)}>
                             <UserOutlined className='teamIcon'/>
                             <UserOutlined className='teamIcon'/>
                         </div>
                         <div className={teams === 3 ? 'teamOptionSelected' : 'teamOption'}
-                        onClick={() => setTeams(3)}>
+                        onClick={() => addSubtracts(3)}>
                             <UserOutlined className='teamIcon'/>
                             <UserOutlined className='teamIcon'/>
                             <UserOutlined className='teamIcon'/>
                         </div>
                         <div className={teams === 4 ? 'teamOptionSelected' : 'teamOption'}
-                        onClick={() => setTeams(4)}>
+                        onClick={() => addSubtracts(4)}>
                             <UserOutlined className='teamIcon'/>
                             <UserOutlined className='teamIcon'/>
                             <UserOutlined className='teamIcon'/>

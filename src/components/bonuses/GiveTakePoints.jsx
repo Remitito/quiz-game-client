@@ -1,4 +1,6 @@
 import { useDispatch, useSelector } from 'react-redux'
+import { FaGift } from "react-icons/fa";
+import { BsMagnetFill } from "react-icons/bs";
 
 export const GiveTakePoints = ({points, finishTurn, updateTeamScore}) => {
     const teams = useSelector((state) => state.setup.teams)
@@ -36,9 +38,15 @@ export const GiveTakePoints = ({points, finishTurn, updateTeamScore}) => {
         <>
             <>
                 {points > 0 ?
-                    <h4 className='bonusTitle'>Give {points} Points to another team</h4>
-                    :
-                    <h4 className='bonusTitle'>Take {points} Points from another team</h4>
+                    <>
+                        <h4 className='bonusTitle'>Give {points} Points to another team</h4>
+                        <FaGift className='bonusIcon' style={{color: "#438945"}}/>
+                    </>
+                :
+                    <>
+                        <h4 className='bonusTitle'>Take {points} Points from another team</h4>
+                        <BsMagnetFill className='bonusIcon' style={{color: "#E40C2B"}}/>
+                    </>
                 }
             </>
             <div className='bonusTeamsCont'>
