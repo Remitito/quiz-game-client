@@ -9,7 +9,7 @@
 
 .sectionName {
     color: #1d1d2c;
-    font-size: 2rem;
+    font-size: 3rem;
     font-family: 'Sigmar', cursive;
     font-weight: 100;
     margin-bottom: 10px;
@@ -20,7 +20,6 @@
 .sectionRow {
     display: flex;
     flex-direction: column;
-    font-size: 1.5rem;
     font-family: 'Sigmar', cursive;
     margin-bottom: 30px;
     text-align: center;

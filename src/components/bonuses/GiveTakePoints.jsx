@@ -2,10 +2,9 @@ import { useDispatch, useSelector } from 'react-redux'
 import { FaGift } from "react-icons/fa";
 import { BsMagnetFill } from "react-icons/bs";
 
-export const GiveTakePoints = ({points, finishTurn, updateTeamScore}) => {
+export const GiveTakePoints = ({points, finishTurn, teamColors, setTeamScore}) => {
     const teams = useSelector((state) => state.setup.teams)
     let currentTeam = useSelector((state) => state.game.currentTeam)
-    const teamColors = ["#3CBCC3","#EBA63F", "#438945", "#E40C2B"] 
 
     const showTeamOptions = () => {
         let teamElements = []
@@ -30,7 +29,7 @@ export const GiveTakePoints = ({points, finishTurn, updateTeamScore}) => {
     }
 
     const handleTeamClick = (team) => {
-        updateTeamScore(team - 1, points) // -1 to reflect function array indexes | 50 points added
+        setTeamScore(team, points, true) // -1 to reflect function array indexes | 50 points added
         finishTurn()
     }
 

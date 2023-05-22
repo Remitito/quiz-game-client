@@ -1,5 +1,5 @@
 import { useDispatch } from "react-redux"
-import { addSubtractOneScore, addSubtractTwoScore, addSubtractThreeScore, addSubtractFourScore } from "../../slices/gameSlice"
+import { setTeamOneScore, setTeamTwoScore, setTeamThreeScore, setTeamFourScore } from "../../slices/gameSlice"
 import { resetScores } from "../../slices/gameSlice"
 import { FaSkull} from "react-icons/fa";
 

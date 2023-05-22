@@ -1,4 +1,12 @@
 
+@import url('https://fonts.googleapis.com/css2?family=Bruno+Ace+SC&display=swap');
+
+@font-face {
+    font-family: 'Bebas Neue';
+    src: url('../fonts/BebasNeue-Regular.ttf');
+}
+
+
 .bonusCont {
     background-color: #F7F4E9;
     border-radius: 2rem;
@@ -56,4 +64,27 @@
 }
 .okayButton:hover {
     color: #e40c2b;
+}
+
+.statusMessage {
+    color: #1d1d2c;
+    font-family: "Bebas Neue";
+    font-size: 3.5rem;
+    margin: 30px 10px 30px 10px;
+}
+
+.teamSelectCont {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.teamSelect {
+    background-color: #EBA63F;
+    border-radius: 2rem;
+    box-shadow: 5px 5px #1d1d2c;
+    font-size: 2.5rem;
+    font-family: 'Sigmar', cursive;
+    height: 100px;
+    margin-top: 30px;
 }

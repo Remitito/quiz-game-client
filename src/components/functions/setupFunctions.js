@@ -26,15 +26,21 @@ const assignSquareType = (squares, bonusSquares) => {
     while (squareTypes.length < squares) {
         if(bonusSquares) {
             if(bonuses.length === 1) {
+                squareTypes.push(["bonus", bonuses[0]]) // push final bonus then repopulate bonus array
                 bonusesBackup.forEach((bonus) => {
                     bonuses.push(bonus)
-                    console.log(bonuses)
                 })
             }
-            squareTypes.push(["bonus", bonuses.pop()])
+            else {
+                squareTypes.push(["bonus", bonuses.pop()])    
+            }
         }
         if(questions.length > 0)
-        squareTypes.push(["question", questions.pop()])
+            squareTypes.push(["question", questions.pop()])
+        // if bonuses not selected but there aren't enough questions
+        if(questions.length === 0 && !bonusSquares) {
+            squareTypes.push(["empty", ""])
+        }
     }
     return squareTypes
 }
