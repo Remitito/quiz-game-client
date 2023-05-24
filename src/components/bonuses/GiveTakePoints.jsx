@@ -1,10 +1,13 @@
 import { useDispatch, useSelector } from 'react-redux'
+import { setTeamScore } from '../../slices/gameSlice';
 import { FaGift } from "react-icons/fa";
 import { BsMagnetFill } from "react-icons/bs";
 
-export const GiveTakePoints = ({points, finishTurn, teamColors, setTeamScore}) => {
+export const GiveTakePoints = ({points, finishTurn, teamColors}) => {
+    const dispatch = useDispatch()
     const teams = useSelector((state) => state.setup.teams)
     let currentTeam = useSelector((state) => state.game.currentTeam)
+    const teamScores = useSelector((state) => state.game.teamScores)
 
     const showTeamOptions = () => {
         let teamElements = []
@@ -28,8 +31,11 @@ export const GiveTakePoints = ({points, finishTurn, teamColors, setTeamScore}) =
         return teamElements
     }
 
-    const handleTeamClick = (team) => {
-        setTeamScore(team, points, true) // -1 to reflect function array indexes | 50 points added
+    const handleTeamClick = (selectedTeam) => { 
+        const currentTeamNewTotal = teamScores[currentTeam - 1] - points
+        const selectedTeamNewTotal = teamScores[selectedTeam - 1] + points
+        dispatch(setTeamScore({team: currentTeam - 1, amount: currentTeamNewTotal}))
+        dispatch(setTeamScore({team: selectedTeam - 1, amount: selectedTeamNewTotal}))
         finishTurn()
     }
 

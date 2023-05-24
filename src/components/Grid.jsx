@@ -1,6 +1,7 @@
 import { useSelector, useDispatch } from 'react-redux'
 import { useState } from 'react'
 import { Bonus } from './Bonus'
+import { Empty } from './Empty'
 import { Question } from './Question'
 import {Row, Col} from 'antd'
 import { setCurrentSquare } from '../slices/gameSlice'
@@ -65,7 +66,13 @@ export const Grid = () => {
                         {currentSquare[0] == "question" ?
                         <Question questionNumber={currentSquare[1]}/>
                         : 
-                        <Bonus bonusNumber={currentSquare[1]}/>
+                        <>
+                            {currentSquare[0] == "bonus" ?
+                            <Bonus bonusNumber={currentSquare[1]}/> 
+                            :
+                            <Empty/>
+                            }
+                        </>
                         }
                     </>
                 }  

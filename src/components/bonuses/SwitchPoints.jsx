@@ -1,14 +1,15 @@
 import { useDispatch, useSelector } from "react-redux";
 import { useState } from "react";
 import { HiSwitchHorizontal } from "react-icons/hi";
+import { setTeamScore } from "../../slices/gameSlice";
 
-export const SwitchScores = ({finishTurn, numOfTeams, teamColors, setTeamScore}) => {
+
+// MAKE THE OPTIONS CONDITIONALLY RENDER USING DISPLAY NONE
+
+
+export const SwitchScores = ({finishTurn, numOfTeams, teamColors}) => {
     const dispatch = useDispatch()
-    const teamOneScore = useSelector((state) => state.game.teamOneScore)
-    const teamTwoScore = useSelector((state) => state.game.teamTwoScore)
-    const teamThreeScore = useSelector((state) => state.game.teamThreeScore)
-    const teamFourScore = useSelector((state) => state.game.teamFourScore)
-    const teamScores = [teamOneScore, teamTwoScore, teamThreeScore, teamFourScore]
+    const teamScores = useSelector((state) => state.game.teamScores)
     const [choiceOne, setChoiceOne] = useState(1)
     const [choiceTwo, setChoiceTwo] = useState(2)
     const [statusMessage, setStatusMessage] = useState(`Swap Team ${choiceOne}'s points with Team ${choiceTwo}'s points?`)
@@ -22,9 +23,9 @@ export const SwitchScores = ({finishTurn, numOfTeams, teamColors, setTeamScore})
         if(validateChoice()) {
             let firstTeamNewScore = teamScores[choiceTwo - 1]
             let secondTeamNewScore = teamScores[choiceOne - 1]
-            console.log(firstTeamNewScore)
-            setTeamScore([choiceOne - 1], firstTeamNewScore)
-            setTeamScore([choiceTwo - 1], secondTeamNewScore)
+            dispatch(setTeamScore({team: choiceOne - 1, amount: firstTeamNewScore}))
+            dispatch(setTeamScore({team: choiceTwo - 1, amount: secondTeamNewScore}))
+            finishTurn()
         }
     }
 

@@ -5,12 +5,7 @@ import '../assets/stylesheets/scores.css'
 export const Scores = () => {
     const teams = useSelector((state) => state.setup.teams)
     const currentTeam = useSelector((state) => state.game.currentTeam)
-    const scores = [
-        useSelector((state) => state.game.teamOneScore),
-        useSelector((state) => state.game.teamTwoScore),
-        useSelector((state) => state.game.teamThreeScore),
-        useSelector((state) => state.game.teamFourScore)
-    ]
+    const scores = useSelector((state) => state.game.teamScores)
     const teamColors = ["#3CBCC3","#EBA63F", "#438945", "#E40C2B"] 
 
     const addTeams = () => {

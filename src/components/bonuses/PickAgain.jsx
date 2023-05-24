@@ -12,9 +12,9 @@ export const PickAgain = () => {
 
     return (
         <div className="bonusSubCont">
-            <label className='bonusTitle'>Pick Again</label>
+            <label className='bonusTitle'>Pick Again!</label>
             <TbRepeatOnce className='bonusIcon' style={{color: "#E40C2B"}}/>
-            <button className="okayButton" onClick={() => backToGrid()}>Back To Grid</button>
+            <button className="okayButton" onClick={() => backToGrid()}>Pick Again</button>
         </div>
     )
 }

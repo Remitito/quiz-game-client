@@ -3,7 +3,7 @@ import { useState } from 'react'
 import {Col, Row} from 'antd'
 import {TiTimes, TiTick} from 'react-icons/ti'
 import '../assets/stylesheets/question.css'
-import { setCurrentTeam, setCurrentScreen, setCurrentSquare, setTeamOneScore, setTeamTwoScore, setTeamThreeScore, setTeamFourScore } from '../slices/gameSlice'
+import {setTeamScore, setCurrentTeam, setCurrentScreen, setCurrentSquare } from '../slices/gameSlice'
 import { BsPatchQuestionFill } from "react-icons/bs";
 
 export const Question = ({questionNumber}) => {
@@ -12,6 +12,7 @@ export const Question = ({questionNumber}) => {
     const currentTeam = useSelector((state) => state.game.currentTeam)
     const numOfTeams = useSelector((state) => state.setup.teams)
     const questions = useSelector((state) => state.setup.questions)
+    const teamScores = useSelector((state) => state.game.teamScores)
 
     const finishTurn = () => {
         if(currentTeam + 1 > numOfTeams) {
@@ -26,8 +27,8 @@ export const Question = ({questionNumber}) => {
 
     // just add 50 points per question for now
     const correctAnswer = () => {
-        const scoreFunctions = [setTeamOneScore(50), setTeamTwoScore(50), setTeamThreeScore(50), setTeamFourScore(50)]
-        dispatch(scoreFunctions[currentTeam - 1]) // indexing is off by 1 but not sure why
+        const newPointTotal = teamScores[currentTeam - 1] + 50  
+        dispatch(setTeamScore({team: currentTeam - 1, amount: newPointTotal}))
         finishTurn()
     }
     

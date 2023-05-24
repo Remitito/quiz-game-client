@@ -6,23 +6,11 @@ export const gameSlice = createSlice({
         currentScreen: 'setup',
         currentSquare: ['none', 0], // e.g. bonus, #4
         currentTeam: 1,
-        teamOneScore: 0,
-        teamTwoScore: 0,
-        teamThreeScore: 0,
-        teamFourScore: 0,
+        teamScores: [0,0,0,0]
     },
     reducers: {
-        setTeamOneScore: (state, action) => {
-            state.teamOneScore = action.payload
-        },
-        setTeamTwoScore: (state, action) => {
-            state.teamTwoScore = action.payload
-        },
-        setTeamThreeScore: (state, action) => {
-            state.teamThreeScore = action.payload
-        },
-        setTeamFourScore: (state, action) => {
-            state.teamFourScore = action.payload
+        setTeamScore: (state, action) => {
+            state.teamScores[action.payload.team] = action.payload.amount 
         },
         resetScores: (state, action) => {
             state.teamOneScore = 0
@@ -42,5 +30,5 @@ export const gameSlice = createSlice({
     }
 })
 
-export const { setTeamOneScore, setTeamTwoScore, setTeamThreeScore, setTeamFourScore, resetScores, setCurrentScreen, setCurrentSquare, setCurrentTeam} = gameSlice.actions
+export const {setTeamScore, resetScores, setCurrentScreen, setCurrentSquare, setCurrentTeam} = gameSlice.actions
 export default gameSlice.reducer

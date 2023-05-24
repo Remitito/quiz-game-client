@@ -1,13 +1,15 @@
-import { useDispatch } from "react-redux"
-import { setTeamOneScore, setTeamTwoScore, setTeamThreeScore, setTeamFourScore } from "../../slices/gameSlice"
-import { resetScores } from "../../slices/gameSlice"
+import { useDispatch, useSelector } from "react-redux"
+import { setTeamScore } from "../../slices/gameSlice"
 import { FaSkull} from "react-icons/fa";
 
 export const ResetScores = ({finishTurn}) => {
     const dispatch = useDispatch()
+    const teams = useSelector((state) => state.setup.teams)
 
     const confirmReset = () => {
-        dispatch(resetScores())
+        for(let i = 0; i < teams; i++) {
+            dispatch(setTeamScore({team: i, amount: 0}))    
+        }
         finishTurn()
     }
 
