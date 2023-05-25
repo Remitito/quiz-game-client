@@ -1,6 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@500&family=Sigmar&display=swap');
+
 .answer {
     color: #438945;
-    font-family: 'Sigmar', cursive;
+    font-family: 'Kanit', sans-serif;
     font-size: 6rem;
 }
 
@@ -35,7 +37,6 @@
 
 .questionIcon {
     color: #3CBCC3;
-    font-family: 'Sigmar', cursive;
     font-size: 20rem;
     margin: auto;
     padding: 40px;
@@ -44,7 +45,8 @@
 .questionTitle {
     color: #1d1d2c;
     font-size: 4.5rem;
-    font-family: 'Sigmar', cursive;
+    font-family: 'Kanit', sans-serif;
+    font-weight: 1000;
     margin-bottom: 10px;
     margin-top: 5px;
     text-align: center;

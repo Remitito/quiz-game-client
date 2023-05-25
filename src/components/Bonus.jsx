@@ -3,7 +3,7 @@ import '../assets/stylesheets/bonus.css'
 import { useDispatch, useSelector } from 'react-redux'
 import { setCurrentScreen, setCurrentSquare, setCurrentTeam} from '../slices/gameSlice'
 import { GiveTakePoints } from './bonuses/GiveTakePoints'
-import { ResetScores } from './bonuses/ResetScores'
+import { ResetAllScores } from './bonuses/ResetAllScores'
 import { SkipTurn } from './bonuses/SkipTurn'
 import { PickAgain } from './bonuses/PickAgain'
 import { SwitchScores } from './bonuses/SwitchPoints'
@@ -33,7 +33,7 @@ export const Bonus = ({bonusNumber}) => {
         <GiveTakePoints teamColors={teamColors} points={-30} finishTurn={finishTurn} />,
         <GiveTakePoints teamColors={teamColors} points={-10} finishTurn={finishTurn} />,
         <GiveTakePoints teamColors={teamColors} points={-1} finishTurn={finishTurn} />,
-        <ResetScores finishTurn={finishTurn}/>,
+        <ResetAllScores finishTurn={finishTurn}/>,
         <SkipTurn finishTurn={finishTurn}/>,
         <PickAgain/>,
         <SwitchScores currentTeam={currentTeam} finishTurn={finishTurn} numOfTeams={numOfTeams} teamColors={teamColors}/>

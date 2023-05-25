@@ -12,7 +12,7 @@ export const gameSlice = createSlice({
         setTeamScore: (state, action) => {
             state.teamScores[action.payload.team] = action.payload.amount 
         },
-        resetScores: (state, action) => {
+        ResetAllScores: (state, action) => {
             state.teamOneScore = 0
             state.teamTwoScore = 0
             state.teamThreeScore = 0
@@ -30,5 +30,5 @@ export const gameSlice = createSlice({
     }
 })
 
-export const {setTeamScore, resetScores, setCurrentScreen, setCurrentSquare, setCurrentTeam} = gameSlice.actions
+export const {setTeamScore, ResetAllScores, setCurrentScreen, setCurrentSquare, setCurrentTeam} = gameSlice.actions
 export default gameSlice.reducer
