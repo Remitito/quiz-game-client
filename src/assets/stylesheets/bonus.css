@@ -6,6 +6,10 @@
     src: url('../fonts/BebasNeue-Regular.ttf');
 }
 
+.animate__animated.animate__bounce {
+    --animate-duration: 2s;
+  }
+
 .bonusCont {
     background-color: #F7F4E9;
     border-radius: 2rem;
@@ -57,7 +61,6 @@
     font-size: 3.5rem;
     margin: 30px 10px 30px 10px;
 }
-
 
 .okayButton {
     background-color: #EBA63F;

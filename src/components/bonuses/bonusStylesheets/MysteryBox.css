@@ -1,0 +1,46 @@
+.fadePoints {
+    font-size: 3rem;
+    opacity: 0;
+    transition: opacity 0.4s ease-in-out;
+  }
+  .fadePoints.visible {
+    opacity: 1;
+  }
+
+.fadePointsCont {
+    color: green;
+    height: 50px;
+}
+
+
+.boxIconClickable {
+    background-color: #dfad25;
+    border-radius: 1.5rem;
+    border-width: 5px;
+    border-style: solid;
+    color: #df4d25;
+    font-size: 12rem;
+    margin: auto;
+    margin-bottom: 40px;
+    padding: 10px;
+}
+.boxIconUnclickable {
+    background-color: #df4d25;
+    border-radius: 1.5rem;
+    border-width: 5px;
+    border-style: solid;
+    color: #df4d25;
+    font-size: 12rem;
+    margin: auto;
+    margin-bottom: 40px;
+    padding: 10px;
+}
+
+.boxIcon:hover {
+    background-color: #a4811f;
+    color: #e40c2b;
+}
+
+.pointsTotal {
+    font-size: 2rem;
+}

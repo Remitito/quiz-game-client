@@ -7,6 +7,7 @@ import { ResetAllScores } from './bonuses/ResetAllScores'
 import { SkipTurn } from './bonuses/SkipTurn'
 import { PickAgain } from './bonuses/PickAgain'
 import { SwitchScores } from './bonuses/SwitchPoints'
+import { MysteryBox } from './bonuses/MysteryBox'
 
 export const Bonus = ({bonusNumber}) => {
     const dispatch = useDispatch()
@@ -36,7 +37,9 @@ export const Bonus = ({bonusNumber}) => {
         <ResetAllScores finishTurn={finishTurn}/>,
         <SkipTurn finishTurn={finishTurn}/>,
         <PickAgain/>,
-        <SwitchScores currentTeam={currentTeam} finishTurn={finishTurn} numOfTeams={numOfTeams} teamColors={teamColors}/>
+        <SwitchScores currentTeam={currentTeam} finishTurn={finishTurn} numOfTeams={numOfTeams} teamColors={teamColors}/>,
+        <MysteryBox finishTurn={finishTurn}/>
+
     ]
 
     return (
@@ -44,7 +47,7 @@ export const Bonus = ({bonusNumber}) => {
             <Col span={5}/>
             <Col className='bonusCont' span={14}>
                 {/* {bonusComponents[bonusNumber]} */}
-                {bonusComponents[10]}
+                {bonusComponents[11]}
             </Col>
             <Col span={5}/>
         </Row>
