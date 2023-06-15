@@ -1,63 +1,86 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { SlPresent } from "react-icons/sl";
-import './bonusStylesheets/MysteryBox.css';
+import { useDispatch, useSelector } from "react-redux";
+import { setTeamScore } from "../../slices/gameSlice";
+import "./bonusStylesheets/MysteryBox.css";
 
-export const MysteryBox = ({ finishTurn }) => {
+export const MysteryBox = ({ correctSound, currentTeam, finishTurn, wrongSound }) => {
+  const dispatch = useDispatch();
+  const teamScore = useSelector((state) => state.game.teamScores[currentTeam]);
   const [pointsVisible, setPointsVisible] = useState(false);
   const [currentPoints, setCurrentPoints] = useState(null);
   const [totalPoints, setTotalPoints] = useState(0);
-  const [boxClickable, setBoxClickable] = useState(true);
   const [finished, setFinished] = useState(false);
-  const possibleOutcomes = [0, 0, 10, 20, 20, 30, 30, 40, 50, 100];
+  let possibleOutcomes = [10, 20, 30, 0, 40, 0, 50, 0, 100];
+  const soundRef = useRef(null);
 
-const openBox = () => {
-    if (!boxClickable) {
-      return;
-    }
-    setBoxClickable(false);
-    const points = possibleOutcomes[Math.floor(Math.random() * 10) + 1];
+  const playSound = (sound) => {
+    const audio = soundRef.current;
+    audio.src = sound;
+    audio.play();
+  };
+
+  const openBox = () => {
+    const choice = Math.floor(Math.random() * possibleOutcomes.length)
+    const points = possibleOutcomes.splice(choice - 1, 1)[0]
+
     if (points > 0) {
+      playSound(correctSound);
       setTotalPoints((prevTotalPoints) => prevTotalPoints + points);
-      setCurrentPoints(points)
+      setCurrentPoints(points);
       setPointsVisible(true);
       setTimeout(() => {
         setPointsVisible(false);
-        setBoxClickable(true);
       }, 2000);
     } else {
-        setPointsVisible(true);
-        setCurrentPoints(-totalPoints);
-        setTotalPoints(0);
-        setFinished(true)
+      playSound(wrongSound);
+      setPointsVisible(true);
+      setCurrentPoints(-totalPoints);
+      setTotalPoints(0);
+      setFinished(true);
     }
   };
 
-  const fadePointsClassName = `fadePoints ${pointsVisible ? 'visible' : ''}`;
+  const finishOpening = () => {
+    dispatch(setTeamScore({ team: currentTeam - 1, amount: teamScore + totalPoints }));
+    finishTurn();
+  };
 
   return (
     <div className="bonusSubCont">
       <label className="bonusTitle">Mystery Box</label>
-      {!finished ?
-        <label className="statusMessage">Touch to get points!</label>
-      :
-        <label className="statusMessage">The box has been locked!</label>
-      }
+      <audio ref={soundRef} />
+      {!finished ? (
+        <label className="statusMessage">Touch to get points! But don't be greedy!</label>
+      ) : (
+        <label style={{ color: "red" }} className="statusMessage">
+          The box has been locked!
+        </label>
+      )}
       <label className="pointsTotal">Points gained: {totalPoints}</label>
-      <div className="fadePointsCont">
-        {currentPoints > 0 ? (
-          <label style={{color: 'green'}} className={fadePointsClassName}>+{currentPoints}</label>
+      <div className="boxPointsCont">
+        {!pointsVisible ? (
+          <div className={'iconCont'}>
+            <SlPresent
+              onClick={openBox}
+              className="boxIcon"
+            />
+          </div>
         ) : (
-          <label style={{color: 'red'}} className={fadePointsClassName}>{currentPoints}</label>
+          <div className="fadePoints">
+            {currentPoints > 0 ? (
+              <div style={{ backgroundColor: "green" }} className="fadePoints">
+                +{currentPoints}
+              </div>
+            ) : (
+              <div style={{ backgroundColor: "red" }} className="fadePoints">
+                {currentPoints}
+              </div>
+            )}
+          </div>
         )}
       </div>
-      <div>
-        <SlPresent
-          disabled={!boxClickable}
-          onClick={openBox}
-          className={boxClickable ? "boxIconClickable" : "boxIconUnclickable"}
-        />
-      </div>
-      <button className="okayButton" onClick={() => finishTurn()}>
+      <button className="okayButton" onClick={finishOpening}>
         Finish
       </button>
     </div>

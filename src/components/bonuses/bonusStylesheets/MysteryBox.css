@@ -1,46 +1,69 @@
-.fadePoints {
-    font-size: 3rem;
+.boxPointsCont {
+    align-items: center;
+    background-color: #dfad25;
+    border-style: solid;
+    border-radius: 1.5rem;
+    border-width: 10px;
+    color: #df4d25;
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    height: 300px;
+    overflow: hidden;
+    width: 300px;
+    z-index: 2;
+    position: relative;
+  }
+  
+  .fadePoints {
+    align-items: center;
+    color: #f7f4e9;
+    display: flex;
+    font-size: 8rem;
+    height: 100%;
+    justify-content: center;
+    margin: auto;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+  }
+  
+  .boxIcon {
+    font-size: 15rem;
+    margin: auto;
+  }
+  
+  .boxIcon:hover {
+    color: #e58f9c;
+  }
+  
+  .iconCont {
+    opacity: 1;
+    transition: opacity 0.4s ease-in-out;
+  }
+  
+  .iconCont.fadeOut {
     opacity: 0;
     transition: opacity 0.4s ease-in-out;
   }
-  .fadePoints.visible {
-    opacity: 1;
-  }
-
-.fadePointsCont {
-    color: green;
-    height: 50px;
-}
-
-
-.boxIconClickable {
-    background-color: #dfad25;
-    border-radius: 1.5rem;
-    border-width: 5px;
-    border-style: solid;
-    color: #df4d25;
-    font-size: 12rem;
-    margin: auto;
-    margin-bottom: 40px;
-    padding: 10px;
-}
-.boxIconUnclickable {
-    background-color: #df4d25;
-    border-radius: 1.5rem;
-    border-width: 5px;
-    border-style: solid;
-    color: #df4d25;
-    font-size: 12rem;
-    margin: auto;
-    margin-bottom: 40px;
-    padding: 10px;
-}
-
-.boxIcon:hover {
+  
+  .pointsTotal {
     background-color: #a4811f;
-    color: #e40c2b;
-}
+    border-radius: 2rem;
+    color: #f7f4e9;
+    font-family: 'Kanit', sans-serif;
 
-.pointsTotal {
-    font-size: 2rem;
-}
+    font-size: 3rem;
+    margin: auto;
+    margin-top: 30px;
+    padding: 10px;
+    width: 40%;
+  }
+  
+  .soundEffect {
+    font-size: 3rem;
+  }

@@ -8,6 +8,9 @@ import { SkipTurn } from './bonuses/SkipTurn'
 import { PickAgain } from './bonuses/PickAgain'
 import { SwitchScores } from './bonuses/SwitchPoints'
 import { MysteryBox } from './bonuses/MysteryBox'
+import { current } from '@reduxjs/toolkit'
+import wrongSound from '../assets/audios/wrong.mp3'
+import correctSound from '../assets/audios/correct.mp3'
 
 export const Bonus = ({bonusNumber}) => {
     const dispatch = useDispatch()
@@ -38,7 +41,7 @@ export const Bonus = ({bonusNumber}) => {
         <SkipTurn finishTurn={finishTurn}/>,
         <PickAgain/>,
         <SwitchScores currentTeam={currentTeam} finishTurn={finishTurn} numOfTeams={numOfTeams} teamColors={teamColors}/>,
-        <MysteryBox finishTurn={finishTurn}/>
+        <MysteryBox correctSound={correctSound} currentTeam={currentTeam} finishTurn={finishTurn} wrongSound={wrongSound}/>
 
     ]
 
