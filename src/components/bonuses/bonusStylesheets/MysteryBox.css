@@ -16,6 +16,9 @@
     z-index: 2;
     position: relative;
   }
+  .boxPointsCont:hover {
+    border-color: #e58f9c;
+  }
   
   .fadePoints {
     align-items: center;
