@@ -4,7 +4,7 @@ import { Bonus } from './Bonus'
 import { Empty } from './Empty'
 import { Question } from './Question'
 import {Row, Col} from 'antd'
-import { setCurrentSquare } from '../slices/gameSlice'
+import { setCurrentSquare, setCurrentScreen } from '../slices/gameSlice'
 import { GridSquareCont, GridSquare } from '../assets/styledComponents/NumberShapes'
 import '../assets/stylesheets/grid.css'
 
@@ -23,6 +23,10 @@ export const Grid = () => {
     }
 
     const loadGridSquares = () => {
+        if(completedSquares.length === squares) {
+            dispatch(setCurrentScreen("finish"))
+            return
+        }
         let squareElements = []
         for(let i = 0; i < squares; i += 5) { // add them in rows of 5
             squareElements.push(

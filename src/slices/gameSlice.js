@@ -6,7 +6,7 @@ export const gameSlice = createSlice({
         currentScreen: 'finish',
         currentSquare: ['none', 0], // e.g. bonus, #4
         currentTeam: 1,
-        teamScores: [0, 0, 0, 0]
+        teamScores: [20, 0, 0, 20]
     },
     reducers: {
         setTeamScore: (state, action) => {

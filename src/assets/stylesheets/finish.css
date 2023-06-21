@@ -20,83 +20,38 @@
     --animate-duration: 2s;
   }
 
-.bonusCont {
-  align-items: center;
+.mainCont {
     background-color: #F7F4E9;
     border-radius: 2rem;
     color: #1d1d2c;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
     font-size: 3rem;
-    height: 550px;
     margin-top: 60px;
-    padding: 30px;
     text-align: center;
 }
 
-.winnerMessageCont {
-    opacity: 1; 
-    animation: fadeIn 10s; 
-  }
-  
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-    }
-    to {
-      opacity: 1; 
-    }
-  }
+.lowerCont {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  animation: fadeIn 10s; 
 
-.bonusSubCont {
-    display: flex;
-    flex-direction: column;
 }
 
-.bonusTeamsCont {
-    margin-bottom: 2px;
-    text-align: center;
-}
-
-.bonusTitle {
-    color: #1d1d2c;
-    font-size: 4rem;
-    font-family: 'KanitBold';
-    font-weight: 1000;
-    margin-bottom: 10px;
-    margin-top: 5px;
-}
-
-.fade {
-    opacity: 1;
-    transition: opacity 0.5s ease-in-out;
-  }
-  
-  .fade.fade-out {
-    opacity: 0;
-  }
-  
-  .fade.fade-in {
-    opacity: 1;
-    transition: opacity 0.5s ease-in-out;
-    transition-delay: 0.5s; /* Delay the fade-in effect */
-  }
-
-.okayButton {
+.playAgain {
     background-color: #EBA63F;
     border-radius: 2rem;
-    margin: auto;
     margin-bottom: 20px;
     box-shadow: 5px 5px #1d1d2c;
     font-size: 2.5rem;
     font-family: 'Sigmar';
     padding: 15px;
-    width: 40%;
     opacity: 1; 
     animation: fadeIn 10s; 
+    height: 50%;
+    margin: auto; 
 }
-.okayButton:hover {
+
+.playAgain:hover {
     color: #e40c2b;
 }
 
@@ -125,17 +80,37 @@
 }
 
 .saxManGif {
-    bottom: 0;
-    position: absolute;
+  animation: fadeIn 10s; 
+}
+
+
+.winnerMessageCont {
+  opacity: 1; 
+  animation: fadeIn 10s; 
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1; 
+  }
 }
 
 .winnerMessage {
   font-family: 'BlackHanSans';
   font-size: 70px;
   font-weight: 900;
-  letter-spacing: 4px;
+  letter-spacing: 2px;
   opacity: 1; 
   animation: fadeIn 10s; 
   -webkit-text-stroke: 2px #000;
   -webkit-text-fill-color: #EBA63F;
+}
+
+.winningTeams {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
 }
