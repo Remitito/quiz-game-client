@@ -1,7 +1,7 @@
 import '../assets/stylesheets/finish.css'
 import { useSelector, useDispatch } from 'react-redux';
 import { setCurrentScreen, resetAllScores } from '../slices/gameSlice';
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import {Col, Row} from 'antd'
 import saxMan from '../assets/images/saxMan.gif'
 import saxManSound from '../assets/audios/saxMan.mp3'
@@ -9,37 +9,54 @@ import saxManSound from '../assets/audios/saxMan.mp3'
 
 export const Finish = () => {
     const teamScores = useSelector((state) => state.game.teamScores);
-    const dispatch = useDispatch()
-    const [showWinner, setShowWinner] = useState(false)
-    const [winningTeams, setWinningTeams] = useState([])
+    const dispatch = useDispatch();
+    const [showWinner, setShowWinner] = useState(false);
+    const [winningTeams, setWinningTeams] = useState([]);
     const soundRef = useRef(null);
-
+    const [audio, setAudio] = useState(null); 
+  
+    useEffect(() => {
+      return () => {
+        if (audio) {
+          audio.pause();
+        }
+      };
+    }, [audio]);
+  
     const findWinners = () => {
-        const max = Math.max(...teamScores);
-        const updatedWinningTeams = []
-        teamScores.forEach((val, index) => {
-            if(val === max) {
-                updatedWinningTeams.push(index + 1)
-            }
-        })
-        setWinningTeams(updatedWinningTeams)
-    }
-
-    const playSong = (sound) => {
-        const audio = new Audio(sound);
-        audio.play();
+      const max = Math.max(...teamScores);
+      const updatedWinningTeams = [];
+      teamScores.forEach((val, index) => {
+        if (val === max) {
+          updatedWinningTeams.push(index + 1);
+        }
+      });
+      setWinningTeams(updatedWinningTeams);
     };
-
+  
+    const playSong = (sound) => {
+      const audio = new Audio(sound);
+      audio.play();
+      setAudio(audio);
+    };
+  
+    const stopSong = () => {
+      if (audio) {
+        audio.pause();
+      }
+    };
+  
     const show = () => {
-        findWinners()
-        playSong(saxManSound)
-        setShowWinner(true)
-    }
-
+      findWinners();
+      playSong(saxManSound);
+      setShowWinner(true);
+    };
+  
     const playAgain = () => {
-        dispatch(resetAllScores())
-        dispatch(setCurrentScreen('setup'))
-    }
+      stopSong(); 
+      dispatch(resetAllScores());
+      dispatch(setCurrentScreen('setup'));
+    };
 
 
     return (
@@ -52,7 +69,7 @@ export const Finish = () => {
                 :
                     <Col className='mainCont' span={14}>
                         <div className='winnerMessageCont'>
-                            {winningTeams[0].length === 1 ?
+                            {winningTeams.length === 1 ?
                             <>
                                 <p className='winnerMessage'>Congratulations to Team {winningTeams[0]}! </p>
                                 <label className='winnerMessage'>You win!</label>

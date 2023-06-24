@@ -21,7 +21,7 @@ export const Navbar = () => {
             <Col className='titleCont' span={14}>
                 <label style={{color: "#1d1d2c"}}>In</label>
                 <label style={{color: "#E40C2B", fontSize: "90px"}}>QUIZ</label>
-                <label style={{color: "#1d1d2c"}}>itive</label>
+                <label style={{color: "#1d1d2c"}}>ition</label>
             </Col>
             <Col className='accountCont' span={5}>
                 <Row>

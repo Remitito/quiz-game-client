@@ -36,10 +36,10 @@ export const Question = ({questionNumber}) => {
         <Row>
             <Col span={5}/>
             <Col className='questionCont' span={14}>
-                <label className='questionTitle'>{questions[questionNumber][1]}</label>
+                <label className='questionTitle'>{questions[questionNumber].prompt}</label>
                 {answer ? 
                     <>
-                        <label className='answer'>{questions[questionNumber][2]}</label>
+                        <label className='answer'>{questions[questionNumber].answer}</label>
                         <div className='correctWrongCont'>
                             <TiTick className='correctIcon' onClick={() => correctAnswer()}/>
                             <TiTimes className='wrongIcon' onClick={() => finishTurn()}/>

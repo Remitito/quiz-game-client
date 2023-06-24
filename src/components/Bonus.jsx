@@ -8,6 +8,7 @@ import { SkipTurn } from './bonuses/SkipTurn'
 import { PickAgain } from './bonuses/PickAgain'
 import { SwitchScores } from './bonuses/SwitchPoints'
 import { MysteryBox } from './bonuses/MysteryBox'
+import { ChooseOne } from './bonuses/ChooseOne'
 import { current } from '@reduxjs/toolkit'
 import wrongSound from '../assets/audios/wrong.mp3'
 import correctSound from '../assets/audios/correct.mp3'
@@ -31,26 +32,26 @@ export const Bonus = ({bonusNumber}) => {
 
     const bonusComponents = [
         <GiveTakePoints teamColors={teamColors} points={50} finishTurn={finishTurn} />,
-        <GiveTakePoints teamColors={teamColors} points={30} finishTurn={finishTurn} />,
         <GiveTakePoints teamColors={teamColors} points={10} finishTurn={finishTurn} />,
         <GiveTakePoints teamColors={teamColors} points={-50} finishTurn={finishTurn} />,
-        <GiveTakePoints teamColors={teamColors} points={-30} finishTurn={finishTurn} />,
         <GiveTakePoints teamColors={teamColors} points={-10} finishTurn={finishTurn} />,
-        <GiveTakePoints teamColors={teamColors} points={-1} finishTurn={finishTurn} />,
         <ResetAllScores finishTurn={finishTurn}/>,
         <SkipTurn finishTurn={finishTurn}/>,
         <PickAgain/>,
         <SwitchScores currentTeam={currentTeam} finishTurn={finishTurn} numOfTeams={numOfTeams} teamColors={teamColors}/>,
-        <MysteryBox correctSound={correctSound} currentTeam={currentTeam} finishTurn={finishTurn} wrongSound={wrongSound}/>
-
+        <MysteryBox correctSound={correctSound} currentTeam={currentTeam} finishTurn={finishTurn} wrongSound={wrongSound}/>,
+        <MysteryBox correctSound={correctSound} currentTeam={currentTeam} finishTurn={finishTurn} wrongSound={wrongSound}/>,
+        <MysteryBox correctSound={correctSound} currentTeam={currentTeam} finishTurn={finishTurn} wrongSound={wrongSound}/>,
+        <MysteryBox correctSound={correctSound} currentTeam={currentTeam} finishTurn={finishTurn} wrongSound={wrongSound}/>,
+        <ChooseOne/>
     ]
 
     return (
         <Row>
             <Col span={5}/>
             <Col className='bonusCont' span={14}>
-                {/* {bonusComponents[bonusNumber]} */}
-                {bonusComponents[11]}
+                {bonusComponents[bonusNumber]}
+                {/* {bonusComponents[12]} */}
             </Col>
             <Col span={5}/>
         </Row>

@@ -3,20 +3,17 @@ import { createSlice } from "@reduxjs/toolkit";
 export const gameSlice = createSlice({
     name: 'game',
     initialState: {
-        currentScreen: 'finish',
+        currentScreen: 'search',
         currentSquare: ['none', 0], // e.g. bonus, #4
         currentTeam: 1,
-        teamScores: [20, 0, 0, 20]
+        teamScores: [0, 0, 0, 0]
     },
     reducers: {
         setTeamScore: (state, action) => {
             state.teamScores[action.payload.team] = action.payload.amount 
         },
         resetAllScores: (state, action) => {
-            state.teamOneScore = 0
-            state.teamTwoScore = 0
-            state.teamThreeScore = 0
-            state.teamFourScore = 0
+            state.teamScores = [0,0,0,0]
         },
         setCurrentScreen: (state, action) => {
             state.currentScreen = action.payload

@@ -11,7 +11,7 @@ export const MysteryBox = ({ correctSound, currentTeam, finishTurn, wrongSound }
   const [currentPoints, setCurrentPoints] = useState(null);
   const [totalPoints, setTotalPoints] = useState(0);
   const [finished, setFinished] = useState(false);
-  let possibleOutcomes = [10, 20, 30, 0, 40, 0, 50, 0, 100];
+  const [possibleOutcomes, setPossibleOutcomes] = useState([10, 20, 30, 0, 40, 0, 50, 0, 100])
   const soundRef = useRef(null);
 
   const playSound = (sound) => {
@@ -22,8 +22,12 @@ export const MysteryBox = ({ correctSound, currentTeam, finishTurn, wrongSound }
 
   const openBox = () => {
     const choice = Math.floor(Math.random() * possibleOutcomes.length)
-    const points = possibleOutcomes.splice(choice - 1, 1)[0]
+    const points = possibleOutcomes[choice - 1]
+    const remainingOutcomes = possibleOutcomes
+    remainingOutcomes.splice(choice - 1, 1)
+    setPossibleOutcomes(remainingOutcomes)
 
+    setPossibleOutcomes(remainingOutcomes) 
     if (points > 0) {
       playSound(correctSound);
       setTotalPoints((prevTotalPoints) => prevTotalPoints + points);
