@@ -11,7 +11,7 @@ export const MysteryBox = ({ correctSound, currentTeam, finishTurn, wrongSound }
   const [currentPoints, setCurrentPoints] = useState(null);
   const [totalPoints, setTotalPoints] = useState(0);
   const [finished, setFinished] = useState(false);
-  const [possibleOutcomes, setPossibleOutcomes] = useState([10, 20, 30, 0, 40, 0, 50, 0, 100])
+  const [possibleOutcomes, setPossibleOutcomes] = useState([10, 20, 30, 40, 0, 50, 0, 100])
   const soundRef = useRef(null);
 
   const playSound = (sound) => {

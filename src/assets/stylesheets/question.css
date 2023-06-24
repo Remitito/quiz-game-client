@@ -23,6 +23,21 @@
     background-color: #E40C2B;
 }
 
+.correctMessage, .wrongMessage {
+    font-size: 6rem;
+    font-family: 'Kanit', sans-serif;
+    font-weight: 1000;
+    margin: auto;
+    text-align: center;
+}
+.correctMessage {
+    color: #438945;
+}
+.wrongMessage {
+    color: #E40C2B;
+
+}
+
 .questionCont {
     background-color: #F7F4E9;
     border-radius: 2rem;

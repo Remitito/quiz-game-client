@@ -63,9 +63,7 @@ export const Finish = () => {
         <Row>
             <Col span={5}/>
                 {!showWinner ?
-                    <Col className='mainCont' span={14}>
                         <button onClick={show} className='revealButton'>CLICK TO REVEAL WINNER</button>
-                    </Col>
                 :
                     <Col className='mainCont' span={14}>
                         <div className='winnerMessageCont'>
