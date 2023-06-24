@@ -12,7 +12,7 @@ export const Search = () => {
   
     useEffect(() => {
       axios
-        .get("http://localhost:3000/quizzes")
+        .get("https://inquizitive-api.onrender.com/quizzes")
         .then((response) => {
           setQuizzes(response.data);
         })
