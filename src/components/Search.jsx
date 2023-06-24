@@ -7,23 +7,26 @@ import {setQuestions} from '../slices/setupSlice'
 import {setCurrentScreen} from '../slices/gameSlice'
 
 export const Search = () => {
-    const [quizzes, setQuizzes] = useState([])
-    const dispatch = useDispatch()
-
+    const [quizzes, setQuizzes] = useState([]);
+    const dispatch = useDispatch();
+  
     useEffect(() => {
-        axios.get('http://localhost:3000/quizzes')
-        .then(response => {
-            setQuizzes(response.data)
+      axios
+        .get("http://localhost:3000/quizzes")
+        .then((response) => {
+          setQuizzes(response.data);
         })
-        .catch(error => {
-            console.error('Error fetching quizzes:', error)
-        })
-    })
-
+        .catch((error) => {
+          console.error("Error fetching quizzes:", error);
+        });
+    }, []);
+  
     const selectQuiz = (quizIndex) => {
-        dispatch(setQuestions(quizzes[quizIndex].questions))
-        dispatch(setCurrentScreen('setup'))
-    }
+      const selectedQuiz = quizzes[quizIndex];
+      const questions = [...selectedQuiz.questions]
+      dispatch(setQuestions(questions));
+      dispatch(setCurrentScreen("setup"));
+    };
 
     const quizItems = quizzes.map((quiz, index) => {
         const className = index % 2 === 0 ? 'quizEven' : 'quizOdd';

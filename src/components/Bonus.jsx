@@ -30,6 +30,7 @@ export const Bonus = ({bonusNumber}) => {
         dispatch(setCurrentScreen("grid"))
     }
 
+    // bonus types: 12
     const bonusComponents = [
         <GiveTakePoints teamColors={teamColors} points={50} finishTurn={finishTurn} />,
         <GiveTakePoints teamColors={teamColors} points={10} finishTurn={finishTurn} />,
@@ -43,7 +44,6 @@ export const Bonus = ({bonusNumber}) => {
         <MysteryBox correctSound={correctSound} currentTeam={currentTeam} finishTurn={finishTurn} wrongSound={wrongSound}/>,
         <MysteryBox correctSound={correctSound} currentTeam={currentTeam} finishTurn={finishTurn} wrongSound={wrongSound}/>,
         <MysteryBox correctSound={correctSound} currentTeam={currentTeam} finishTurn={finishTurn} wrongSound={wrongSound}/>,
-        <ChooseOne/>
     ]
 
     return (

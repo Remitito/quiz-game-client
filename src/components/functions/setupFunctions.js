@@ -10,16 +10,15 @@ const shuffleSquares = (squares) => {
 
 // combine choose Bonuses / question into one function
 
-const assignSquareType = (squares, bonusSquares) => {
+const assignSquareType = (squares, bonusSquares, numQuestions) => {
     let squareTypes = []
     let overallCounter = 0
     let bonuses = []
     // get random indexes to refer to different bonuses/questions
-    let questions = chooseInstances(12)
-    if(bonusSquares) {bonuses = chooseInstances(7)}
+    let questions = chooseInstances(numQuestions - 1)
+    if(bonusSquares) {bonuses = chooseInstances(11)} // the number of bonuses - 1 for index
     
-    // backup in case bonuses/questions need to be used again e..g on a big grid
-    const questionsBackup = questions
+    // backup in case bonuses need to be used again e.g. on a big grid
     const bonusesBackup = bonuses
 
     // assign square types e.g. bonus with an index for a certain bonus
@@ -45,8 +44,8 @@ const assignSquareType = (squares, bonusSquares) => {
     return squareTypes
 }
 
-export const assignSquareValues = (squares, bonusSquares) => {
-    let squareValues = assignSquareType(squares, bonusSquares)
+export const assignSquareValues = (squares, bonusSquares, numQuestions) => {
+    let squareValues = assignSquareType(squares, bonusSquares, numQuestions)
     return shuffleSquares(squareValues)
 }
 
