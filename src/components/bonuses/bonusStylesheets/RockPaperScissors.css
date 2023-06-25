@@ -1,0 +1,8 @@
+.teamDiv {
+    display: flex;   
+}
+
+.rpsGif {
+    border-radius: 2rem;
+    margin-bottom: 20px;;
+}

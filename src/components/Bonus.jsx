@@ -7,6 +7,8 @@ import { ResetAllScores } from './bonuses/ResetAllScores'
 import { SkipTurn } from './bonuses/SkipTurn'
 import { PickAgain } from './bonuses/PickAgain'
 import { SwitchScores } from './bonuses/SwitchPoints'
+import { RockPaperScissors } from './bonuses/RockPaperScissors'
+import rps from '../assets/images/rps.gif'
 import { MysteryBox } from './bonuses/MysteryBox'
 import { ChooseOne } from './bonuses/ChooseOne'
 import { current } from '@reduxjs/toolkit'
@@ -33,17 +35,23 @@ export const Bonus = ({bonusNumber}) => {
     // bonus types: 12
     const bonusComponents = [
         <GiveTakePoints teamColors={teamColors} points={50} finishTurn={finishTurn} />,
-        <GiveTakePoints teamColors={teamColors} points={10} finishTurn={finishTurn} />,
         <GiveTakePoints teamColors={teamColors} points={-50} finishTurn={finishTurn} />,
-        <GiveTakePoints teamColors={teamColors} points={-10} finishTurn={finishTurn} />,
+        <GiveTakePoints teamColors={teamColors} points={-25} finishTurn={finishTurn} />,
         <ResetAllScores finishTurn={finishTurn}/>,
         <SkipTurn finishTurn={finishTurn}/>,
         <PickAgain/>,
+        <SwitchScores currentTeam={currentTeam} finishTurn={finishTurn} numOfTeams={numOfTeams} teamColors={teamColors}/>,
         <SwitchScores currentTeam={currentTeam} finishTurn={finishTurn} numOfTeams={numOfTeams} teamColors={teamColors}/>,
         <MysteryBox correctSound={correctSound} currentTeam={currentTeam} finishTurn={finishTurn} wrongSound={wrongSound}/>,
         <MysteryBox correctSound={correctSound} currentTeam={currentTeam} finishTurn={finishTurn} wrongSound={wrongSound}/>,
         <MysteryBox correctSound={correctSound} currentTeam={currentTeam} finishTurn={finishTurn} wrongSound={wrongSound}/>,
         <MysteryBox correctSound={correctSound} currentTeam={currentTeam} finishTurn={finishTurn} wrongSound={wrongSound}/>,
+        <RockPaperScissors image={rps} teamColors={teamColors} points={50} finishTurn={finishTurn}/>,
+        <RockPaperScissors image={rps} teamColors={teamColors} points={50} finishTurn={finishTurn}/>,
+        <RockPaperScissors image={rps} teamColors={teamColors} points={50} finishTurn={finishTurn}/>,
+        <ChooseOne  correctSound={correctSound} wrongSound={wrongSound} finishTurn={finishTurn}/>,
+        <ChooseOne  correctSound={correctSound} wrongSound={wrongSound} finishTurn={finishTurn}/>,
+        <ChooseOne  correctSound={correctSound} wrongSound={wrongSound} finishTurn={finishTurn}/>
     ]
 
     return (
@@ -51,7 +59,7 @@ export const Bonus = ({bonusNumber}) => {
             <Col span={5}/>
             <Col className='bonusCont' span={14}>
                 {bonusComponents[bonusNumber]}
-                {/* {bonusComponents[12]} */}
+                {/* {bonusComponents[bonusComponents.length - 1]} */}
             </Col>
             <Col span={5}/>
         </Row>
