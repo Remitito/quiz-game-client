@@ -6,12 +6,12 @@ import "./bonusStylesheets/MysteryBox.css";
 
 export const MysteryBox = ({ correctSound, currentTeam, finishTurn, wrongSound }) => {
   const dispatch = useDispatch();
-  const teamScore = useSelector((state) => state.game.teamScores[currentTeam]);
+  const teamScore = useSelector((state) => state.game.teamScores[currentTeam - 1]);
   const [pointsVisible, setPointsVisible] = useState(false);
   const [currentPoints, setCurrentPoints] = useState(null);
   const [totalPoints, setTotalPoints] = useState(0);
   const [finished, setFinished] = useState(false);
-  const [possibleOutcomes, setPossibleOutcomes] = useState([10, 20, 30, 40, 0, 50, 0, 100])
+  const [possibleOutcomes, setPossibleOutcomes] = useState([10, 20, 50, 0])
   const soundRef = useRef(null);
 
   const playSound = (sound) => {
@@ -22,11 +22,9 @@ export const MysteryBox = ({ correctSound, currentTeam, finishTurn, wrongSound }
 
   const openBox = () => {
     const choice = Math.floor(Math.random() * possibleOutcomes.length)
-    const points = possibleOutcomes[choice - 1]
+    const points = possibleOutcomes[choice]
     const remainingOutcomes = possibleOutcomes
     remainingOutcomes.splice(choice - 1, 1)
-    setPossibleOutcomes(remainingOutcomes)
-
     setPossibleOutcomes(remainingOutcomes) 
     if (points > 0) {
       playSound(correctSound);
@@ -46,7 +44,7 @@ export const MysteryBox = ({ correctSound, currentTeam, finishTurn, wrongSound }
   };
 
   const finishOpening = () => {
-    dispatch(setTeamScore({ team: currentTeam - 1, amount: teamScore + totalPoints }));
+    dispatch(setTeamScore({ team: currentTeam - 1, amount: teamScore + totalPoints}));
     finishTurn();
   };
 

@@ -39,7 +39,7 @@ export const Search = () => {
     return (
         <Row>
             <Col span={5}/>
-            <Col className='mainCont' span={14}>
+            <Col className='searchCont' span={14}>
                     <Row className='sectionRow'>
                         <h4 className='sectionName'>Click to select</h4>
                         <div className='quizList'>

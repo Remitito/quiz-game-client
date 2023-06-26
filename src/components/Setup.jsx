@@ -33,55 +33,64 @@ export const Setup = () => {
         <Row>
             <Col span={4}/>
             <Col className='setupCont' span={16}>
-                <Row className='sectionRow'>
-                    <h4 className='sectionName' span={7}>Teams</h4>
-                    <div className='teamContainer'>
-                        <div className={numberOfTeams === 2 ? 'teamOptionSelected' : 'teamOption'}
-                        onClick={() => setNumberOfTeams(2)}>
-                            <UserOutlined className='teamIcon'/>
-                            <UserOutlined className='teamIcon'/>
-                        </div>
-                        <div className={numberOfTeams === 3 ? 'teamOptionSelected' : 'teamOption'}
-                        onClick={() => setNumberOfTeams(3)}>
-                            <UserOutlined className='teamIcon'/>
-                            <UserOutlined className='teamIcon'/>
-                            <UserOutlined className='teamIcon'/>
-                        </div>
-                        <div className={numberOfTeams === 4 ? 'teamOptionSelected' : 'teamOption'}
-                        onClick={() => setNumberOfTeams(4)}>
-                            <UserOutlined className='teamIcon'/>
-                            <UserOutlined className='teamIcon'/>
-                            <UserOutlined className='teamIcon'/>
-                            <UserOutlined className='teamIcon'/>
-                        </div>
-                    </div>
-                </Row>
-                <Row className='sectionRow'>
+                <Row className='setupRow'>
+                    <Col span={12} className='setupColumn'>
+                        <h4 className='sectionName' span={7}>Teams</h4>
+                    </Col>
+                    <Col span={12} className='setupColumn'>
                         <h4 className='sectionName'>Squares</h4>
+                    </Col>
+                </Row>
+                <Row className='setupRow'>
+                    <Col span={12} className='setupColumn'>
+                        <div className='teamContainer'>
+                            <div className={numberOfTeams === 2 ? 'teamOptionSelected' : 'teamOption'}
+                            onClick={() => setNumberOfTeams(2)}>
+                                <UserOutlined className='teamIcon'/>
+                                <UserOutlined className='teamIcon'/>
+                            </div>
+                            <div className={numberOfTeams === 3 ? 'teamOptionSelected' : 'teamOption'}
+                            onClick={() => setNumberOfTeams(3)}>
+                                <UserOutlined className='teamIcon'/>
+                                <UserOutlined className='teamIcon'/>
+                                <UserOutlined className='teamIcon'/>
+                            </div>
+                            <div className={numberOfTeams === 4 ? 'teamOptionSelected' : 'teamOption'}
+                            onClick={() => setNumberOfTeams(4)}>
+                                <UserOutlined className='teamIcon'/>
+                                <UserOutlined className='teamIcon'/>
+                                <UserOutlined className='teamIcon'/>
+                                <UserOutlined className='teamIcon'/>
+                            </div>
+                        </div>
+                    </Col>
+                <Col span={12} className='setupColumn'>
                         <SetupSquareCont>
                             <SetupSquare selected={squares === 20} onClick={() => setSquaresLocal(20)}>20</SetupSquare>
                             <SetupSquare selected={squares === 30} onClick={() => setSquaresLocal(30)}>30</SetupSquare>
                             <SetupSquare selected={squares === 40} onClick={() => setSquaresLocal(40)}>40</SetupSquare>
                         </SetupSquareCont>
+                </Col>
                 </Row>
-                <Row className='sectionRow'> 
-                    <div>
+                <Row className='setupRow'>
+                    <Col span={12} className='setupColumn'> 
                         <div>
-                        <h4 className='sectionName'>Bonuses</h4>
-                            <Toggle translate={45} sliderWidth={25} width={80} height={40} 
-                            backgroundColorChecked={"#EBA63F"} backgroundColorUnchecked={"#1d1d2c"}
-                            backgroundColorButton={"#F7F4E9"} checked={bonusSquares} 
-                            onChange={() => setBonusSquaresLocal(currentState => !currentState)}
-                            />
+                            <h4 className='sectionName'>Bonuses</h4>
+                                <Toggle translate={45} sliderWidth={25} width={80} height={40} 
+                                backgroundColorChecked={"#EBA63F"} backgroundColorUnchecked={"#1d1d2c"}
+                                backgroundColorButton={"#F7F4E9"} checked={bonusSquares} 
+                                onChange={() => setBonusSquaresLocal(currentState => !currentState)}
+                                />
                         </div>
-                    </div>
+                    </Col>
+                    <Col span={12} className='setupColumn'>
+                        <button className='startGameButton' onClick={() => confirm()}>
+                            <RightCircleOutlined className='startGameIcon'/>
+                            Start Game
+                        </button>
+                    </Col>
                 </Row>
-                <Row className='sectionRow'>
-                    <button className='startGameButton' onClick={() => confirm()}>
-                        <RightCircleOutlined className='startGameIcon'/>
-                        Start Game
-                    </button>
-                </Row>
+                <div style={{marginBottom: "50px"}}></div>
             </Col>
             <Col span={4}/>
         </Row>

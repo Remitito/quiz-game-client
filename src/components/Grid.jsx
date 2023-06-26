@@ -8,14 +8,14 @@ import { setCurrentSquare, setCurrentScreen } from '../slices/gameSlice'
 import { GridSquareCont, GridSquare } from '../assets/styledComponents/NumberShapes'
 import '../assets/stylesheets/grid.css'
 
-
 export const Grid = () => {
     const [completedSquares, setCompletedSquares] = useState([]);
     let currentSquare = useSelector((state) => state.game.currentSquare)
     const dispatch = useDispatch()
     const squares = useSelector((state) => state.setup.squares)
     const squareValues = useSelector((state) => state.setup.squareValues)
-    const fonts = ["5rem", "3.5rem", "3rem"] 
+    const fonts = ["5rem", "4rem", "3rem"] // depending on total square number
+    const squaresPerRow = [5,6,8] // depending on total square number
 
     const loadSquare = (squareId) => {
         dispatch(setCurrentSquare(squareValues[squareId]))
@@ -28,7 +28,7 @@ export const Grid = () => {
             return
         }
         let squareElements = []
-        for(let i = 0; i < squares; i += 5) { // add them in rows of 5
+        for(let i = 0; i < squares; i += squaresPerRow[squares / 10 - 2]) { // add them in rows of 5
             squareElements.push(
                 <GridSquareCont>
                     <GridSquare font={fonts[squares / 10 - 2]} size={squares} id={`Square${i + 1}`}
@@ -51,6 +51,28 @@ export const Grid = () => {
                     className={!completedSquares.includes(i + 5) ? 'gridSquare' : 'gridSquareComplete'}
                     onClick={() => {!completedSquares.includes(i + 5) ? loadSquare(i + 4) : undefined}}>{i + 5}
                     </GridSquare>
+                    {squares > 20 ?
+                        <GridSquare font={fonts[squares / 10 - 2]} size={squares} id={`Square${i + 6}`}
+                        className={!completedSquares.includes(i + 6) ? 'gridSquare' : 'gridSquareComplete'}
+                        onClick={() => {!completedSquares.includes(i + 6) ? loadSquare(i + 5) : undefined}}>{i + 6}
+                        </GridSquare>
+                    : 
+                        <></>
+                    }
+                    {squares > 30 ?
+                        <>
+                            <GridSquare font={fonts[squares / 10 - 2]} size={squares} id={`Square${i + 7}`}
+                            className={!completedSquares.includes(i + 7) ? 'gridSquare' : 'gridSquareComplete'}
+                            onClick={() => {!completedSquares.includes(i + 7) ? loadSquare(i + 6) : undefined}}>{i + 7}
+                            </GridSquare>
+                            <GridSquare font={fonts[squares / 10 - 2]} size={squares} id={`Square${i + 8}`}
+                            className={!completedSquares.includes(i + 8) ? 'gridSquare' : 'gridSquareComplete'}
+                            onClick={() => {!completedSquares.includes(i + 8) ? loadSquare(i + 7) : undefined}}>{i + 8}
+                            </GridSquare>
+                        </>
+                    : 
+                        <></>
+                    }
                 </GridSquareCont>
             )
         }

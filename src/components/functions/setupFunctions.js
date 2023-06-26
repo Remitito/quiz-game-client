@@ -16,7 +16,7 @@ const assignSquareType = (squares, bonusSquares, numQuestions) => {
     let bonuses = []
     // get random indexes to refer to different bonuses/questions
     let questions = chooseInstances(numQuestions - 1)
-    if(bonusSquares) {bonuses = chooseInstances(11)} // the number of bonuses - 1 for index
+    if(bonusSquares) {bonuses = chooseInstances(17)} // the number of bonuses - 1 for index
     
     // backup in case bonuses need to be used again e.g. on a big grid
     const bonusesBackup = bonuses

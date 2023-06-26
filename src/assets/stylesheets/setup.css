@@ -17,12 +17,13 @@
 }
 
 
-.sectionRow {
-    display: flex;
-    flex-direction: column;
+.setupColumn {
     font-family: 'Sigmar', cursive;
-    margin-bottom: 30px;
     text-align: center;
+}
+.setupRow {
+    display: flex;
+    flex-direction: row;
 }
 
 .startGameButton {
@@ -31,7 +32,7 @@
     box-shadow: 5px 5px #1d1d2c;
     font-size: 2rem;
     font-family: 'Sigmar', cursive;
-    margin: auto;
+    margin-top: 20px;
     padding: 15px;
 }
 .startGameButton:hover {

@@ -1,4 +1,3 @@
-import {Col, Row} from 'antd'
 import { useSelector } from "react-redux"
 import '../assets/stylesheets/scores.css'
 
@@ -24,12 +23,8 @@ export const Scores = () => {
     } 
 
     return (
-        <Row>
-            <Col span={1}/>
-            <Col span={20} className="scoresCont">
-                {addTeams()}
-            </Col>
-            <Col span={1}/>
-        </Row>
+        <div className='scoresCont'>
+            {addTeams()}
+        </div>
     )
 }

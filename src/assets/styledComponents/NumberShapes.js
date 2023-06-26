@@ -24,7 +24,7 @@ export const GridSquare = styled.div `
     margin: auto;
     margin-bottom: ${props => props.size ===  40 ? "5px" : "15px"};
     margin-top: ${props => props.size ===  40 ? "5px" : "15px"};
-    padding: ${props => props.size ===  40 ? "5px" : "20px"};
+    padding: ${props => props.size ===  40 ? "5px" : "10px"};
     text-align: center;
     :hover {
         background-color: #EBA63F;

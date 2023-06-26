@@ -24,9 +24,7 @@ export const RockPaperScissors = ({image, points, finishTurn, teamColors}) => {
     }
 
     const handleTeamClick = (selectedTeam) => { 
-        const currentTeamNewTotal = teamScores[currentTeam - 1] - points
         const selectedTeamNewTotal = teamScores[selectedTeam - 1] + points
-        dispatch(setTeamScore({team: currentTeam - 1, amount: currentTeamNewTotal}))
         dispatch(setTeamScore({team: selectedTeam - 1, amount: selectedTeamNewTotal}))
         finishTurn()
     }

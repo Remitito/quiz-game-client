@@ -1,15 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Sigmar&display=swap');
 
 
-.mainCont {
+.searchCont {
     background-color: #F7F4E9;
     border-radius: 2rem;
     color: #1d1d2c;
     margin-top: 90px;
-}
-
-.quizList {
-
 }
 
 .quizEven, .quizOdd {

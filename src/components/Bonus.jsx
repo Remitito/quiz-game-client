@@ -58,8 +58,10 @@ export const Bonus = ({bonusNumber}) => {
         <Row>
             <Col span={5}/>
             <Col className='bonusCont' span={14}>
-                {bonusComponents[bonusNumber]}
-                {/* {bonusComponents[bonusComponents.length - 1]} */}
+                 {bonusComponents[bonusNumber]}
+                {/* {bonusComponents[bonusComponents.length - 1]} */} */
+                {/* {bonusComponents[10]} */}
+
             </Col>
             <Col span={5}/>
         </Row>

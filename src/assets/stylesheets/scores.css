@@ -2,15 +2,12 @@
 
 
 .scoresCont {
-    display: flex;
-    flex-direction: row;
-    margin: auto;
+    margin-left: 100px;
 }
 
 .teamCont, .teamContSelected {
     border-radius: 2rem;
     color: #1d1d2c;
-    margin: auto;
     margin-top: 60px;
     text-align: center;
 }
