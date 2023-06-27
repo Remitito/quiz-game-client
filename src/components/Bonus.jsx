@@ -1,4 +1,3 @@
-import {Col, Row} from 'antd'
 import '../assets/stylesheets/bonus.css'
 import { useDispatch, useSelector } from 'react-redux'
 import { setCurrentScreen, setCurrentSquare, setCurrentTeam} from '../slices/gameSlice'
@@ -55,15 +54,10 @@ export const Bonus = ({bonusNumber}) => {
     ]
 
     return (
-        <Row>
-            <Col span={5}/>
-            <Col className='bonusCont' span={14}>
-                 {bonusComponents[bonusNumber]}
-                {/* {bonusComponents[bonusComponents.length - 1]} */} */
-                {/* {bonusComponents[10]} */}
-
-            </Col>
-            <Col span={5}/>
-        </Row>
+        <div className='bonusCont'>
+            {bonusComponents[bonusNumber]}
+            {/* {bonusComponents[bonusComponents.length - 1]} */}
+            {/* {bonusComponents[10]} */}
+        </div>
     )
 }

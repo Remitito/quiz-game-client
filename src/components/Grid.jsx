@@ -83,6 +83,7 @@ export const Grid = () => {
         <Row>
             <Col span={3}/>
             <Col span={18}>
+            <div className='mainCont'>
                 {currentSquare[0] == "none" ?
                 <div className='gridCont'>
                     {loadGridSquares()}
@@ -102,6 +103,7 @@ export const Grid = () => {
                         }
                     </>
                 }  
+            </div>
             </Col>
             <Col span={3}/>
         </Row>

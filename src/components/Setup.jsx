@@ -14,8 +14,8 @@ import { current } from '@reduxjs/toolkit'
 
 
 export const Setup = () => {
-    const [numberOfTeams, setNumberOfTeams] = useState(2)
-    const [squares, setSquaresLocal] = useState(20)
+    const [numberOfTeams, setNumberOfTeams] = useState(4)
+    const [squares, setSquaresLocal] = useState(30)
     const [bonusSquares, setBonusSquaresLocal] = useState(true) 
     const questions = useSelector((state) => state.setup.questions)
     const dispatch = useDispatch()

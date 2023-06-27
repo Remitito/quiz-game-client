@@ -1,6 +1,5 @@
 import { useDispatch, useSelector } from 'react-redux'
 import { useState, useRef } from 'react'
-import {Col, Row} from 'antd'
 import {TiTimes, TiTick} from 'react-icons/ti'
 import '../assets/stylesheets/question.css'
 import {setTeamScore, setCurrentTeam, setCurrentScreen, setCurrentSquare } from '../slices/gameSlice'
@@ -60,18 +59,15 @@ export const Question = ({ questionNumber }) => {
   }
 
   return (
-    <Row>
-      <Col span={5} />
-      <Col className="questionCont" span={14}>
+    <div className="questionCont">
         <audio ref={soundRef} />
         <>
           {pointsMessage.length === 0 ? (
-            <>
-              <label className="questionTitle">{currentQuestion.prompt}</label>
+            <div className='questionSubCont'>
+              <label className='questionPrompt'>{currentQuestion.prompt}</label>
               {answer ? (
                 <>
-                  {}
-                  <label className="answer">{currentQuestion.answer}</label>
+                  <div className="answer">{currentQuestion.answer}</div>
                   <div className="correctWrongCont">
                     <TiTick className="correctIcon" onClick={() => correctAnswer()} />
                     <TiTimes className="wrongIcon" onClick={() => wrongAnswer()} />
@@ -88,7 +84,7 @@ export const Question = ({ questionNumber }) => {
                   </button>
                 </>
               )}
-            </>
+            </div>
           ) : (
             <>
               {pointsMessage === "correct" ? (
@@ -99,8 +95,6 @@ export const Question = ({ questionNumber }) => {
             </>
           )}
         </>
-      </Col>
-      <Col span={5} />
-    </Row>
+    </div>
   );
 };

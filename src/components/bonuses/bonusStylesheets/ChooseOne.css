@@ -1,3 +1,5 @@
+
+
 .boxCont {
     display: flex;
     flex-direction: row;
@@ -17,14 +19,3 @@
     text-align: center;
 }
 
-.mainCont {
-    background-color: #F7F4E9;
-    border-radius: 2rem;
-    color: #1d1d2c;
-    display: flex;
-    flex-direction: column;
-    height: 600px;
-    margin-top: 60px;
-    padding: 10px;
-    text-align: center;
-}

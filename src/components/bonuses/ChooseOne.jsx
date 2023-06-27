@@ -45,26 +45,26 @@ export const ChooseOne = ({finishTurn, wrongSound, correctSound}) => {
     }
 
     return (
-        <div className="mainCont">
-        <audio ref={soundRef} />
-            {pointsMessage.length === 0 ?
-                <>
-                    <label className='bonusTitle'>Choose One</label>
-                    <div className="boxCont">
-                        <GiPresent onClick={() => handleClick(0)} style={{color: "red"}} className='giftIcon'/>
-                        <GiPresent onClick={() => handleClick(1)} style={{color: "blue"}} className='giftIcon'/>
-                        <GiPresent onClick={() => handleClick(2)} style={{color: "green"}} className='giftIcon'/>
+        <div className="bonusSubCont">
+            <audio ref={soundRef} />
+                {pointsMessage.length === 0 ?
+                    <div>
+                        <label className='bonusTitle'>Choose One</label>
+                        <div className="boxCont">
+                            <GiPresent onClick={() => handleClick(0)} style={{color: "red"}} className='giftIcon'/>
+                            <GiPresent onClick={() => handleClick(1)} style={{color: "blue"}} className='giftIcon'/>
+                            <GiPresent onClick={() => handleClick(2)} style={{color: "green"}} className='giftIcon'/>
+                        </div>
                     </div>
-                </>
-                    :
-                    <>
-                        {points === 50 ?
-                        <label style={{color: '#438945'}} className="pointsMessage">{pointsMessage}</label>
-                                :
-                        <label style={{color: '#E40C2B'}} className="pointsMessage">{pointsMessage}</label>
-                        }
-                    </>
-                }
+                        :
+                        <div>
+                            {points === 50 ?
+                            <label style={{color: '#438945'}} className="pointsMessage">{pointsMessage}</label>
+                                    :
+                            <label style={{color: '#E40C2B'}} className="pointsMessage">{pointsMessage}</label>
+                            }
+                        </div>
+                    }
         </div>
     )
 }

@@ -8,8 +8,6 @@
     display: flex;
     justify-content: center;
     margin: auto;
-    margin-bottom: 20px;
-    margin-top: 20px;
     height: 300px;
     overflow: hidden;
     width: 300px;
@@ -59,9 +57,7 @@
     border-radius: 2rem;
     color: #f7f4e9;
     font-family: 'Kanit', sans-serif;
-
     font-size: 3rem;
-    margin: auto;
     margin-top: 30px;
     padding: 10px;
     min-width: 50%;

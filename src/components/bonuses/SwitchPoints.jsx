@@ -76,7 +76,7 @@ export const SwitchScores = ({finishTurn, numOfTeams, teamColors}) => {
                         <label className='errorMessage'>{errorMessage}</label>
                     }
                 </>
-                <button className="okayButton" onClick={() => switchScores()}>Switch</button>
+                    <button className="okayButton" onClick={() => switchScores()}>Switch</button>
         </div>
     )
 }
