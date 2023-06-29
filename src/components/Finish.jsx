@@ -60,37 +60,35 @@ export const Finish = () => {
 
 
     return (
-        <Row>
-            <Col span={5}/>
-                {!showWinner ?
-                        <button onClick={show} className='revealButton'>CLICK TO REVEAL WINNER</button>
-                :
-                    <Col className='mainCont' span={14}>
-                        <div className='winnerMessageCont'>
-                            {winningTeams.length === 1 ?
-                            <>
-                                <p className='winnerMessage'>Congratulations to Team {winningTeams[0]}! </p>
-                                <label className='winnerMessage'>You win!</label>
-                            </>
-                            :
-                            <div className='winnerMessage'>
-                                <p>Winners:</p>
-                                <div className='winningTeams'>
-                                    {winningTeams.map((team) => (
-                                        <label>Team {team}</label>    
-                                    ))}
-                                </div>
-                            </div>
-                            }
-                        </div>      
-                        <div className='lowerCont'>
-                            <button onClick={playAgain} className='playAgain'>Play Again</button>
-                            <img className='saxManGif' src={saxMan} alt="Sax Gif"/>              
+      <div className='finishCont'>
+        {!showWinner ?
+                <button onClick={show} className='revealButton'>CLICK TO REVEAL WINNER</button>
+        :
+            <div className='finishSubCont'>
+                <div className='winnerMessageCont'>
+                    {winningTeams.length === 1 ?
+                    <>
+                        <p className='winnerMessage'>Congratulations to Team {winningTeams[0]}! </p>
+                        <label className='winnerMessage'>You win!</label>
+                    </>
+                    :
+                    <div className='winnerMessage'>
+                        <p>Winners:</p>
+                        <div className='winningTeams'>
+                            {winningTeams.map((team) => (
+                                <label>Team {team}</label>    
+                            ))}
                         </div>
-                    </Col>
-                }
-            <Col span={5}/>
-        </Row>
+                    </div>
+                    }
+                </div>      
+                <div className='lowerCont'>
+                    <button onClick={playAgain} className='playAgain'>Play Again</button>
+                    <img className='saxManGif' src={saxMan} alt="Sax Gif"/>              
+                </div>
+            </div>
+        }
+      </div>
     );
   };
 

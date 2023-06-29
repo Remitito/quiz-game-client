@@ -16,7 +16,7 @@ export const ResetAllScores = ({finishTurn}) => {
     return (
         <div className="bonusSubCont">
             <label className='bonusTitle'>Reset All Scores to Zero</label>
-            <FaSkull className='bonusIcon'/>
+            <FaSkull className='scaleIcon'/>
             <button className="okayButton" onClick={() => confirmReset()}>Reset</button>
         </div>
     )

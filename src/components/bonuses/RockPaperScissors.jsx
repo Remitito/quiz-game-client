@@ -30,13 +30,13 @@ export const RockPaperScissors = ({image, points, finishTurn, teamColors}) => {
     }
 
     return (
-        <>
+        <div className='bonusSubCont'>
             <label className='bonusTitle'>Play Rock Paper Scissors for {points} points!</label>
-            <p className='statusMessage'>Choose a team to play against then set the winner below</p>
+            <p className='statusMessage'>Choose a team to play against then select the winner</p>
             <img className='rpsGif' src={image} alt="RPS"/>
             <div className='teamDiv'>
                 {showTeamOptions()}
             </div>
-        </>
+        </div>
     )
 }

@@ -20,11 +20,23 @@
     --animate-duration: 2s;
   }
 
-.mainCont {
+.finishCont {
+  align-items: center;
+  border-radius: 2rem;
+  color: #1d1d2c;
+  justify-content: center;
+  margin: auto;
+  margin-top: 50px;
+  padding: 20px;
+  text-align: center;
+  width: 80%;
+}
+.finishSubCont {
     background-color: #F7F4E9;
     border-radius: 2rem;
     color: #1d1d2c;
     font-size: 3rem;
+    margin: auto;
     margin-top: 60px;
     text-align: center;
 }
@@ -57,20 +69,16 @@
 
 .revealButton {
   border-radius: 5rem;
-  display: inline-block;
   padding: 54px;
   font-size: 6rem;
   font-weight: bold;
   margin: auto;
   margin-top: 150px;
-  text-align: center;
-  text-transform: uppercase;
   color: #fff;
   background-color: #ff5e3a;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  cursor: pointer;
   transition: background-color 0.3s ease;
-  width: 30%;
+  width: 50%;
 }
 
 .revealButton:hover {

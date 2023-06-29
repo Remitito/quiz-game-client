@@ -1,0 +1,58 @@
+
+
+.boxCont {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.pointsBox, .pointsBoxFlash, .pointsBoxRed, .pointsBoxBlue, .pointsBoxGreen {
+    font-size: 6rem;
+    padding: 50px;
+    margin-bottom: 30px;
+    width: 30%;
+    text-align: center;
+}
+.pointsBoxFlash {
+    background-color: aquamarine;
+    border: solid;
+    border-radius: 5rem;
+    background-color: yellow;
+}
+.pointsBoxRed {
+    background-color: red;
+    border: solid;
+    border-radius: 5rem;
+    color: white;
+}
+.pointsBoxBlue {
+    background-color: blue;
+    border: solid;
+    border-radius: 5rem;
+    color: white;
+}
+.pointsBoxGreen {
+    background-color: green;
+    border: solid;
+    border-radius: 5rem;
+    color: white;
+}
+
+.pointsMessage {
+    font-size: 6rem;
+    font-family: 'Kanit', sans-serif;
+    font-weight: 1000;
+    margin: auto;
+    text-align: center;
+}
+
+.stopButton {
+    background-color: #e40c2b;
+    border-radius: 5rem;
+    color: white;
+    margin-bottom: 20px;
+    font-size: 5rem;
+    font-family: 'Sigmar', cursive;
+    padding: 25px;
+}

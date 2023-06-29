@@ -85,9 +85,9 @@ export const Grid = () => {
             <Col span={18}>
             <div className='mainCont'>
                 {currentSquare[0] == "none" ?
-                <div className='gridCont'>
-                    {loadGridSquares()}
-                </div>
+                    <div className='gridCont'>
+                        {loadGridSquares()}
+                    </div>
                     :
                     <>
                         {currentSquare[0] == "question" ?

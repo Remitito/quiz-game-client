@@ -5,6 +5,7 @@ import { GiveTakePoints } from './bonuses/GiveTakePoints'
 import { ResetAllScores } from './bonuses/ResetAllScores'
 import { SkipTurn } from './bonuses/SkipTurn'
 import { PickAgain } from './bonuses/PickAgain'
+import { StopMoving } from './bonuses/StopMoving'
 import { SwitchScores } from './bonuses/SwitchPoints'
 import { RockPaperScissors } from './bonuses/RockPaperScissors'
 import rps from '../assets/images/rps.gif'
@@ -50,13 +51,15 @@ export const Bonus = ({bonusNumber}) => {
         <RockPaperScissors image={rps} teamColors={teamColors} points={50} finishTurn={finishTurn}/>,
         <ChooseOne  correctSound={correctSound} wrongSound={wrongSound} finishTurn={finishTurn}/>,
         <ChooseOne  correctSound={correctSound} wrongSound={wrongSound} finishTurn={finishTurn}/>,
-        <ChooseOne  correctSound={correctSound} wrongSound={wrongSound} finishTurn={finishTurn}/>
+        <ChooseOne  correctSound={correctSound} wrongSound={wrongSound} finishTurn={finishTurn}/>,
+        <StopMoving finishTurn={finishTurn}/>,
+        <StopMoving finishTurn={finishTurn}/>
     ]
 
     return (
         <div className='bonusCont'>
             {bonusComponents[bonusNumber]}
-            {/* {bonusComponents[bonusComponents.length - 1]} */}
+            {/* {bonusComponents[bonusComponents.length - 3]} */}
             {/* {bonusComponents[10]} */}
         </div>
     )

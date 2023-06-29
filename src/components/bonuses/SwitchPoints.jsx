@@ -50,6 +50,13 @@ export const SwitchScores = ({finishTurn, numOfTeams, teamColors}) => {
     return (
         <div className="bonusSubCont">
             <label className='bonusTitle'>Switch Scores</label>
+            <>
+                    {errorMessage.length == 0 ?
+                        <label className='statusMessage'>{statusMessage}</label>
+                        :
+                        <label className='errorMessage'>{errorMessage}</label>
+                    }
+                </>
             <div className="teamSelectCont">
                 <select placeholder="Select the first team" className="teamSelect" height
                 value={choiceOne} onChange={(selection) => handleChange(setChoiceOne, selection.target.value)}
@@ -69,13 +76,6 @@ export const SwitchScores = ({finishTurn, numOfTeams, teamColors}) => {
                     <option style={{display: numOfTeams < 4 ? "none" : ""}} value={4}>Team 4</option>
                 </select>
                 </div>
-                <>
-                    {errorMessage.length == 0 ?
-                        <label className='statusMessage'>{statusMessage}</label>
-                        :
-                        <label className='errorMessage'>{errorMessage}</label>
-                    }
-                </>
                     <button className="okayButton" onClick={() => switchScores()}>Switch</button>
         </div>
     )

@@ -62,6 +62,40 @@
     padding: 10px;
     min-width: 50%;
   }
+
+  .spotlight {
+    width: 200px;
+    height: 200px;
+    background-color: rgba(0, 0, 0, 0.8);
+    border-radius: 50%;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .spotlight::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    height: 80%;
+    background-image: radial-gradient(rgba(255, 255, 255, 0.8), transparent);
+    border-radius: 50%;
+    animation: spotlight-animation 2s linear infinite;
+  }
+  
+  @keyframes spotlight-animation {
+    0% {
+      transform: translate(-50%, -50%) scale(0.2);
+    }
+    50% {
+      transform: translate(-50%, -50%) scale(1);
+    }
+    100% {
+      transform: translate(-50%, -50%) scale(0.2);
+    }
+  }
   
   .soundEffect {
     font-size: 3rem;

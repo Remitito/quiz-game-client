@@ -8,11 +8,15 @@ import {Col, Row} from 'antd'
 import { useSelector } from 'react-redux'
 
 export const Game = () => {
-    let currentScreen = useSelector((state) => state.game.currentScreen);
-    return (
+  let currentScreen = useSelector((state) => state.game.currentScreen);
+  return (
+    <>
+      {currentScreen === 'setup' ? (
+        <Setup />
+      ) : (
         <>
-          {currentScreen === 'setup' ? (
-            <Setup />
+          {currentScreen === 'finish' ? (
+            <Finish />
           ) : (
             <>
               {currentScreen === 'search' ? (
@@ -26,13 +30,7 @@ export const Game = () => {
                     {currentScreen === 'grid' ? (
                       <Grid />
                     ) : (
-                      <>
-                        {currentScreen === 'finish' ? (
-                          <Finish />
-                        ) : (
-                          <></>
-                        )}
-                      </>
+                      <></>
                     )}
                   </Col>
                 </Row>
@@ -40,5 +38,7 @@ export const Game = () => {
             </>
           )}
         </>
-      );
-}
+      )}
+    </>
+  );
+};

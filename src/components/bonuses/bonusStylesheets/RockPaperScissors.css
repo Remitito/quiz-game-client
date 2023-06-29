@@ -1,8 +1,13 @@
 .teamDiv {
-    display: flex;   
+    display: flex;  
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%; 
 }
 
 .rpsGif {
     border-radius: 2rem;
-    margin-bottom: 20px;;
+    height: 40%;
+    margin-bottom: 20px;
+    width: 50%;
 }

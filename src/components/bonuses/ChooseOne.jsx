@@ -18,7 +18,7 @@ export const ChooseOne = ({finishTurn, wrongSound, correctSound}) => {
       audio.src = sound;
       audio.play();
     };
-    
+
     useEffect(() => {
         const shuffledArray = [...boxContents]
         for (let i = shuffledArray.length - 1; i > 0; i--) {
@@ -26,7 +26,7 @@ export const ChooseOne = ({finishTurn, wrongSound, correctSound}) => {
             [shuffledArray[i], shuffledArray[j]] = [shuffledArray[j], shuffledArray[i]];
           }
           setBoxContents(shuffledArray)
-    }, [])
+            }, [])
 
     const handleClick = (index) => {
         setPoints(boxContents[index])
@@ -41,7 +41,7 @@ export const ChooseOne = ({finishTurn, wrongSound, correctSound}) => {
             const newPointTotal = teamScores[currentTeam - 1] + boxContents[index]
             dispatch(setTeamScore({ team: currentTeam - 1, amount: newPointTotal}));
             finishTurn()
-        }, 1500)
+        }, 1000)
     }
 
     return (
