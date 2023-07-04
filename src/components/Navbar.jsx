@@ -10,7 +10,7 @@ export const Navbar = () => {
 
     const handleFind = () => {
         dispatch(resetAllScores())
-        dispatch(setCurrentScreen('search'))
+        dispatch(setCurrentScreen('searchOfficial'))
     }
 
     return (

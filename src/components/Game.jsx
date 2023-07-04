@@ -1,7 +1,8 @@
 import {Setup} from './Setup'
 import { Grid } from './Grid';
 import { Scores } from './Scores';
-import { Search } from './Search';
+import { SearchOfficial } from './SearchOfficial';
+import {SearchUser} from './SearchUser'
 import { Testing } from './Testing';
 import { Finish } from './Finish';
 import {Col, Row} from 'antd'
@@ -19,21 +20,29 @@ export const Game = () => {
             <Finish />
           ) : (
             <>
-              {currentScreen === 'search' ? (
-                <Search />
+              {currentScreen === 'searchOfficial' ? (
+                <>
+                  <SearchOfficial />
+                </>
               ) : (
-                <Row>
-                  <Col span={4}>
-                    <Scores />
-                  </Col>
-                  <Col span={20}>
-                    {currentScreen === 'grid' ? (
-                      <Grid />
-                    ) : (
-                      <></>
-                    )}
-                  </Col>
-                </Row>
+                <>
+                  {currentScreen === 'searchUser' ? (
+                    <SearchUser />
+                  ) : (
+                    <Row>
+                      <Col span={4}>
+                        <Scores />
+                      </Col>
+                      <Col span={20}>
+                        {currentScreen === 'grid' ? (
+                          <Grid />
+                        ) : (
+                          <></>
+                        )}
+                      </Col>
+                    </Row>
+                  )}
+                </>
               )}
             </>
           )}
@@ -41,4 +50,4 @@ export const Game = () => {
       )}
     </>
   );
-};
+}

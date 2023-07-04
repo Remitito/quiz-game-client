@@ -3,7 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 export const gameSlice = createSlice({
     name: 'game',
     initialState: {
-        currentScreen: 'search',
+        currentScreen: 'searchOfficial',
         currentSquare: ['none', 0], // e.g. bonus, #4
         currentTeam: 1,
         teamScores: [0, 0, 0, 0]
