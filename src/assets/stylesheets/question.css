@@ -1,4 +1,13 @@
-@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@500&family=Sigmar&display=swap');
+
+@font-face {
+    font-family: 'Kanit';
+    src: url('../fonts/Kanit-Bold.ttf');
+  }
+
+@font-face {
+    font-family: 'Sigmar';
+    src: url('../fonts/Sigmar-Regular.ttf');
+  }
 
 .answer {
     color: #438945;

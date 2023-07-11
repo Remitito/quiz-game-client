@@ -35,10 +35,10 @@ export const Setup = () => {
             <Col className='setupCont' span={16}>
                 <Row className='setupRow'>
                     <Col span={12} className='setupColumn'>
-                        <h4 className='sectionName' span={7}>Teams</h4>
+                        <label className='sectionName' span={7}>Teams</label>
                     </Col>
                     <Col span={12} className='setupColumn'>
-                        <h4 className='sectionName'>Squares</h4>
+                        <label className='sectionName'>Squares</label>
                     </Col>
                 </Row>
                 <Row className='setupRow'>
@@ -75,7 +75,7 @@ export const Setup = () => {
                 <Row className='setupRow'>
                     <Col span={12} className='setupColumn'> 
                         <div>
-                            <h4 className='sectionName'>Bonuses</h4>
+                            <label className='sectionName'>Bonuses</label>
                                 <Toggle translate={45} sliderWidth={25} width={80} height={40} 
                                 backgroundColorChecked={"#EBA63F"} backgroundColorUnchecked={"#1d1d2c"}
                                 backgroundColorButton={"#F7F4E9"} checked={bonusSquares} 

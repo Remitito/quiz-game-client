@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Sigmar&display=swap');
-
 .loadingLabel {
     margin-right: 20px;
     font-family: 'Kanit', sans-serif;
@@ -21,15 +19,16 @@
     background-color: #F7F4E9;
     border-radius: 2rem;
     color: #1d1d2c;
+    display: flex;
+    flex-direction: column;
     margin-top: 90px;
+    font-family: 'Sigmar', cursive;
+    margin-bottom: 30px;
+    text-align: center;
 }
 
 .searchTopRow {
-    align-items: center;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    margin: auto;
+    width: 100%;
 }
 
 .quizEven, .quizOdd {
@@ -51,18 +50,12 @@
 
 .sectionName {
     color: #1d1d2c;
-    font-size: 3rem;
     font-family: 'Sigmar', cursive;
     font-weight: 100;
     margin-bottom: 40px;
     margin-top: 5px;
 }
 
-
-.sectionRow {
-    display: flex;
-    flex-direction: column;
-    font-family: 'Sigmar', cursive;
-    margin-bottom: 30px;
-    text-align: center;
+.quizList {
+    margin-bottom: 20px;
 }

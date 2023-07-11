@@ -3,6 +3,7 @@ import { Grid } from './Grid';
 import { Scores } from './Scores';
 import { SearchOfficial } from './SearchOfficial';
 import {SearchUser} from './SearchUser'
+import {Create} from './Create'
 import { Testing } from './Testing';
 import { Finish } from './Finish';
 import {Col, Row} from 'antd'
@@ -21,26 +22,30 @@ export const Game = () => {
           ) : (
             <>
               {currentScreen === 'searchOfficial' ? (
-                <>
-                  <SearchOfficial />
-                </>
+                <SearchOfficial />
               ) : (
                 <>
                   {currentScreen === 'searchUser' ? (
                     <SearchUser />
                   ) : (
-                    <Row>
-                      <Col span={4}>
-                        <Scores />
-                      </Col>
-                      <Col span={20}>
-                        {currentScreen === 'grid' ? (
-                          <Grid />
-                        ) : (
-                          <></>
-                        )}
-                      </Col>
-                    </Row>
+                    <>
+                      {currentScreen === 'create' ? (
+                        <Create />
+                      ) : (
+                        <Row>
+                          <Col span={4}>
+                            <Scores />
+                          </Col>
+                          <Col span={20}>
+                            {currentScreen === 'grid' ? (
+                              <Grid />
+                            ) : (
+                              <></>
+                            )}
+                          </Col>
+                        </Row>
+                      )}
+                    </>
                   )}
                 </>
               )}
@@ -50,4 +55,5 @@ export const Game = () => {
       )}
     </>
   );
+  
 }

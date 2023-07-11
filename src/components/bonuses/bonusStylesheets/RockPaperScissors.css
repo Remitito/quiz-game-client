@@ -1,13 +1,19 @@
+.bonusTitle {
+    font-size: 3rem;
+}
+
 .teamDiv {
     display: flex;  
     flex-direction: row;
     justify-content: space-between;
     width: 100%; 
 }
+.statusMessage {
+    font-size: 2rem;
+}
 
 .rpsGif {
     border-radius: 2rem;
-    height: 40%;
+    height: 50%;
     margin-bottom: 20px;
-    width: 50%;
 }

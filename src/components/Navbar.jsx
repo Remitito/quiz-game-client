@@ -8,9 +8,9 @@ import 'animate.css';
 export const Navbar = () => {
     const dispatch = useDispatch()
 
-    const handleFind = () => {
+    const handleClick = (nextScreen) => {
         dispatch(resetAllScores())
-        dispatch(setCurrentScreen('searchOfficial'))
+        dispatch(setCurrentScreen(nextScreen))
     }
 
     return (
@@ -18,7 +18,7 @@ export const Navbar = () => {
             <Col span={5} className='findCont'>
             <Row>
                 <Space>
-                    <Avatar onClick={() => handleFind()} size="large" className="navbarIcon" icon={<SearchOutlined/>}/>
+                    <Avatar onClick={() => handleClick('searchOfficial')} size="large" className="navbarIcon" icon={<SearchOutlined/>}/>
                     <label className='findCont'>Find a quiz</label>
                     <label style={{fontSize: "30px"}}></label>
                 </Space>
@@ -32,7 +32,7 @@ export const Navbar = () => {
             <Col className='accountCont' span={5}>
                 <Row>
                     <Space>
-                        <Avatar size="large" className="navbarIcon" icon={<UserOutlined/>}/>
+                        <Avatar onClick={() => handleClick('create')} size="large" className="navbarIcon" icon={<UserOutlined/>}/>
                         <label className='accountCont'>Guest User</label>
                     </Space>
                 </Row>

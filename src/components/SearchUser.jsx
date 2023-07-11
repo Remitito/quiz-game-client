@@ -54,24 +54,22 @@ export const SearchUser = () => {
         <Row>
             <Col span={5}/>
             <Col className='searchCont' span={14}>
-                    <Row className='sectionRow'>
-                        <div className='searchTopRow'>
-                            <label className='sectionName'>User Quizzes</label>
-                            <button onClick={() => dispatch(setCurrentScreen('searchOfficial'))} className='searchButton'>View Official Quizzes</button>
+                <div className='searchTopRow'>
+                    <label className='sectionName'>User Quizzes</label>
+                    <button onClick={() => dispatch(setCurrentScreen('searchOfficial'))} className='searchButton'>Official Quizzes</button>
+                </div>
+                <>
+                    {quizzes.length > 0 ? 
+                        <div className='quizList'>
+                            {userQuizItems}
                         </div>
-                        <>
-                            {quizzes.length > 0 ? 
-                                <div >
-                                    {userQuizItems}
-                                </div>
-                            :
-                                <LoadingContainer>
-                                    <label className='loadingLabel'>Loading</label>
-                                    <LoadingSpinner/>
-                                </LoadingContainer>
-                            }
-                        </>                        
-                    </Row>
+                    :
+                        <LoadingContainer>
+                            <label className='loadingLabel'>Loading</label>
+                            <LoadingSpinner/>
+                        </LoadingContainer>
+                    }
+                </>                        
             </Col>
             <Col span={5}/>
         </Row>
