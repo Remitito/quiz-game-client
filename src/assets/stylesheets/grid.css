@@ -5,16 +5,21 @@
     color: #1d1d2c;
     height: 700px;
     justify-content: center;
+    margin-right: 20px;
     margin-top: 50px;
     padding: 10px;
     text-align: center;
+    width: 80%;
 }
 
-.gridCont {
+.gridScoreCont {
     display: flex;
-    flex-direction: column;
-    height: 100%;
-    justify-content: space-evenly;
+    flex-direction: row;
+}
+
+.scoresCont {
+    margin: auto;
+    width: 50%;
 }
 
 .gridSquare, .gridSquareComplete {
@@ -23,4 +28,27 @@
 
 .gridSquareComplete {
     background-color: #1d1d2c;
+}
+
+.teamCont, .teamContSelected {
+    border-radius: 2rem;
+    color: #1d1d2c;
+    margin-top: 20px;
+    text-align: center;
+}
+.teamCont {
+    padding: 10px;
+}
+.teamContSelected {
+    border: 10px solid #F7F4E9;
+    padding: 30px;
+}
+
+.teamName {
+    font-family: 'Sigmar', cursive;
+    font-size: 2rem;
+}
+
+.teamScore {
+    font-size: 4rem;
 }

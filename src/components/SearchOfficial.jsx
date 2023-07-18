@@ -2,9 +2,9 @@ import {Row, Col} from 'antd'
 import '../assets/stylesheets/search.css'
 import axios from 'axios'
 import { useState, useEffect } from 'react'
+import { useNavigate } from 'react-router';
 import { useDispatch } from 'react-redux'
 import {setQuestions} from '../slices/setupSlice'
-import {setCurrentScreen} from '../slices/gameSlice'
 import { LoadingContainer, LoadingSpinner } from '../assets/styledComponents/Loading'
 
 // https://inquizitive-api.onrender.com
@@ -12,6 +12,7 @@ import { LoadingContainer, LoadingSpinner } from '../assets/styledComponents/Loa
 export const SearchOfficial = () => {
     const [quizzes, setQuizzes] = useState([]);
     const dispatch = useDispatch();
+    const navigate = useNavigate()
 
     useEffect(() => {
         getOfficialQuizNames()
@@ -38,7 +39,7 @@ export const SearchOfficial = () => {
     })
     .then(response => {
         dispatch(setQuestions(response.data.questions));
-        dispatch(setCurrentScreen("setup"));
+        navigate('/setup')
     })
     .catch(error => {
         console.log(error)
@@ -59,7 +60,7 @@ export const SearchOfficial = () => {
             <Col className='searchCont' span={14}>
                 <div className='searchTopRow'>
                     <label className='sectionName'>Official Quizzes</label>
-                    <button onClick={() => dispatch(setCurrentScreen('searchUser'))} className='searchButton'>User Quizzes</button>
+                    <button onClick={() => navigate('/searchUser')} className='searchButton'>User Quizzes</button>
                 </div>
                 <>
                     {quizzes.length > 0 ? 

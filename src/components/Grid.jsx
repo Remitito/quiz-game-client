@@ -3,6 +3,7 @@ import { useState } from 'react'
 import { Bonus } from './Bonus'
 import { Empty } from './Empty'
 import { Question } from './Question'
+import {Scores} from './Scores'
 import {Row, Col} from 'antd'
 import { setCurrentSquare, setCurrentScreen } from '../slices/gameSlice'
 import { GridSquareCont, GridSquare } from '../assets/styledComponents/NumberShapes'
@@ -80,32 +81,31 @@ export const Grid = () => {
     } 
 
     return (
-        <Row>
-            <Col span={3}/>
-            <Col span={18}>
-            <div className='mainCont'>
-                {currentSquare[0] == "none" ?
-                    <div className='gridCont'>
-                        {loadGridSquares()}
-                    </div>
-                    :
-                    <>
-                        {currentSquare[0] == "question" ?
-                        <Question questionNumber={currentSquare[1]}/>
-                        : 
+        <div className='gridScoreCont'>
+            <div className='scoresCont'>
+                <Scores/>
+            </div>
+                <div className='mainCont'>
+                    {currentSquare[0] == "none" ?
+                        <div>
+                            {loadGridSquares()}
+                        </div>
+                        :
                         <>
-                            {currentSquare[0] == "bonus" ?
-                            <Bonus bonusNumber={currentSquare[1]}/> 
-                            :
-                            <Empty/>
+                            {currentSquare[0] == "question" ?
+                            <Question questionNumber={currentSquare[1]}/>
+                            : 
+                            <>
+                                {currentSquare[0] == "bonus" ?
+                                <Bonus bonusNumber={currentSquare[1]}/> 
+                                :
+                                <Empty/>
+                                }
+                            </>
                             }
                         </>
-                        }
-                    </>
-                }  
+                    }  
             </div>
-            </Col>
-            <Col span={3}/>
-        </Row>
+        </div>
     )
 }

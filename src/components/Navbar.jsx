@@ -4,13 +4,15 @@ import { setCurrentScreen, resetAllScores } from '../slices/gameSlice';
 import { useSelector, useDispatch } from 'react-redux';
 import {UserOutlined, SearchOutlined} from '@ant-design/icons'
 import 'animate.css';
+import { useNavigate } from 'react-router';
 
 export const Navbar = () => {
     const dispatch = useDispatch()
+    const navigate = useNavigate()
 
-    const handleClick = (nextScreen) => {
+    const handleClick = (page) => {
         dispatch(resetAllScores())
-        dispatch(setCurrentScreen(nextScreen))
+        navigate(page)
     }
 
     return (
@@ -24,16 +26,16 @@ export const Navbar = () => {
                 </Space>
             </Row>
             </Col>
-            <Col className='titleCont' span={14}>
+            <Col className='titleCont' span={13}>
                 <label style={{color: "#1d1d2c"}}>In</label>
-                <label style={{color: "#E40C2B", fontSize: "90px"}}>QUIZ</label>
+                <label style={{color: "#E40C2B", fontSize: "70px"}}>QUIZ</label>
                 <label style={{color: "#1d1d2c"}}>itive</label>
             </Col>
             <Col className='accountCont' span={5}>
                 <Row>
                     <Space>
                         <Avatar onClick={() => handleClick('create')} size="large" className="navbarIcon" icon={<UserOutlined/>}/>
-                        <label className='accountCont'>Guest User</label>
+                        <label className='accountCont'>Create a Quiz</label>
                     </Space>
                 </Row>
             </Col>

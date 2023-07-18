@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from "react-redux";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { HiSwitchHorizontal } from "react-icons/hi";
 import { setTeamScore } from "../../slices/gameSlice";
 
@@ -10,11 +10,20 @@ export const SwitchScores = ({finishTurn, numOfTeams, teamColors}) => {
     const [choiceTwo, setChoiceTwo] = useState(2)
     const [statusMessage, setStatusMessage] = useState(`Swap Team ${choiceOne}'s points with Team ${choiceTwo}'s points?`)
     const [errorMessage, setErrorMessage] = useState("")
+    const [rotation, setRotation] = useState(-1)
 
     let teams = []
     for(let i = 1; i <= numOfTeams; i++) {
         teams.push(i)
     }
+
+    useEffect(() => {
+        const interval = setInterval(() => {
+          setRotation((prevRotation) => (prevRotation === -1 ? 1 : -1));
+        }, 500);
+        
+        return () => clearInterval(interval);
+    }, []);
 
     const handleChange = (choiceFunction, team) => {
         choiceFunction(team)
@@ -66,7 +75,8 @@ export const SwitchScores = ({finishTurn, numOfTeams, teamColors}) => {
                     <option style={{display: numOfTeams < 3 ? "none" : ""}} value={3}>Team 3</option>
                     <option style={{display: numOfTeams < 4 ? "none" : ""}} value={4}>Team 4</option>
                 </select>
-                <HiSwitchHorizontal className="bonusIcon"/>
+                <HiSwitchHorizontal className="bonusIcon"
+                style={{ transform: `scaleX(${rotation})` }}/>
                 <select placeholder="Select the second team" className="teamSelect" 
                 value={choiceTwo} onChange={(selection) => handleChange(setChoiceTwo, selection.target.value)}
                  style={{backgroundColor: teamColors[choiceTwo - 1]}}>

@@ -32,8 +32,8 @@
 
 .navbarCont {
     background-color: #F7F4E9;
-    margin-top: 30px;
-    justify-content: space-between;
+    justify-content: space-evenly;
+    height: 100px;
 }
 
 .navbarIcon:hover {
@@ -44,6 +44,6 @@
     color: #E40C2B;
     background-clip: text;
     font-family: 'Bruno Ace SC', cursive;
-    font-size: 70px;
+    font-size: 50px;
     text-align: center;
 }

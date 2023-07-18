@@ -6,10 +6,12 @@ import { useDispatch } from 'react-redux'
 import {setQuestions} from '../slices/setupSlice'
 import {setCurrentScreen} from '../slices/gameSlice'
 import { LoadingContainer, LoadingSpinner } from '../assets/styledComponents/Loading'
+import { useNavigate } from 'react-router'
 
 export const SearchUser = () => {
     const [quizzes, setQuizzes] = useState([]);
     const dispatch = useDispatch();
+    const navigate = useNavigate()
   
     useEffect(() => {
       getUserQuizNames()
@@ -56,7 +58,7 @@ export const SearchUser = () => {
             <Col className='searchCont' span={14}>
                 <div className='searchTopRow'>
                     <label className='sectionName'>User Quizzes</label>
-                    <button onClick={() => dispatch(setCurrentScreen('searchOfficial'))} className='searchButton'>Official Quizzes</button>
+                    <button onClick={() => navigate('/searchOfficial')} className='searchButton'>Official Quizzes</button>
                 </div>
                 <>
                     {quizzes.length > 0 ? 

@@ -39,7 +39,6 @@ export const GridSquare = styled.div `
 export const GridSquareCont = styled.div `
     display: flex;
     flex-direction: row;
-    margin-top: 5px;
 `
 
 export const SetupSquare = styled.div `

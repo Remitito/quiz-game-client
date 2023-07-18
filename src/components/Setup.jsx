@@ -6,11 +6,11 @@ import {RightCircleOutlined, UserOutlined} from '@ant-design/icons'
 import { useDispatch, useSelector } from 'react-redux'
 import { setNumOfTeams, setSquares, setBonusSquares } from '../slices/setupSlice'
 import { assignSquareValues } from './functions/setupFunctions'
-import { setCurrentScreen } from '../slices/gameSlice'
 import { setSquareValues } from '../slices/setupSlice'
 import { Bonus } from './Bonus'
 import Toggle from 'react-styled-toggle'
 import { current } from '@reduxjs/toolkit'
+import { useNavigate } from 'react-router';
 
 
 export const Setup = () => {
@@ -19,6 +19,7 @@ export const Setup = () => {
     const [bonusSquares, setBonusSquaresLocal] = useState(true) 
     const questions = useSelector((state) => state.setup.questions)
     const dispatch = useDispatch()
+    const navigate = useNavigate()
 
     const confirm = () => {
         const squareValues = assignSquareValues(squares, bonusSquares, questions.length)
@@ -26,7 +27,7 @@ export const Setup = () => {
         dispatch(setNumOfTeams(numberOfTeams))
         dispatch(setSquares(squares))
         dispatch(setBonusSquares(bonusSquares))
-        dispatch(setCurrentScreen("grid"))
+        navigate('/grid')
     }
 
     return (

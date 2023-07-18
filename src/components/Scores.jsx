@@ -1,5 +1,5 @@
 import { useSelector } from "react-redux"
-import '../assets/stylesheets/scores.css'
+import '../assets/stylesheets/grid.css'
 
 export const Scores = () => {
     const teams = useSelector((state) => state.setup.teams)
