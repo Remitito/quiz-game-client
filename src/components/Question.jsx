@@ -1,11 +1,11 @@
 import { useDispatch, useSelector } from 'react-redux'
-import { useState, useRef } from 'react'
+import { useEffect, useState, useRef } from 'react'
 import {TiTimes, TiTick} from 'react-icons/ti'
 import '../assets/stylesheets/question.css'
 import {setTeamScore, setCurrentTeam, setCurrentScreen, setCurrentSquare } from '../slices/gameSlice'
 import { BsPatchQuestionFill } from "react-icons/bs";
-import wrongSound from '../assets/audios/wrong.mp3'
-import correctSound from '../assets/audios/correct.mp3'
+import wrongSound from '../assets/audios/wrong.mp3';
+import correctSound from '../assets/audios/correct.mp3';
 
 export const Question = ({ questionNumber }) => {
   const [answer, showAnswer] = useState(false);
@@ -16,6 +16,19 @@ export const Question = ({ questionNumber }) => {
   const questions = useSelector((state) => state.setup.questions);
   const teamScores = useSelector((state) => state.game.teamScores);
   const soundRef = useRef(null);
+
+  useEffect(() => {
+    const wrongAudio = new Audio(wrongSound);
+    wrongAudio.preload = 'auto';
+
+    const correctAudio = new Audio(correctSound);
+    correctAudio.preload = 'auto';
+
+    return () => {
+      wrongAudio.remove();
+      correctAudio.remove();
+    };
+  }, []);
 
   const playSound = (sound) => {
     const audio = soundRef.current;
