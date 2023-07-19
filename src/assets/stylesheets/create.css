@@ -1,3 +1,26 @@
+.copyCont, .playCont {
+    background-color: #1d1d2c;
+    border-radius: 2rem;
+    display: flex;
+    font-size: 3rem;
+    justify-content: space-evenly;
+    margin: auto;
+    margin-top: 30px;
+    padding: 5px;
+    width: 50%;
+}
+
+.copyCont {
+    color: white;
+}
+
+.playCont {
+    color: lightgreen;
+}
+
+.copyCont:hover, .playCont:hover {
+    color: red;
+}
 
 .createCont {
     background-color: #F7F4E9;
@@ -19,7 +42,7 @@
 .exampleInput {
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     margin: auto;
-    width: 80%;
+    width: 100%;
 }
 
 .sectionName {
@@ -44,6 +67,17 @@
     height: 80px;
     margin-top: 20px;    
     
+}
+
+.quizLinkCont {
+    border: solid;
+    margin: auto;
+    width: 80%;
+}
+
+.quizLink {
+    font-size: 20px;
+    text-decoration: none;
 }
 
 .questionInput {

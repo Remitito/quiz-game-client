@@ -1,8 +1,10 @@
 import { useDispatch, useSelector } from "react-redux"
 import { useEffect, useState, useRef } from "react";
 import { setTeamScore } from "../../slices/gameSlice"
-import { GiPresent } from "react-icons/gi";
+import { GiIgloo, GiPresent } from "react-icons/gi";
 import './bonusStylesheets/StopMoving.css'
+import wrongSound from '../../assets/audios/wrong.mp3'
+import correctSound from '../../assets/audios/correct.mp3'
 
 export const StopMoving = ({finishTurn}) => {
     const [boxContents, setBoxContents] = useState([-50, 0, 50]);
@@ -13,13 +15,31 @@ export const StopMoving = ({finishTurn}) => {
     const [boxThreeClass, setBoxThreeClass] = useState("pointsBox");
     const [currentPoints, setCurrentPoints] = useState()
     const [stop, setStop] = useState(false);
-    const soundRef = useRef(null);
     const timeoutsRef = useRef([]);
   
+    useEffect(() => {
+      const audioWrong = new Audio(wrongSound);
+      audioWrong.preload = 'auto';
+      const audioCorrect = new Audio(correctSound)
+      audioCorrect.preload = 'auto'
+
+      return () => {
+        audioWrong.pause()
+        audioWrong.src = ''
+        audioCorrect.pause()
+        audioCorrect.src = ''
+      }
+    }, []);
+
     const playSound = (sound) => {
-      const audio = soundRef.current;
-      audio.src = sound;
-      audio.play();
+      if(sound === 'wrong') {
+        const audioWrong = new Audio(wrongSound)
+        audioWrong.play();
+      }
+      else {
+        const audioCorrect = new Audio(correctSound)
+        audioCorrect.play();
+      }
     };
   
     const playBoxAnimationThree = () => {
@@ -66,14 +86,20 @@ export const StopMoving = ({finishTurn}) => {
         setBoxOneClass("pointsBox");
         setBoxTwoClass("pointsBox");
         setBoxThreeClass("pointsBox");
-        if(currentPoints === 0) {setBoxOneClass("pointsBoxRed")}
+        if(currentPoints === 0) {
+          setBoxOneClass("pointsBoxRed")
+          playSound('wrong')
+        }
         if(currentPoints === 1) {setBoxTwoClass("pointsBoxBlue")}
-        if(currentPoints === 2) {setBoxThreeClass("pointsBoxGreen")}
+        if(currentPoints === 2) {
+          setBoxThreeClass("pointsBoxGreen")
+          playSound('correct')
+        }
         timeoutsRef.current.forEach((timeoutId) => clearTimeout(timeoutId));
         timeoutsRef.current = [];
         setTimeout(() => {
             finishTurn()
-          }, 2500)
+          }, 1500)
     };
   
     useEffect(() => {

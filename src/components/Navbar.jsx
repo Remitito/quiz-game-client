@@ -7,13 +7,13 @@ import 'animate.css';
 import { useNavigate } from 'react-router';
 
 export const Navbar = () => {
-    const dispatch = useDispatch()
-    const navigate = useNavigate()
-
+    const dispatch = useDispatch();
+    const navigate = useNavigate();
+  
     const handleClick = (page) => {
-        dispatch(resetAllScores())
-        navigate(page)
-    }
+      dispatch(resetAllScores());
+      navigate(page);
+    };
 
     return (
         <Row className='navbarCont'>

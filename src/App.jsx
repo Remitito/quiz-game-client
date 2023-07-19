@@ -13,6 +13,7 @@ import { Testing } from './components/Testing.jsx';
 import { Finish } from './components/Finish.jsx';
 import { Col, Row } from 'antd';
 import { useSelector } from 'react-redux';
+import { Play } from './components/Play';
 
 
 function App() {
@@ -24,6 +25,7 @@ function App() {
         <div className='contentWrapper'>
           <Routes>
             <Route exact path="/" element={<SearchOfficial />} />
+            <Route path="/play/:id" element={<Play />} />
             <Route path="/setup" element={<Setup/>} />
             <Route path="/finish" element={<Finish/>} />
             <Route path="/searchOfficial" element={<SearchOfficial />} />

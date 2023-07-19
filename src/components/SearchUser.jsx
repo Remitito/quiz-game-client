@@ -30,6 +30,7 @@ export const SearchUser = () => {
   
     const selectUserQuiz = (quizIndex) => {
       const selectedQuiz = quizzes[quizIndex];
+      console.log(quizzes[quizIndex].id)
       axios.get("https://inquizitive-api.onrender.com/quiz/user", {
         params: {
             id: quizzes[quizIndex].id

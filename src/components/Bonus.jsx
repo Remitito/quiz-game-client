@@ -35,8 +35,10 @@ export const Bonus = ({bonusNumber}) => {
 
     const bonusComponents = [
         <TakePoints teamColors={teamColors} points={50} finishTurn={finishTurn} />,
+        <TakePoints teamColors={teamColors} points={25} finishTurn={finishTurn} />,
         <TakePoints teamColors={teamColors} points={-50} finishTurn={finishTurn} />,
         <TakePoints teamColors={teamColors} points={-25} finishTurn={finishTurn} />,
+        <ResetAllScores finishTurn={finishTurn}/>,
         <ResetAllScores finishTurn={finishTurn}/>,
         <SkipTurn finishTurn={finishTurn}/>,
         <PickAgain/>,
@@ -53,14 +55,15 @@ export const Bonus = ({bonusNumber}) => {
         <ChooseOne correctSound={correctSound} wrongSound={wrongSound} finishTurn={finishTurn}/>,
         <ChooseOne correctSound={correctSound} wrongSound={wrongSound} finishTurn={finishTurn}/>,
         <StopMoving finishTurn={finishTurn}/>,
+        <StopMoving finishTurn={finishTurn}/>,
         <StopMoving finishTurn={finishTurn}/>
     ]
 
     return (
         <div className='bonusCont'>
-            {/* {bonusComponents[bonusNumber]} */}
-            {bonusComponents[bonusComponents.length - 1]}
-            {/* {bonusComponents[3]} */}
+            {bonusComponents[bonusNumber]}
+            {/* {bonusComponents[bonusComponents.length - 1]} */}
+            {/* {bonusComponents[0]} */}
         </div>
     )
 }

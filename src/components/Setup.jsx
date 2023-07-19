@@ -39,7 +39,9 @@ export const Setup = () => {
 
     const handleSettingChange = (func) => {
         playSound()
-        func()
+        setTimeout(() => {
+            func()
+        }, 100)
     }
 
     const confirm = () => {
@@ -68,18 +70,18 @@ export const Setup = () => {
                     <Col span={12} className='setupColumn'>
                         <div className='teamContainer'>
                             <div className={numberOfTeams === 2 ? 'teamOptionSelected' : 'teamOption'}
-                            onClick={() => handleSettingChange(setNumberOfTeams(2))}>
+                            onClick={() => handleSettingChange(() => setNumberOfTeams(2))}>
                                 <UserOutlined className='teamIcon'/>
                                 <UserOutlined className='teamIcon'/>
                             </div>
                             <div className={numberOfTeams === 3 ? 'teamOptionSelected' : 'teamOption'}
-                            onClick={() => handleSettingChange(setNumberOfTeams(3))}>
+                            onClick={() => handleSettingChange(() => setNumberOfTeams(3))}>
                                 <UserOutlined className='teamIcon'/>
                                 <UserOutlined className='teamIcon'/>
                                 <UserOutlined className='teamIcon'/>
                             </div>
                             <div className={numberOfTeams === 4 ? 'teamOptionSelected' : 'teamOption'}
-                            onClick={() => handleSettingChange(setNumberOfTeams(4))}>
+                            onClick={() => handleSettingChange(() => setNumberOfTeams(4))}>
                                 <UserOutlined className='teamIcon'/>
                                 <UserOutlined className='teamIcon'/>
                                 <UserOutlined className='teamIcon'/>
@@ -89,9 +91,9 @@ export const Setup = () => {
                     </Col>
                 <Col span={12} className='setupColumn'>
                         <SetupSquareCont>
-                            <SetupSquare selected={squares === 20} onClick={() => handleSettingChange(setSquaresLocal(20))}>20</SetupSquare>
-                            <SetupSquare selected={squares === 30} onClick={() => handleSettingChange(setSquaresLocal(30))}>30</SetupSquare>
-                            <SetupSquare selected={squares === 40} onClick={() => handleSettingChange(setSquaresLocal(40))}>40</SetupSquare>
+                            <SetupSquare selected={squares === 20} onClick={() => handleSettingChange(() => setSquaresLocal(20))}>20</SetupSquare>
+                            <SetupSquare selected={squares === 30} onClick={() => handleSettingChange(() => setSquaresLocal(30))}>30</SetupSquare>
+                            <SetupSquare selected={squares === 40} onClick={() => handleSettingChange(() => setSquaresLocal(40))}>40</SetupSquare>
                         </SetupSquareCont>
                 </Col>
                 </Row>
@@ -102,12 +104,12 @@ export const Setup = () => {
                                 <Toggle translate={45} sliderWidth={25} width={80} height={40} 
                                 backgroundColorChecked={"#EBA63F"} backgroundColorUnchecked={"#1d1d2c"}
                                 backgroundColorButton={"#F7F4E9"} checked={bonusSquares} 
-                                onChange={() => handleSettingChange(setBonusSquaresLocal(currentState => !currentState))}
+                                onChange={() => handleSettingChange(() => setBonusSquaresLocal(currentState => !currentState))}
                                 />
                         </div>
                     </Col>
                     <Col span={12} className='setupColumn'>
-                        <button className='startGameButton' onClick={() => handleSettingChange(confirm())}>
+                        <button className='startGameButton' onClick={() => handleSettingChange(() => confirm())}>
                             <RightCircleOutlined className='startGameIcon'/>
                             Start Game
                         </button>

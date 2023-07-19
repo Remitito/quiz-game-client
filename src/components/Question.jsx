@@ -15,25 +15,30 @@ export const Question = ({ questionNumber }) => {
   const numOfTeams = useSelector((state) => state.setup.teams);
   const questions = useSelector((state) => state.setup.questions);
   const teamScores = useSelector((state) => state.game.teamScores);
-  const soundRef = useRef(null);
 
   useEffect(() => {
-    const wrongAudio = new Audio(wrongSound);
-    wrongAudio.preload = 'auto';
-
-    const correctAudio = new Audio(correctSound);
-    correctAudio.preload = 'auto';
+    const audioWrong = new Audio(wrongSound);
+    audioWrong.preload = 'auto';
+    const audioCorrect = new Audio(correctSound);
+    audioCorrect.preload = 'auto';
 
     return () => {
-      wrongAudio.remove();
-      correctAudio.remove();
+      audioWrong.pause()
+      audioWrong.src = ''
+      audioCorrect.pause()
+      audioCorrect.src = ''
     };
   }, []);
 
   const playSound = (sound) => {
-    const audio = soundRef.current;
-    audio.src = sound;
-    audio.play();
+    if(sound === 'wrong') {
+      const audioWrong = new Audio(wrongSound)
+      audioWrong.play();
+    }
+    else {
+      const audioCorrect = new Audio(correctSound)
+      audioCorrect.play();
+    }
   };
 
   const finishTurn = () => {
@@ -47,7 +52,7 @@ export const Question = ({ questionNumber }) => {
   };
 
   const wrongAnswer = () => {
-    playSound(wrongSound);
+    playSound('wrong');
     setPointsMessage("wrong");
     setTimeout(() => {
       finishTurn();
@@ -56,7 +61,7 @@ export const Question = ({ questionNumber }) => {
 
   // just add 50 points per question for now
   const correctAnswer = () => {
-    playSound(correctSound);
+    playSound('correct');
     setPointsMessage("correct");
     setTimeout(() => {
       const newPointTotal = teamScores[currentTeam - 1] + 50;
@@ -73,7 +78,6 @@ export const Question = ({ questionNumber }) => {
 
   return (
     <div className="questionCont">
-        <audio ref={soundRef} />
         <>
           {pointsMessage.length === 0 ? (
             <div className='questionSubCont'>

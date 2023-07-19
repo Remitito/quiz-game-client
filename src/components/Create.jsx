@@ -1,11 +1,16 @@
 import '../assets/stylesheets/create.css'
 import { useState } from 'react'
 import axios from 'axios'
+import { CopyOutlined } from '@ant-design/icons'
+import { IoLogoGameControllerA } from "react-icons/io";
+import { useNavigate } from 'react-router';
 
 export const Create = () => {
     const [quizName, setQuizName] = useState('')
     const [quizId, setQuizId] = useState('')
     const [questions, setQuestions] = useState('')
+    const [copyText, setCopyText] = useState('Copy URL')
+    const navigate = useNavigate()
 
     const makeQuestions = () => {
         const splitByLine = questions.split('\n')
@@ -19,6 +24,17 @@ export const Create = () => {
         return questionsArray
     }
     
+    const copyToClipboard = (id) => {
+        console.log("YEs")
+        navigator.clipboard.writeText(id)
+      .then(() => {
+        setCopyText("URL Copied!");
+      })
+      .catch((error) => {
+        console.error("Failed to copy to clipboard:", error);
+      });
+    }
+
     const createQuiz = () => {
         const questions = makeQuestions()
         axios
@@ -58,7 +74,15 @@ export const Create = () => {
                 :
                 <>
                     <h1 className='createTitle'>Quiz Created!</h1>
-                    {quizId}
+                    <div className='copyCont' onClick={() => copyToClipboard(quizId)}>
+                        {copyText}
+                        <CopyOutlined />
+                    </div>
+                    <div className='playCont' 
+                    onClick={() => navigate(`/play/${quizId}`)}>
+                        Play Now
+                        <IoLogoGameControllerA/>
+                    </div>
                 </>}
             </>
         </div>
