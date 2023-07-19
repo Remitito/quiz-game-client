@@ -33,7 +33,7 @@ export const MysteryBox = ({ correctSound, currentTeam, finishTurn, wrongSound }
       setPointsVisible(true);
       setTimeout(() => {
         setPointsVisible(false);
-      }, 2000);
+      }, 1000);
     } else {
       playSound(wrongSound);
       setPointsVisible(true);
@@ -62,9 +62,8 @@ export const MysteryBox = ({ correctSound, currentTeam, finishTurn, wrongSound }
       <label className="pointsTotal">Points gained: {totalPoints}</label>
       <div className="boxPointsCont">
         {!pointsVisible ? (
-          <div className={'iconCont'}>
+          <div className={'iconCont'} onClick={() => openBox()}>
             <SlPresent
-              onClick={openBox}
               className="boxIcon"
             />
           </div>

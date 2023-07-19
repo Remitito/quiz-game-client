@@ -23,7 +23,7 @@ export const SkipTurn = ({finishTurn}) => {
         playSound()
         setTimeout(() => {
             finishTurn()
-        }, 1500)
+        }, 750)
     }
 
     return (

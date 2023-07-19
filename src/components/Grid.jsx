@@ -14,6 +14,7 @@ export const Grid = () => {
     const [completedSquares, setCompletedSquares] = useState([]);
     let currentSquare = useSelector((state) => state.game.currentSquare)
     const dispatch = useDispatch()
+    const navigate = useNavigate()
     const squares = useSelector((state) => state.setup.squares)
     const squareValues = useSelector((state) => state.setup.squareValues)
     const fonts = ["4rem", "3rem", "3rem"] // depending on total square number
@@ -26,7 +27,7 @@ export const Grid = () => {
 
     const loadGridSquares = () => {
         if(completedSquares.length === squares) {
-            useNavigate('/finish')
+            navigate('/finish')
             return
         }
         let squareElements = []

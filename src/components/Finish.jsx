@@ -5,6 +5,7 @@ import { useState, useRef, useEffect } from 'react';
 import {Col, Row} from 'antd'
 import saxMan from '../assets/images/saxMan.gif'
 import saxManSound from '../assets/audios/saxMan.mp3'
+import { useNavigate } from 'react-router';
 
 
 export const Finish = () => {
@@ -14,6 +15,7 @@ export const Finish = () => {
     const [winningTeams, setWinningTeams] = useState([]);
     const soundRef = useRef(null);
     const [audio, setAudio] = useState(null); 
+    const navigate = useNavigate()
   
     useEffect(() => {
       return () => {
@@ -55,7 +57,7 @@ export const Finish = () => {
     const playAgain = () => {
       stopSong(); 
       dispatch(resetAllScores());
-      dispatch(setCurrentScreen('setup'));
+      navigate('/setup')
     };
 
 
