@@ -111,7 +111,7 @@ export const StopMoving = ({finishTurn}) => {
                     <div>
                         <label className='bonusTitle'>Press Stop At the Right Time</label>
                         <div className="boxCont">
-                            <label onClick={() => handleClick(0)} className={boxOneClass}>50</label>
+                            <label onClick={() => handleClick(0)} className={boxOneClass}>-50</label>
                             <label onClick={() => handleClick(1)} className={boxTwoClass}>0</label>
                             <label onClick={() => handleClick(2)} className={boxThreeClass}>+50</label>
                         </div>

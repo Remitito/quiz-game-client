@@ -1,13 +1,30 @@
 import { useDispatch, useSelector } from 'react-redux'
+import { useEffect } from 'react';
 import { setTeamScore } from '../../slices/gameSlice';
 import { FaGift } from "react-icons/fa";
 import './bonusStylesheets/RockPaperScissors.css'
+import winnerSound from '../../assets/audios/correct.mp3';
 
 export const RockPaperScissors = ({image, points, finishTurn, teamColors}) => {
     const dispatch = useDispatch()
     const teams = useSelector((state) => state.setup.teams)
     let currentTeam = useSelector((state) => state.game.currentTeam)
     const teamScores = useSelector((state) => state.game.teamScores)
+
+    useEffect(() => {
+        const audio = new Audio(winnerSound);
+        audio.preload = 'auto';
+
+        return () => {
+            audio.pause()
+            audio.src = ''
+        }
+      }, []);
+    
+    const playSound = (sound) => {
+        const audio = new Audio(winnerSound);
+        audio.play();
+    };
 
     const showTeamOptions = () => {
         let teamElements = []
@@ -26,7 +43,10 @@ export const RockPaperScissors = ({image, points, finishTurn, teamColors}) => {
     const handleTeamClick = (selectedTeam) => { 
         const selectedTeamNewTotal = teamScores[selectedTeam - 1] + points
         dispatch(setTeamScore({team: selectedTeam - 1, amount: selectedTeamNewTotal}))
-        finishTurn()
+        playSound(winnerSound)
+        setTimeout(() => {
+        }, 1500)
+        finishTurn();
     }
 
     return (

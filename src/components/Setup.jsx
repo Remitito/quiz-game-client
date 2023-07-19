@@ -1,7 +1,7 @@
 import {Button, Col, ConfigProvider, InputNumber, Radio, Row, Slider} from 'antd'
 import {Circle, CircleCont, SetupSquare, SetupSquareCont} from '../assets/styledComponents/NumberShapes'
 import '../assets/stylesheets/setup.css'
-import {useState} from 'react'
+import {useEffect, useState} from 'react'
 import {RightCircleOutlined, UserOutlined} from '@ant-design/icons'
 import { useDispatch, useSelector } from 'react-redux'
 import { setNumOfTeams, setSquares, setBonusSquares } from '../slices/setupSlice'
@@ -11,7 +11,8 @@ import { Bonus } from './Bonus'
 import Toggle from 'react-styled-toggle'
 import { current } from '@reduxjs/toolkit'
 import { useNavigate } from 'react-router';
-
+import { setCurrentSquare } from '../slices/gameSlice'
+import popSound from '../assets/audios/pop.mp3'
 
 export const Setup = () => {
     const [numberOfTeams, setNumberOfTeams] = useState(4)
@@ -21,12 +22,33 @@ export const Setup = () => {
     const dispatch = useDispatch()
     const navigate = useNavigate()
 
+    useEffect(() => {
+        const audio = new Audio(popSound);
+        audio.preload = 'auto';
+
+        return () => {
+            audio.pause()
+            audio.src = ''
+        }
+      }, []);
+
+    const playSound = () => {
+        const audio = new Audio(popSound);
+        audio.play();
+    };
+
+    const handleSettingChange = (func) => {
+        playSound()
+        func()
+    }
+
     const confirm = () => {
         const squareValues = assignSquareValues(squares, bonusSquares, questions.length)
         dispatch(setSquareValues(squareValues))
         dispatch(setNumOfTeams(numberOfTeams))
         dispatch(setSquares(squares))
         dispatch(setBonusSquares(bonusSquares))
+        dispatch(setCurrentSquare(["none", 0]))
         navigate('/grid')
     }
 
@@ -46,18 +68,18 @@ export const Setup = () => {
                     <Col span={12} className='setupColumn'>
                         <div className='teamContainer'>
                             <div className={numberOfTeams === 2 ? 'teamOptionSelected' : 'teamOption'}
-                            onClick={() => setNumberOfTeams(2)}>
+                            onClick={() => handleSettingChange(setNumberOfTeams(2))}>
                                 <UserOutlined className='teamIcon'/>
                                 <UserOutlined className='teamIcon'/>
                             </div>
                             <div className={numberOfTeams === 3 ? 'teamOptionSelected' : 'teamOption'}
-                            onClick={() => setNumberOfTeams(3)}>
+                            onClick={() => handleSettingChange(setNumberOfTeams(3))}>
                                 <UserOutlined className='teamIcon'/>
                                 <UserOutlined className='teamIcon'/>
                                 <UserOutlined className='teamIcon'/>
                             </div>
                             <div className={numberOfTeams === 4 ? 'teamOptionSelected' : 'teamOption'}
-                            onClick={() => setNumberOfTeams(4)}>
+                            onClick={() => handleSettingChange(setNumberOfTeams(4))}>
                                 <UserOutlined className='teamIcon'/>
                                 <UserOutlined className='teamIcon'/>
                                 <UserOutlined className='teamIcon'/>
@@ -67,9 +89,9 @@ export const Setup = () => {
                     </Col>
                 <Col span={12} className='setupColumn'>
                         <SetupSquareCont>
-                            <SetupSquare selected={squares === 20} onClick={() => setSquaresLocal(20)}>20</SetupSquare>
-                            <SetupSquare selected={squares === 30} onClick={() => setSquaresLocal(30)}>30</SetupSquare>
-                            <SetupSquare selected={squares === 40} onClick={() => setSquaresLocal(40)}>40</SetupSquare>
+                            <SetupSquare selected={squares === 20} onClick={() => handleSettingChange(setSquaresLocal(20))}>20</SetupSquare>
+                            <SetupSquare selected={squares === 30} onClick={() => handleSettingChange(setSquaresLocal(30))}>30</SetupSquare>
+                            <SetupSquare selected={squares === 40} onClick={() => handleSettingChange(setSquaresLocal(40))}>40</SetupSquare>
                         </SetupSquareCont>
                 </Col>
                 </Row>
@@ -80,12 +102,12 @@ export const Setup = () => {
                                 <Toggle translate={45} sliderWidth={25} width={80} height={40} 
                                 backgroundColorChecked={"#EBA63F"} backgroundColorUnchecked={"#1d1d2c"}
                                 backgroundColorButton={"#F7F4E9"} checked={bonusSquares} 
-                                onChange={() => setBonusSquaresLocal(currentState => !currentState)}
+                                onChange={() => handleSettingChange(setBonusSquaresLocal(currentState => !currentState))}
                                 />
                         </div>
                     </Col>
                     <Col span={12} className='setupColumn'>
-                        <button className='startGameButton' onClick={() => confirm()}>
+                        <button className='startGameButton' onClick={() => handleSettingChange(confirm())}>
                             <RightCircleOutlined className='startGameIcon'/>
                             Start Game
                         </button>

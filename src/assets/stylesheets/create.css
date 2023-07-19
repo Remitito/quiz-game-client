@@ -32,17 +32,18 @@
 
 .singleLineInput {
     font-size: 2rem;
-    height: 100%;
     padding: 1%;
     width: 80%;
 }
 
 .sectionRow {
+
     display: flex;
     flex-direction: row;
     justify-content: center;
-    height: 100px;
+    height: 80px;
     margin-top: 20px;    
+    
 }
 
 .questionInput {

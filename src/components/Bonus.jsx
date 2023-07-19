@@ -1,7 +1,8 @@
 import '../assets/stylesheets/bonus.css'
 import { useDispatch, useSelector } from 'react-redux'
+import { useNavigate } from 'react-router'
 import { setCurrentScreen, setCurrentSquare, setCurrentTeam} from '../slices/gameSlice'
-import { GiveTakePoints } from './bonuses/GiveTakePoints'
+import { TakePoints } from './bonuses/TakePoints'
 import { ResetAllScores } from './bonuses/ResetAllScores'
 import { SkipTurn } from './bonuses/SkipTurn'
 import { PickAgain } from './bonuses/PickAgain'
@@ -32,11 +33,10 @@ export const Bonus = ({bonusNumber}) => {
         dispatch(setCurrentScreen("grid"))
     }
 
-    // bonus types: 12
     const bonusComponents = [
-        <GiveTakePoints teamColors={teamColors} points={50} finishTurn={finishTurn} />,
-        <GiveTakePoints teamColors={teamColors} points={-50} finishTurn={finishTurn} />,
-        <GiveTakePoints teamColors={teamColors} points={-25} finishTurn={finishTurn} />,
+        <TakePoints teamColors={teamColors} points={50} finishTurn={finishTurn} />,
+        <TakePoints teamColors={teamColors} points={-50} finishTurn={finishTurn} />,
+        <TakePoints teamColors={teamColors} points={-25} finishTurn={finishTurn} />,
         <ResetAllScores finishTurn={finishTurn}/>,
         <SkipTurn finishTurn={finishTurn}/>,
         <PickAgain/>,
@@ -49,18 +49,18 @@ export const Bonus = ({bonusNumber}) => {
         <RockPaperScissors image={rps} teamColors={teamColors} points={50} finishTurn={finishTurn}/>,
         <RockPaperScissors image={rps} teamColors={teamColors} points={50} finishTurn={finishTurn}/>,
         <RockPaperScissors image={rps} teamColors={teamColors} points={50} finishTurn={finishTurn}/>,
-        <ChooseOne  correctSound={correctSound} wrongSound={wrongSound} finishTurn={finishTurn}/>,
-        <ChooseOne  correctSound={correctSound} wrongSound={wrongSound} finishTurn={finishTurn}/>,
-        <ChooseOne  correctSound={correctSound} wrongSound={wrongSound} finishTurn={finishTurn}/>,
+        <ChooseOne correctSound={correctSound} wrongSound={wrongSound} finishTurn={finishTurn}/>,
+        <ChooseOne correctSound={correctSound} wrongSound={wrongSound} finishTurn={finishTurn}/>,
+        <ChooseOne correctSound={correctSound} wrongSound={wrongSound} finishTurn={finishTurn}/>,
         <StopMoving finishTurn={finishTurn}/>,
         <StopMoving finishTurn={finishTurn}/>
     ]
 
     return (
         <div className='bonusCont'>
-            {bonusComponents[bonusNumber]}
-            {/* {bonusComponents[bonusComponents.length - 3]} */}
-            {/* {bonusComponents[10]} */}
+            {/* {bonusComponents[bonusNumber]} */}
+            {bonusComponents[bonusComponents.length - 1]}
+            {/* {bonusComponents[3]} */}
         </div>
     )
 }

@@ -14,10 +14,9 @@ export const SearchOfficial = () => {
     const dispatch = useDispatch();
     const navigate = useNavigate()
 
-    useEffect(() => {
+    useEffect(() => { // when first starting up making multiple calls to the API makes it faster
         getOfficialQuizNames()
-        getOfficialQuizNames()
-    }, []);
+    });
 
     const getOfficialQuizNames = () => {
         axios

@@ -2,12 +2,29 @@ import { useDispatch, useSelector } from 'react-redux'
 import { setTeamScore } from '../../slices/gameSlice';
 import { FaGift } from "react-icons/fa";
 import { BsMagnetFill } from "react-icons/bs";
+import { useEffect } from 'react';
+import magnetSound from '../../assets/audios/magnet.mp3'
 
-export const GiveTakePoints = ({points, finishTurn, teamColors}) => {
+export const TakePoints = ({points, finishTurn, teamColors}) => {
     const dispatch = useDispatch()
     const teams = useSelector((state) => state.setup.teams)
     let currentTeam = useSelector((state) => state.game.currentTeam)
     const teamScores = useSelector((state) => state.game.teamScores)
+
+    useEffect(() => {
+        const audio = new Audio(magnetSound);
+        audio.preload = 'auto';
+
+        return () => {
+            audio.pause()
+            audio.src = ''
+        }
+      }, []);
+
+    const playSound = () => {
+        const audio = new Audio(magnetSound);
+        audio.play();
+    };
 
     const showTeamOptions = () => {
         let teamElements = []
@@ -36,6 +53,7 @@ export const GiveTakePoints = ({points, finishTurn, teamColors}) => {
         const selectedTeamNewTotal = teamScores[selectedTeam - 1] + points
         dispatch(setTeamScore({team: currentTeam - 1, amount: currentTeamNewTotal}))
         dispatch(setTeamScore({team: selectedTeam - 1, amount: selectedTeamNewTotal}))
+        playSound()
         finishTurn()
     }
 

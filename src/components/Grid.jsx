@@ -1,11 +1,12 @@
 import { useSelector, useDispatch } from 'react-redux'
 import { useState } from 'react'
+import { useNavigate } from 'react-router'
 import { Bonus } from './Bonus'
 import { Empty } from './Empty'
 import { Question } from './Question'
 import {Scores} from './Scores'
 import {Row, Col} from 'antd'
-import { setCurrentSquare, setCurrentScreen } from '../slices/gameSlice'
+import { setCurrentSquare } from '../slices/gameSlice'
 import { GridSquareCont, GridSquare } from '../assets/styledComponents/NumberShapes'
 import '../assets/stylesheets/grid.css'
 
@@ -25,7 +26,7 @@ export const Grid = () => {
 
     const loadGridSquares = () => {
         if(completedSquares.length === squares) {
-            dispatch(setCurrentScreen("finish"))
+            useNavigate('/finish')
             return
         }
         let squareElements = []

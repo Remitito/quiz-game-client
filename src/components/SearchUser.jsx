@@ -37,7 +37,7 @@ export const SearchUser = () => {
     })
         .then(response => {
             dispatch(setQuestions(response.data.questions));
-            dispatch(setCurrentScreen("setup"));
+            navigate("/setup");
         })
         .catch(error => {
             console.log(error)

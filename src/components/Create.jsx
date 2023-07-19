@@ -40,7 +40,7 @@ export const Create = () => {
                     <h1 className='createTitle'>Create a Quiz</h1>
                     <div className='sectionRow'>
                         <label className='sectionName'>Title:</label>
-                        <input value={quizName} onChange={(e) => setQuizName(e.target.value)} className='singleLineInput'></input>
+                        <input value={quizName} onChange={(e) => setQuizName(e.target.value)} className='singleLineInput'/>
                     </div>
                     <div className='questionSection'>
                         <label style={{marginBottom: "10px"}}>Enter 1 question per line in this format:</label>
