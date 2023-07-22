@@ -25,8 +25,8 @@ export const Create = () => {
     }
     
     const copyToClipboard = (id) => {
-        console.log("YEs")
-        navigator.clipboard.writeText(id)
+        const quizUrl = `https://inquizitive-api.onrender.com/${id}`
+        navigator.clipboard.writeText(quizUrl)
       .then(() => {
         setCopyText("URL Copied!");
       })
