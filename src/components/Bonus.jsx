@@ -35,10 +35,7 @@ export const Bonus = ({bonusNumber}) => {
 
     const bonusComponents = [
         <TakePoints teamColors={teamColors} points={50} finishTurn={finishTurn} />,
-        <TakePoints teamColors={teamColors} points={25} finishTurn={finishTurn} />,
         <TakePoints teamColors={teamColors} points={-50} finishTurn={finishTurn} />,
-        <TakePoints teamColors={teamColors} points={-25} finishTurn={finishTurn} />,
-        <ResetAllScores finishTurn={finishTurn}/>,
         <ResetAllScores finishTurn={finishTurn}/>,
         <SkipTurn finishTurn={finishTurn}/>,
         <PickAgain/>,
@@ -46,15 +43,10 @@ export const Bonus = ({bonusNumber}) => {
         <SwitchScores currentTeam={currentTeam} finishTurn={finishTurn} numOfTeams={numOfTeams} teamColors={teamColors}/>,
         <MysteryBox correctSound={correctSound} currentTeam={currentTeam} finishTurn={finishTurn} wrongSound={wrongSound}/>,
         <MysteryBox correctSound={correctSound} currentTeam={currentTeam} finishTurn={finishTurn} wrongSound={wrongSound}/>,
-        <MysteryBox correctSound={correctSound} currentTeam={currentTeam} finishTurn={finishTurn} wrongSound={wrongSound}/>,
-        <MysteryBox correctSound={correctSound} currentTeam={currentTeam} finishTurn={finishTurn} wrongSound={wrongSound}/>,
-        <RockPaperScissors image={rps} teamColors={teamColors} points={50} finishTurn={finishTurn}/>,
         <RockPaperScissors image={rps} teamColors={teamColors} points={50} finishTurn={finishTurn}/>,
         <RockPaperScissors image={rps} teamColors={teamColors} points={50} finishTurn={finishTurn}/>,
         <ChooseOne correctSound={correctSound} wrongSound={wrongSound} finishTurn={finishTurn}/>,
         <ChooseOne correctSound={correctSound} wrongSound={wrongSound} finishTurn={finishTurn}/>,
-        <ChooseOne correctSound={correctSound} wrongSound={wrongSound} finishTurn={finishTurn}/>,
-        <StopMoving finishTurn={finishTurn}/>,
         <StopMoving finishTurn={finishTurn}/>,
         <StopMoving finishTurn={finishTurn}/>
     ]
