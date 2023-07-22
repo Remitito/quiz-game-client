@@ -10,24 +10,13 @@ import { LoadingContainer, LoadingSpinner } from '../assets/styledComponents/Loa
 // https://inquizitive-api.onrender.com
 
 export const SearchOfficial = () => {
-    const [quizzes, setQuizzes] = useState([]);
+    // set them manually to save initial load time
+    const [quizzes, setQuizzes] = useState([
+        "Country_Names.json", "First_and_Second_Conditional.json", "Past_Participles.json", 
+        "Past_Simple_vs_Past_Continuous.json", "Present_Perfect.json"
+    ]);
     const dispatch = useDispatch();
     const navigate = useNavigate()
-
-    useEffect(() => { // when first starting up making multiple calls to the API makes it faster
-        getOfficialQuizNames()
-    });
-
-    const getOfficialQuizNames = () => {
-        axios
-        .get("https://inquizitive-api.onrender.com/names/official")
-        .then((response) => {
-          setQuizzes(response.data.files);
-        })
-        .catch((error) => {
-          console.error("Error fetching quizzes:", error);
-        });
-    }
 
     const selectOfficialQuiz = (quizIndex) => {
       const selectedQuiz = quizzes[quizIndex];
@@ -49,7 +38,7 @@ export const SearchOfficial = () => {
         const className = index % 2 === 0 ? 'quizEven' : 'quizOdd';
         return (
             <div onClick={() => selectOfficialQuiz(index)} className={className} key={index}>
-                <label>{quiz.split('.')[0]}</label>
+                <label>{quiz.replaceAll('_', ' ').split('.')[0]}</label>
             </div>
         )});
 
