@@ -4,13 +4,18 @@ import axios from 'axios'
 import { CopyOutlined } from '@ant-design/icons'
 import { IoLogoGameControllerA } from "react-icons/io";
 import { useNavigate } from 'react-router';
+import { setQuestions } from '../slices/setupSlice';
+import { useDispatch } from 'react-redux';
 
 export const Create = () => {
     const [quizName, setQuizName] = useState('')
     const [quizId, setQuizId] = useState('')
-    const [questions, setQuestions] = useState('')
+    const [questions, setQuestionsLocal] = useState('')
+    const [questionArray, setQuestionArray] = useState([])
     const [copyText, setCopyText] = useState('Copy URL')
+
     const navigate = useNavigate()
+    const dispatch = useDispatch()
 
     const makeQuestions = () => {
         const splitByLine = questions.split('\n')
@@ -21,11 +26,12 @@ export const Create = () => {
             const answer = current[1]
             questionsArray.push({prompt: prompt, answer: answer, type: "normal"})
         }
+        setQuestionArray(questionsArray)
         return questionsArray
     }
     
     const copyToClipboard = (id) => {
-        const quizUrl = `https://inquizitive-api.onrender.com/${id}`
+        const quizUrl = `https://inquizitive-api.onrender.com/play/${id}`
         navigator.clipboard.writeText(quizUrl)
       .then(() => {
         setCopyText("URL Copied!");
@@ -33,6 +39,11 @@ export const Create = () => {
       .catch((error) => {
         console.error("Failed to copy to clipboard:", error);
       });
+    }
+
+    const playNow = () => {
+        dispatch(setQuestions(questionArray))
+        navigate('/setup')
     }
 
     const createQuiz = () => {
@@ -65,7 +76,7 @@ export const Create = () => {
                         <label className='exampleInput'>
                             {'Name a European city --- Paris'}
                         </label>
-                        <textarea value={questions} onChange={(e) => setQuestions(e.target.value)} placeholder='Question/prompt --- Answer' 
+                        <textarea value={questions} onChange={(e) => setQuestionsLocal(e.target.value)} placeholder='Question/prompt --- Answer' 
                         className='questionInput'/>
                     </div>
                     <button onClick={() => createQuiz()} className='createButton'>Create</button>
@@ -73,12 +84,12 @@ export const Create = () => {
                 :
                 <>
                     <h1 className='createTitle'>Quiz Created!</h1>
-                    <div className='copyCont' onClick={() => copyToClipboard(quizId)}>
+                    {/* <div className='copyCont' onClick={() => copyToClipboard(quizId)}>
                         {copyText}
                         <CopyOutlined />
-                    </div>
+                    </div> */}
                     <div className='playCont' 
-                    onClick={() => navigate(`/play/${quizId}`)}>
+                    onClick={() => playNow()}>
                         Play Now
                         <IoLogoGameControllerA/>
                     </div>
