@@ -133,7 +133,7 @@ export const StopMoving = ({finishTurn}) => {
 
     return (
         <div className="bonusSubCont">
-            <audio ref={soundRef} />
+            <audio />
                     <div>
                         <label className='bonusTitle'>Press Stop At the Right Time</label>
                         <div className="boxCont">

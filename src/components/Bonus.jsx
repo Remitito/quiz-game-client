@@ -1,6 +1,7 @@
 import '../assets/stylesheets/bonus.css'
 import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate } from 'react-router'
+import { useEffect } from 'react'
 import { setCurrentScreen, setCurrentSquare, setCurrentTeam} from '../slices/gameSlice'
 import { TakePoints } from './bonuses/TakePoints'
 import { ResetAllScores } from './bonuses/ResetAllScores'
