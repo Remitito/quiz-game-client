@@ -13,6 +13,7 @@ export const LoadingContainer = styled.div`
   display: flex;
   justify-content: center;
   font-size: 2rem;
+  margin-bottom: 50px;
   align-items: center;
 `;
 

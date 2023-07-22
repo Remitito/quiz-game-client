@@ -14,8 +14,13 @@ export const SearchUser = () => {
     const navigate = useNavigate()
   
     useEffect(() => {
-      getUserQuizNames()
-    }, []);
+        setTimeout(() => {
+            getUserQuizNames()
+        }, 3000)
+    if(quizzes.length === 0) {
+        getUserQuizNames()
+    }
+    });
 
     const getUserQuizNames = () => {
         axios

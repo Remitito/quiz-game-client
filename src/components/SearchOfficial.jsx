@@ -10,6 +10,17 @@ import { LoadingContainer, LoadingSpinner } from '../assets/styledComponents/Loa
 // https://inquizitive-api.onrender.com
 
 export const SearchOfficial = () => {
+    useEffect(() => { // make a request to the user part so that it begins loading straight away
+        axios
+        .get("https://inquizitive-api.onrender.com/names/user")
+        .then((response) => {
+            console.log(response.data);
+        })
+        .catch((error) => {
+          console.error("Error fetching quizzes:", error);
+        });
+    }, [])
+
     // set them manually to save initial load time
     const [quizzes, setQuizzes] = useState([
         "Country_Names.json", "First_and_Second_Conditional.json", "Past_Participles.json", 
