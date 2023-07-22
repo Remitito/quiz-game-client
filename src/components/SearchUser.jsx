@@ -10,17 +10,24 @@ import { useNavigate } from 'react-router'
 
 export const SearchUser = () => {
     const [quizzes, setQuizzes] = useState([]);
+    const [retryCount, setRetryCount] = useState(0)
     const dispatch = useDispatch();
     const navigate = useNavigate()
   
     useEffect(() => {
         setTimeout(() => {
             getUserQuizNames()
-        }, 3000)
-    if(quizzes.length === 0) {
-        getUserQuizNames()
-    }
-    });
+        }, 2000)
+    }, []);
+
+    useEffect(() => {
+        const retryTimer = setTimeout(() => {
+            if (quizzes.length === 0) {
+              getUserQuizNames()
+            }
+          }, 2000);
+          return () => clearTimeout(retryTimer)
+    }, [quizzes.length, retryCount])
 
     const getUserQuizNames = () => {
         axios
