@@ -40,7 +40,6 @@ export const Create = () => {
         axios
         .post('https://inquizitive-api.onrender.com/uploadQuiz', { title: quizName, questions: questions })
         .then(response => {
-          console.log(response.data);
           setQuizId(response.data.quizId)
         })
         .catch(error => {
