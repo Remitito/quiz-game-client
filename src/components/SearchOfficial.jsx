@@ -12,27 +12,25 @@ import { LoadingContainer, LoadingSpinner } from '../assets/styledComponents/Loa
 export const SearchOfficial = () => {
     // set them manually to save initial load time
     const [quizzes, setQuizzes] = useState([
-        "Country_Names.json", "First_and_Second_Conditional.json", "Past_Participles.json", 
-        "Past_Simple_vs_Past_Continuous.json", "Present_Perfect.json"
+        "Country_Names", "First_and_Second_Conditional", "Past_Participles", 
+        "Past_Simple_vs_Past_Continuous", "Present_Perfect"
     ]);
     const dispatch = useDispatch();
     const navigate = useNavigate()
 
     const selectOfficialQuiz = (quizIndex) => {
-      const selectedQuiz = quizzes[quizIndex];
-      axios.get("https://inquizitive-api.onrender.com/quiz/official", {
-      params: {
-          filename: selectedQuiz
-      },
-    })
-    .then(response => {
-        dispatch(setQuestions(response.data.questions));
-        navigate('/setup')
-    })
-    .catch(error => {
-        console.log(error)
-    })
-    };
+        const selectedQuiz = quizzes[quizIndex];
+        
+        import(`../assets/quizzes/${selectedQuiz}.json` /* @vite-ignore */)
+          .then((module) => {
+            const questions = module.default.questions;
+            dispatch(setQuestions(questions));
+            navigate('/setup');
+          })
+          .catch((error) => {
+            console.error('Error fetching data:', error);
+          });
+      };
 
     const officialQuizItems = quizzes.map((quiz, index) => {
         const className = index % 2 === 0 ? 'quizEven' : 'quizOdd';
