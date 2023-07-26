@@ -10,6 +10,7 @@ import { useDispatch } from 'react-redux';
 export const Create = () => {
     const [quizName, setQuizName] = useState('')
     const [quizId, setQuizId] = useState('')
+    const [errorMsg, setErrorMsg] = useState('')
     const [questions, setQuestionsLocal] = useState('')
     const [questionArray, setQuestionArray] = useState([])
     const [copyText, setCopyText] = useState('Copy URL')
@@ -17,18 +18,45 @@ export const Create = () => {
     const navigate = useNavigate()
     const dispatch = useDispatch()
 
-    const makeQuestions = () => {
-        const splitByLine = questions.split('\n')
-        const questionsArray = []
-        while (splitByLine.length > 0) { 
-            const current = splitByLine.pop().split('---')
-            const prompt = current[0]
-            const answer = current[1]
-            questionsArray.push({prompt: prompt, answer: answer, type: "normal"})
+    const errorCheck = () => {
+        if(quizName.length < 4) {
+            setErrorMsg("Choose a title of at least 4 characters")
+            return false
         }
-        setQuestionArray(questionsArray)
-        return questionsArray
+        if(quizName.length > 35) {
+            setErrorMsg("Choose a title no longer than 35 characters")
+            return false
+        }
+        const splitByLine = questions.split('\n').filter((line) => line.trim() !== '');
+        if(splitByLine.length < 5) {
+            setErrorMsg("Please add at least 5 questions")
+            return false
+        }
+        if(splitByLine.length > 30) {
+            setErrorMsg("No more than 30 questions")
+            return false
+        }
+        for(let i = 0; i < splitByLine.length; i++) {
+            if(!splitByLine[i].includes('---')) {
+                setErrorMsg("Make sure all questions and answers are separated by '---'")
+                return false
+            }
+        }
+        return true
     }
+
+    const makeQuestions = () => {
+          const splitByLine = questions.split('\n').filter((line) => line.trim() !== '');
+          const questionsArray = [];
+          while (splitByLine.length > 0) {
+            const current = splitByLine.pop().split('---');
+            const prompt = current[0];
+            const answer = current[1];
+            questionsArray.push({ prompt: prompt, answer: answer, type: 'normal' });
+          }
+          setQuestionArray(questionsArray);
+          return questionsArray;
+      };
     
     const copyToClipboard = (id) => {
         const quizUrl = `https://inquizitive-api.onrender.com/play/${id}`
@@ -47,15 +75,22 @@ export const Create = () => {
     }
 
     const createQuiz = () => {
-        const questions = makeQuestions()
-        axios
-        .post('https://inquizitive-api.onrender.com/uploadQuiz', { title: quizName, questions: questions })
-        .then(response => {
-          setQuizId(response.data.quizId)
-        })
-        .catch(error => {
-          console.log(error);
-        });
+        if(errorCheck()) {
+            const questions = makeQuestions()
+            axios
+            .post('https://inquizitive-api.onrender.com/uploadQuiz', { title: quizName, questions: questions })
+            .then(response => {
+              setQuizId(response.data.quizId)
+            })
+            .catch(error => {
+              console.log(error);
+            });
+        }
+    } 
+
+    const updateName = (val) => {
+        setQuizName(val)
+        setErrorMsg('')
     } 
 
     return (
@@ -66,16 +101,24 @@ export const Create = () => {
                     <h1 className='createTitle'>Create a Quiz</h1>
                     <div className='sectionRow'>
                         <label className='sectionName'>Title:</label>
-                        <input value={quizName} onChange={(e) => setQuizName(e.target.value)} className='singleLineInput'/>
+                        <input value={quizName} onChange={(e) => updateName(e.target.value)} className='singleLineInput'/>
                     </div>
                     <div className='questionSection'>
-                        <label style={{marginBottom: "10px"}}>Enter 1 question per line in this format:</label>
-                        <label className='exampleInput'>
-                            {'What is 1 + 1? --- 2'}
-                        </label>
-                        <label className='exampleInput'>
-                            {'Name a European city --- Paris'}
-                        </label>
+                        {errorMsg.length === 0 ?
+                            <div className='exampleCont'>
+                                <label style={{marginBottom: "10px"}}>Enter 1 question per line in this format:</label>
+                                <label className='exampleInput'>
+                                    {'What is 1 + 1? --- 2'}
+                                </label>
+                                <label className='exampleInput'>
+                                    {'Name a European city --- Paris'}
+                                </label>
+                            </div>
+                            :
+                            <div className='exampleCont'>
+                                <label className='errorMsg'>{errorMsg}</label>
+                            </div>
+                        }
                         <textarea value={questions} onChange={(e) => setQuestionsLocal(e.target.value)} placeholder='Question/prompt --- Answer' 
                         className='questionInput'/>
                     </div>

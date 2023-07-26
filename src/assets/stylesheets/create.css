@@ -39,6 +39,19 @@
     font-family: 'Kanit', sans-serif;
 }
 
+.errorMsg {
+    color: red;
+    font-size: 4rem;
+    margin-bottom: 10px;
+}
+
+.exampleCont {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;    
+    height: 200px;
+}
+
 .exampleInput {
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     margin: auto;
