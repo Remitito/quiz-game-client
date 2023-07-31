@@ -9,8 +9,8 @@
     margin-bottom: 20px;
     box-shadow: 5px 5px #1d1d2c;
     font-size: 1.5rem;
-    font-family: 'Sigmar', cursive;
-    margin-left: 30px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    margin-left: 50px;
     padding: 10px;
 }
 
@@ -21,12 +21,14 @@
     display: flex;
     flex-direction: column;
     margin-top: 90px;
-    font-family: 'Sigmar', cursive;
     margin-bottom: 30px;
     text-align: center;
 }
 
 .searchTopRow {
+    align-items: center;
+    justify-content: space-evenly;
+    height: 100px;
     width: 100%;
 }
 
@@ -48,13 +50,7 @@
     background-color: #ffece6;
 }
 
-.sectionName {
-    color: #1d1d2c;
-    font-family: 'Sigmar', cursive;
-    font-weight: 100;
-    margin-bottom: 40px;
-    margin-top: 5px;
-}
+
 
 .quizList {
     margin-bottom: 20px;
