@@ -6,8 +6,7 @@ import { useNavigate } from 'react-router';
 import { useDispatch } from 'react-redux'
 import {setQuestions} from '../slices/setupSlice'
 import { LoadingContainer, LoadingSpinner } from '../assets/styledComponents/Loading'
-
-// https://inquizitive-api.onrender.com
+import {BsFillArrowRightCircleFill} from 'react-icons/bs'
 
 export const SearchOfficial = () => {
     // set them manually to save initial load time
@@ -46,7 +45,10 @@ export const SearchOfficial = () => {
             <Col className='searchCont' span={14}>
                 <div className='searchTopRow'>
                     <label className='sectionName'>Official Quizzes</label>
-                    <button onClick={() => navigate('/searchUser')} className='searchButton'>User Quizzes</button>
+                    <div className='searchButton'>
+                        User Quizzes<BsFillArrowRightCircleFill onClick={() => navigate('/searchUser')}
+                        className='searchButtonIcon'></BsFillArrowRightCircleFill>
+                    </div>
                 </div>
                 <>
                     {quizzes.length > 0 ? 

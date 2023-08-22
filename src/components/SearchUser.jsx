@@ -7,6 +7,7 @@ import {setQuestions} from '../slices/setupSlice'
 import {setCurrentScreen} from '../slices/gameSlice'
 import { LoadingContainer, LoadingSpinner } from '../assets/styledComponents/Loading'
 import { useNavigate } from 'react-router'
+import {BsFillArrowRightCircleFill} from 'react-icons/bs'
 
 export const SearchUser = () => {
     const [quizzes, setQuizzes] = useState([]);
@@ -71,7 +72,9 @@ export const SearchUser = () => {
             <Col className='searchCont' span={14}>
                 <div className='searchTopRow'>
                     <label className='sectionName'>User Quizzes</label>
-                    <button onClick={() => navigate('/searchOfficial')} className='searchButton'>Official Quizzes</button>
+                    <div className='searchButton'>
+                            Official Quizzes<BsFillArrowRightCircleFill onClick={() => navigate('/searchOfficial')} className='searchButtonIcon'></BsFillArrowRightCircleFill>
+                    </div>
                 </div>
                 <>
                     {quizzes.length > 0 ? 
