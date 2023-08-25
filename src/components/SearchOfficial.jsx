@@ -8,6 +8,8 @@ import {setQuestions} from '../slices/setupSlice'
 import { LoadingContainer, LoadingSpinner } from '../assets/styledComponents/Loading'
 import {BsFillArrowLeftCircleFill} from 'react-icons/bs'
 import {BsFillArrowRightCircleFill} from 'react-icons/bs'
+import {RiExchangeFill} from "react-icons/ri"
+
 
 export const SearchOfficial = () => {
     // set them manually to save initial load time
@@ -76,7 +78,8 @@ export const SearchOfficial = () => {
                     <div className='sectionName'>Official Quizzes</div>
                     <div className='searchButtonCont'>
                         <button className='searchButton' onClick={() => navigate('/searchUser')}>
-                            User Quizzes
+                        <RiExchangeFill className='changeLogo'/>
+                        <label>User Quizzes</label>
                         </button>
                     </div>
                 </div>

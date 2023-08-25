@@ -9,6 +9,7 @@ import { LoadingContainer, LoadingSpinner } from '../assets/styledComponents/Loa
 import { useNavigate } from 'react-router'
 import {BsFillArrowLeftCircleFill} from 'react-icons/bs'
 import {BsFillArrowRightCircleFill} from 'react-icons/bs'
+import {RiExchangeFill} from "react-icons/ri"
 
 
 export const SearchUser = () => {
@@ -100,10 +101,13 @@ export const SearchUser = () => {
                                 className='pageArrows'/>
                         </div>
                     </div>
-                    <div className='sectionName'>User Quizzes</div>
+                    <div className='sectionName'>
+                        User Quizzes
+                    </div>
                     <div className='searchButtonCont'>
-                        <button className='searchButton' onClick={() => navigate('/searchOfficial')}>
-                            Official Quizzes
+                    <button className='searchButton' onClick={() => navigate('/searchOfficial')}>
+                        <RiExchangeFill className='changeLogo'/>
+                        <label>Official Quizzes</label>
                         </button>
                     </div>
                 </div>
