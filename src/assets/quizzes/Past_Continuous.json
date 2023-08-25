@@ -1,0 +1,55 @@
+{
+    "title": "Past Continuous Quiz",
+    "questions": [
+      {
+        "prompt": "Fill in the blank: 'While she _______ (study), the phone rang.'",
+        "answer": "was studying",
+        "type": "normal"
+      },
+      {
+        "prompt": "Spot the mistake: 'They was playing football when it started to rain.'",
+        "answer": "was playing",
+        "type": "normal"
+      },
+      {
+        "prompt": "Fill in the blank: 'I _______ (not listen) to music when he arrived.'",
+        "answer": "was not listening",
+        "type": "normal"
+      },
+      {
+        "prompt": "Spot the mistake: 'She were reading a book when the power went out.'",
+        "answer": "were reading",
+        "type": "normal"
+      },
+      {
+        "prompt": "Fill in the blank: 'The kids _______ (play) in the garden all afternoon.'",
+        "answer": "were playing",
+        "type": "normal"
+      },
+      {
+        "prompt": "Spot the mistake: 'It was raining while they was walking to the store.'",
+        "answer": "was walking",
+        "type": "normal"
+      },
+      {
+        "prompt": "Fill in the blank: 'While the teacher _______ (speak), the students took notes.'",
+        "answer": "was speaking",
+        "type": "normal"
+      },
+      {
+        "prompt": "Spot the mistake: 'He was work in the garden when I saw him.'",
+        "answer": "was work",
+        "type": "normal"
+      },
+      {
+        "prompt": "Fill in the blank: 'They _______ (not watch) TV when the guests arrived.'",
+        "answer": "were not watching",
+        "type": "normal"
+      },
+      {
+        "prompt": "Spot the mistake: 'I were eating lunch when she called me.'",
+        "answer": "were eating",
+        "type": "normal"
+      }
+    ]
+}

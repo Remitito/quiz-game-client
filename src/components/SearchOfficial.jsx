@@ -6,16 +6,33 @@ import { useNavigate } from 'react-router';
 import { useDispatch } from 'react-redux'
 import {setQuestions} from '../slices/setupSlice'
 import { LoadingContainer, LoadingSpinner } from '../assets/styledComponents/Loading'
+import {BsFillArrowLeftCircleFill} from 'react-icons/bs'
 import {BsFillArrowRightCircleFill} from 'react-icons/bs'
 
 export const SearchOfficial = () => {
     // set them manually to save initial load time
     const [quizzes, setQuizzes] = useState([
         "Country_Names", "First_and_Second_Conditional", "Past_Participles", 
-        "Past_Simple_vs_Past_Continuous", "Present_Perfect"
+        "Past_Simple_vs_Past_Continuous", "Present_Perfect", "Just_Yet_Already", "Mixed_Future_Tenses",
+        "Past_Continuous", "Present_Simple_Passive", "Reported_Speech", "Zero_Conditional",
+        "Future_Continuous", "Future_Passive"
     ]);
+    const [pageNum, setPageNum] = useState(1)
+    const pages = (Math.ceil(quizzes.length / 10))
     const dispatch = useDispatch();
     const navigate = useNavigate()
+
+    const nextPage = () => {
+        if(pageNum + 1 <= pages) {
+            setPageNum(pageNum + 1)
+        }
+    }
+
+    const lastPage = () => {
+        if(pageNum - 1 > 0) {
+            setPageNum(pageNum - 1)
+        }
+    }
 
     const selectOfficialQuiz = (quizIndex) => {
         const selectedQuiz = quizzes[quizIndex];
@@ -31,23 +48,36 @@ export const SearchOfficial = () => {
           });
       };
 
-    const officialQuizItems = quizzes.map((quiz, index) => {
-        const className = index % 2 === 0 ? 'quizEven' : 'quizOdd';
-        return (
-            <div onClick={() => selectOfficialQuiz(index)} className={className} key={index}>
-                <label>{quiz.replaceAll('_', ' ').split('.')[0]}</label>
-            </div>
-        )});
-
+      const startIndex = (pageNum - 1) * 8;
+      const endIndex = pageNum * 8;
+      
+      const officialQuizItems = quizzes.slice(startIndex, endIndex).map((quiz, index) => {
+          const className = index % 2 === 0 ? 'quizEven' : 'quizOdd';
+          return (
+              <div onClick={() => selectOfficialQuiz(startIndex + index)} className={className} key={startIndex + index}>
+                  <label>{quiz.replaceAll('_', ' ').split('.')[0]}</label>
+              </div>
+          );
+      });
+      
     return (
         <Row>
-            <Col span={5}/>
-            <Col className='searchCont' span={14}>
+            <Col span={2}/>
+            <Col className='searchCont' span={20}>
                 <div className='searchTopRow'>
-                    <label className='sectionName'>Official Quizzes</label>
-                    <div className='searchButton'>
-                        User Quizzes<BsFillArrowRightCircleFill onClick={() => navigate('/searchUser')}
-                        className='searchButtonIcon'></BsFillArrowRightCircleFill>
+                    <div className='pageCont'>Page {pageNum} / {pages}
+                        <div className='arrowsCont'>
+                            <BsFillArrowLeftCircleFill onClick={() => lastPage()}
+                                className='pageArrows'/>
+                            <BsFillArrowRightCircleFill onClick={() => nextPage()}
+                                className='pageArrows'/>
+                        </div>
+                    </div>
+                    <div className='sectionName'>Official Quizzes</div>
+                    <div className='searchButtonCont'>
+                        <button className='searchButton' onClick={() => navigate('/searchUser')}>
+                            User Quizzes
+                        </button>
                     </div>
                 </div>
                 <>
@@ -63,7 +93,7 @@ export const SearchOfficial = () => {
                     }
                 </>  
             </Col>
-            <Col span={5}/>
+            <Col span={2}/>
         </Row>
     )
 }

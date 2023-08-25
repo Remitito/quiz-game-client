@@ -1,0 +1,55 @@
+{
+    "title": "Just/Yet/Already with Present Perfect Quiz",
+    "questions": [
+      {
+        "prompt": "Fill in the blank: 'I've _______ (finish) my homework.'",
+        "answer": "just finished",
+        "type": "normal"
+      },
+      {
+        "prompt": "Spot the mistake: 'He's just come to the party.'",
+        "answer": "No mistake",
+        "type": "normal"
+      },
+      {
+        "prompt": "Fill in the blank: 'Have you done your chores _______?'",
+        "answer": "yet",
+        "type": "normal"
+      },
+      {
+        "prompt": "Spot the mistake: 'She's yet finished the report.'",
+        "answer": "yet finished",
+        "type": "normal"
+      },
+      {
+        "prompt": "Fill in the blank: 'They've _______ seen that movie twice.'",
+        "answer": "already",
+        "type": "normal"
+      },
+      {
+        "prompt": "Spot the mistake: 'I've yet to eat breakfast.'",
+        "answer": "No mistake",
+        "type": "normal"
+      },
+      {
+        "prompt": "Fill in the blank: 'She's _______ been to Paris.'",
+        "answer": "already",
+        "type": "normal"
+      },
+      {
+        "prompt": "Spot the mistake: 'They've just not arrived at the station.'",
+        "answer": "just not",
+        "type": "normal"
+      },
+      {
+        "prompt": "Fill in the blank: 'We haven't received the mail _______.'",
+        "answer": "yet",
+        "type": "normal"
+      },
+      {
+        "prompt": "Spot the mistake: 'He's already don't buy the tickets.'",
+        "answer": "already don't buy",
+        "type": "normal"
+      }
+    ]
+}

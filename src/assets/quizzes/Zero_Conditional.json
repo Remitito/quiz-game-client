@@ -1,0 +1,55 @@
+{
+    "title": "Zero Conditional Quiz",
+    "questions": [
+      {
+        "prompt": "Complete the sentence: 'If water reaches 100°C, it _______.'",
+        "answer": "boils",
+        "type": "normal"
+      },
+      {
+        "prompt": "Complete the sentence: 'If you don't water plants, they _______.'",
+        "answer": "die",
+        "type": "normal"
+      },
+      {
+        "prompt": "Complete the sentence: 'If the sun sets, it gets _______.'",
+        "answer": "dark",
+        "type": "normal"
+      },
+      {
+        "prompt": "Complete the sentence: 'If you touch fire, it _______.'",
+        "answer": "burns",
+        "type": "normal"
+      },
+      {
+        "prompt": "Complete the sentence: 'Ice _______ if you leave it out in the sun.'",
+        "answer": "melts",
+        "type": "normal"
+      },
+      {
+        "prompt": "Complete the sentence: 'If it rains, the grass _______.'",
+        "answer": "grows",
+        "type": "normal"
+      },
+      {
+        "prompt": "Complete the sentence: 'Birds _______ if you scare them.'",
+        "answer": "fly",
+        "type": "normal"
+      },
+      {
+        "prompt": "Complete the sentence: 'If you drop something, it _______.'",
+        "answer": "falls",
+        "type": "normal"
+      },
+      {
+        "prompt": "Complete the sentence: 'If you heat metal, it _______.'",
+        "answer": "expands",
+        "type": "normal"
+      },
+      {
+        "prompt": "Complete the sentence: 'If you don't eat for a long time, you feel _______.'",
+        "answer": "hungry",
+        "type": "normal"
+      }
+    ]
+}

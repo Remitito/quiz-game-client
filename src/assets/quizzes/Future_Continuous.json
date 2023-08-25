@@ -1,0 +1,105 @@
+{
+    "title": "Future Continuous Quiz",
+    "questions": [
+      {
+        "prompt": "Fill in the blank: 'At 5 o'clock tomorrow, I _______ (work) on my project.'",
+        "answer": "will be working",
+        "type": "normal"
+      },
+      {
+        "prompt": "Spot the mistake: 'She will be go to the market at this time tomorrow.'",
+        "answer": "will be go",
+        "type": "normal"
+      },
+      {
+        "prompt": "Change the sentence to future continuous tense: 'I am reading a book.'",
+        "answer": "I will be reading a book.",
+        "type": "normal"
+      },
+      {
+        "prompt": "Fill in the blank: 'They _______ (not travel) to Europe this time next week.'",
+        "answer": "will not be traveling",
+        "type": "normal"
+      },
+      {
+        "prompt": "Spot the mistake: 'We will playing soccer at 3 pm.'",
+        "answer": "will playing",
+        "type": "normal"
+      },
+      {
+        "prompt": "Change the sentence to future continuous tense: 'She is singing.'",
+        "answer": "She will be singing.",
+        "type": "normal"
+      },
+      {
+        "prompt": "Fill in the blank: 'Next summer, they _______ (celebrate) their 10th anniversary.'",
+        "answer": "will be celebrating",
+        "type": "normal"
+      },
+      {
+        "prompt": "Spot the mistake: 'This time next year, he will be live in Japan.'",
+        "answer": "will be live",
+        "type": "normal"
+      },
+      {
+        "prompt": "Change the sentence to future continuous tense: 'They are playing video games.'",
+        "answer": "They will be playing video games.",
+        "type": "normal"
+      },
+      {
+        "prompt": "Spot the mistake: 'She will be not attending the meeting.'",
+        "answer": "will be not",
+        "type": "normal"
+      },
+      {
+        "prompt": "Fill in the blank: 'By 10 o'clock, they _______ (watch) the movie for over an hour.'",
+        "answer": "will have been watching",
+        "type": "normal"
+      },
+      {
+        "prompt": "Change the sentence to future continuous tense: 'He is cooking dinner.'",
+        "answer": "He will be cooking dinner.",
+        "type": "normal"
+      },
+      {
+        "prompt": "Spot the mistake: 'At noon tomorrow, she will be swim in the pool.'",
+        "answer": "will be swim",
+        "type": "normal"
+      },
+      {
+        "prompt": "Change the sentence to future continuous tense: 'They are studying for the exam.'",
+        "answer": "They will be studying for the exam.",
+        "type": "normal"
+      },
+      {
+        "prompt": "Fill in the blank: 'Don't call me at 7 pm because I _______ (have) dinner.'",
+        "answer": "will be having",
+        "type": "normal"
+      },
+      {
+        "prompt": "Spot the mistake: 'This time next month, we will be travel to Italy.'",
+        "answer": "will be travel",
+        "type": "normal"
+      },
+      {
+        "prompt": "Change the sentence to future continuous tense: 'You are writing a letter.'",
+        "answer": "You will be writing a letter.",
+        "type": "normal"
+      },
+      {
+        "prompt": "Fill in the blank: 'In the evening, I _______ (relax) at home.'",
+        "answer": "will be relaxing",
+        "type": "normal"
+      },
+      {
+        "prompt": "Spot the mistake: 'I will be not playing tennis tomorrow.'",
+        "answer": "will be not",
+        "type": "normal"
+      },
+      {
+        "prompt": "Change the sentence to future continuous tense: 'She is cleaning her room.'",
+        "answer": "She will be cleaning her room.",
+        "type": "normal"
+      }
+    ]
+}

@@ -1,0 +1,55 @@
+{
+    "title": "Present Simple Passive Quiz",
+    "questions": [
+      {
+        "prompt": "Fill in the blank: 'English _______ (speak) in many countries.'",
+        "answer": "is spoken",
+        "type": "normal"
+      },
+      {
+        "prompt": "Spot the mistake: 'The book was wrote by George Orwell.'",
+        "answer": "was wrote",
+        "type": "normal"
+      },
+      {
+        "prompt": "Fill in the blank: 'The artwork _______ (display) in the main hall.'",
+        "answer": "is displayed",
+        "type": "normal"
+      },
+      {
+        "prompt": "Spot the mistake: 'These shoes is made in Italy.'",
+        "answer": "is made",
+        "type": "normal"
+      },
+      {
+        "prompt": "Fill in the blank: 'The documentary _______ (produce) by a famous director.'",
+        "answer": "is produced",
+        "type": "normal"
+      },
+      {
+        "prompt": "Spot the mistake: 'Bread are eaten with most meals in many countries.'",
+        "answer": "are eaten",
+        "type": "normal"
+      },
+      {
+        "prompt": "Fill in the blank: 'The news _______ (broadcast) every evening at 7 pm.'",
+        "answer": "is broadcast",
+        "type": "normal"
+      },
+      {
+        "prompt": "Spot the mistake: 'The conference are held annually.'",
+        "answer": "are held",
+        "type": "normal"
+      },
+      {
+        "prompt": "Fill in the blank: 'The letters _______ (deliver) every morning.'",
+        "answer": "are delivered",
+        "type": "normal"
+      },
+      {
+        "prompt": "Spot the mistake: 'The building is design by a famous architect.'",
+        "answer": "is design",
+        "type": "normal"
+      }
+    ]
+}

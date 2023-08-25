@@ -1,0 +1,55 @@
+{
+    "title": "Reported Speech Quiz",
+    "questions": [
+      {
+        "prompt": "Transform the sentence to reported speech: 'She said, \"I am going to the store.\"'",
+        "answer": "She said she was going to the store.",
+        "type": "normal"
+      },
+      {
+        "prompt": "Spot the mistake: 'He said that he will come to the party.'",
+        "answer": "will come",
+        "type": "normal"
+      },
+      {
+        "prompt": "Transform the sentence to reported speech: '\"Do you like ice cream?\" he asked.'",
+        "answer": "He asked if I liked ice cream.",
+        "type": "normal"
+      },
+      {
+        "prompt": "Spot the mistake: 'She said that she can play the piano.'",
+        "answer": "can play",
+        "type": "normal"
+      },
+      {
+        "prompt": "Transform the sentence to reported speech: '\"I have finished my work,\" he said.'",
+        "answer": "He said he had finished his work.",
+        "type": "normal"
+      },
+      {
+        "prompt": "Spot the mistake: 'They told that they are going to the cinema.'",
+        "answer": "told that",
+        "type": "normal"
+      },
+      {
+        "prompt": "Transform the sentence to reported speech: '\"I didn't take the money,\" she said.'",
+        "answer": "She said she hadn't taken the money.",
+        "type": "normal"
+      },
+      {
+        "prompt": "Spot the mistake: 'He asked what time does the show start.'",
+        "answer": "does the show start",
+        "type": "normal"
+      },
+      {
+        "prompt": "Transform the sentence to reported speech: '\"We'll meet at the station,\" they said.'",
+        "answer": "They said they would meet at the station.",
+        "type": "normal"
+      },
+      {
+        "prompt": "Spot the mistake: 'She told she was feeling sick.'",
+        "answer": "told she was",
+        "type": "normal"
+      }
+    ]
+}

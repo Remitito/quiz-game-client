@@ -1,0 +1,105 @@
+{
+    "title": "Future Passive Quiz",
+    "questions": [
+      {
+        "prompt": "Fill in the blank: 'The building _______ (complete) by the end of next year.'",
+        "answer": "will be completed",
+        "type": "normal"
+      },
+      {
+        "prompt": "Spot the mistake: 'The documents will be send by her tomorrow.'",
+        "answer": "will be send",
+        "type": "normal"
+      },
+      {
+        "prompt": "Change the sentence to future passive tense: 'They will launch the product.'",
+        "answer": "The product will be launched.",
+        "type": "normal"
+      },
+      {
+        "prompt": "Fill in the blank: 'The project _______ (not approve) by the committee.'",
+        "answer": "will not be approved",
+        "type": "normal"
+      },
+      {
+        "prompt": "Spot the mistake: 'By next year, a new school will built in the area.'",
+        "answer": "will built",
+        "type": "normal"
+      },
+      {
+        "prompt": "Change the sentence to future passive tense: 'She will present the award.'",
+        "answer": "The award will be presented by her.",
+        "type": "normal"
+      },
+      {
+        "prompt": "Fill in the blank: 'All the arrangements _______ (handle) by the event manager.'",
+        "answer": "will be handled",
+        "type": "normal"
+      },
+      {
+        "prompt": "Spot the mistake: 'The experiment will be conduct next week.'",
+        "answer": "will be conduct",
+        "type": "normal"
+      },
+      {
+        "prompt": "Change the sentence to future passive tense: 'They will fix the computer.'",
+        "answer": "The computer will be fixed.",
+        "type": "normal"
+      },
+      {
+        "prompt": "Fill in the blank: 'A new law _______ (enact) next year.'",
+        "answer": "will be enacted",
+        "type": "normal"
+      },
+      {
+        "prompt": "Spot the mistake: 'The painting will be display in the museum.'",
+        "answer": "will be display",
+        "type": "normal"
+      },
+      {
+        "prompt": "Change the sentence to future passive tense: 'He will teach the course.'",
+        "answer": "The course will be taught by him.",
+        "type": "normal"
+      },
+      {
+        "prompt": "Fill in the blank: 'The work _______ (finish) by 5 pm tomorrow.'",
+        "answer": "will be finished",
+        "type": "normal"
+      },
+      {
+        "prompt": "Spot the mistake: 'The new policy will be implement next month.'",
+        "answer": "will be implement",
+        "type": "normal"
+      },
+      {
+        "prompt": "Change the sentence to future passive tense: 'She will write the book.'",
+        "answer": "The book will be written by her.",
+        "type": "normal"
+      },
+      {
+        "prompt": "Fill in the blank: 'The event _______ (organize) by a team of professionals.'",
+        "answer": "will be organized",
+        "type": "normal"
+      },
+      {
+        "prompt": "Spot the mistake: 'A meeting will be hold on Friday.'",
+        "answer": "will be hold",
+        "type": "normal"
+      },
+      {
+        "prompt": "Change the sentence to future passive tense: 'They will prepare the meal.'",
+        "answer": "The meal will be prepared by them.",
+        "type": "normal"
+      },
+      {
+        "prompt": "Fill in the blank: 'The final report _______ (submit) next week.'",
+        "answer": "will be submitted",
+        "type": "normal"
+      },
+      {
+        "prompt": "Spot the mistake: 'The movie will be watch by many.'",
+        "answer": "will be watch",
+        "type": "normal"
+      }
+    ]
+}
