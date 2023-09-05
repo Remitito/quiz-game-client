@@ -1,0 +1,105 @@
+{
+    "title": "Adverbs Quiz",
+    "questions": [
+      {
+        "prompt": "Fill in the blank: 'He runs _______ (fast/fastly).'",
+        "answer": "fast",
+        "type": "normal"
+      },
+      {
+        "prompt": "Spot the mistake: 'She sings beautiful.'",
+        "answer": "beautiful (beautifully)",
+        "type": "normal"
+      },
+      {
+        "prompt": "Change the sentence to include an adverb: 'She speaks English.'",
+        "answer": "She speaks English fluently.",
+        "type": "normal"
+      },
+      {
+        "prompt": "Fill in the blank: 'They are working _______ (hard/hardly).'",
+        "answer": "hard",
+        "type": "normal"
+      },
+      {
+        "prompt": "Spot the mistake: 'He drives careful.'",
+        "answer": "careful (carefully)",
+        "type": "normal"
+      },
+      {
+        "prompt": "Change the sentence to include an adverb: 'He writes.'",
+        "answer": "He writes neatly.",
+        "type": "normal"
+      },
+      {
+        "prompt": "Fill in the blank: 'She talks _______ (loud/loudly).'",
+        "answer": "loudly",
+        "type": "normal"
+      },
+      {
+        "prompt": "Spot the mistake: 'They played terrible in the match.'",
+        "answer": "terrible (terribly)",
+        "type": "normal"
+      },
+      {
+        "prompt": "Change the sentence to include an adverb: 'She reads.'",
+        "answer": "She reads quickly.",
+        "type": "normal"
+      },
+      {
+        "prompt": "Fill in the blank: 'The story ended _______ (sad/sadly).'",
+        "answer": "sadly",
+        "type": "normal"
+      },
+      {
+        "prompt": "Spot the mistake: 'The meeting was hold recently.'",
+        "answer": "was hold (was held)",
+        "type": "normal"
+      },
+      {
+        "prompt": "Change the sentence to include an adverb: 'He ate the cake.'",
+        "answer": "He ate the cake greedily.",
+        "type": "normal"
+      },
+      {
+        "prompt": "Fill in the blank: 'She finished the test _______ (quick/quickly).'",
+        "answer": "quickly",
+        "type": "normal"
+      },
+      {
+        "prompt": "Spot the mistake: 'She looked angry at him.'",
+        "answer": "angry (angrily)",
+        "type": "normal"
+      },
+      {
+        "prompt": "Change the sentence to include an adverb: 'The cat sleeps.'",
+        "answer": "The cat sleeps soundly.",
+        "type": "normal"
+      },
+      {
+        "prompt": "Fill in the blank: 'He spoke _______ (clear/clearly).'",
+        "answer": "clearly",
+        "type": "normal"
+      },
+      {
+        "prompt": "Spot the mistake: 'She danced graceful.'",
+        "answer": "graceful (gracefully)",
+        "type": "normal"
+      },
+      {
+        "prompt": "Change the sentence to include an adverb: 'She solves puzzles.'",
+        "answer": "She solves puzzles easily.",
+        "type": "normal"
+      },
+      {
+        "prompt": "Fill in the blank: 'The teacher explained the concept _______ (simple/simply).'",
+        "answer": "simply",
+        "type": "normal"
+      },
+      {
+        "prompt": "Spot the mistake: 'He dressed sharp for the interview.'",
+        "answer": "sharp (sharply)",
+        "type": "normal"
+      }
+    ]
+}

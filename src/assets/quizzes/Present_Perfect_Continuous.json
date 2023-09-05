@@ -1,0 +1,105 @@
+{
+    "title": "Present Perfect Continuous Quiz",
+    "questions": [
+      {
+        "prompt": "Fill in the blank: 'She _______ (wait) for you for the last 30 minutes.'",
+        "answer": "has been waiting",
+        "type": "normal"
+      },
+      {
+        "prompt": "Spot the mistake: 'I have been read for three hours.'",
+        "answer": "have been read (have been reading)",
+        "type": "normal"
+      },
+      {
+        "prompt": "Change the sentence to present perfect continuous tense: 'He eats an apple.'",
+        "answer": "He has been eating an apple.",
+        "type": "normal"
+      },
+      {
+        "prompt": "Fill in the blank: 'They _______ (live) in this city for four years.'",
+        "answer": "have been living",
+        "type": "normal"
+      },
+      {
+        "prompt": "Spot the mistake: 'She has been not cooking since morning.'",
+        "answer": "has been not (has not been cooking)",
+        "type": "normal"
+      },
+      {
+        "prompt": "Change the sentence to present perfect continuous tense: 'She reads a book.'",
+        "answer": "She has been reading a book.",
+        "type": "normal"
+      },
+      {
+        "prompt": "Fill in the blank: 'The children _______ (play) in the garden all afternoon.'",
+        "answer": "have been playing",
+        "type": "normal"
+      },
+      {
+        "prompt": "Spot the mistake: 'I have been work here for five years.'",
+        "answer": "have been work (have been working)",
+        "type": "normal"
+      },
+      {
+        "prompt": "Change the sentence to present perfect continuous tense: 'They swim in the pool.'",
+        "answer": "They have been swimming in the pool.",
+        "type": "normal"
+      },
+      {
+        "prompt": "Fill in the blank: 'He _______ (write) emails since he arrived.'",
+        "answer": "has been writing",
+        "type": "normal"
+      },
+      {
+        "prompt": "Spot the mistake: 'We has been studying for the final exams.'",
+        "answer": "has been (have been studying)",
+        "type": "normal"
+      },
+      {
+        "prompt": "Change the sentence to present perfect continuous tense: 'You write a letter.'",
+        "answer": "You have been writing a letter.",
+        "type": "normal"
+      },
+      {
+        "prompt": "Fill in the blank: 'It _______ (rain) for two days straight.'",
+        "answer": "has been raining",
+        "type": "normal"
+      },
+      {
+        "prompt": "Spot the mistake: 'She have been sleeping for eight hours.'",
+        "answer": "have been (has been sleeping)",
+        "type": "normal"
+      },
+      {
+        "prompt": "Change the sentence to present perfect continuous tense: 'I watch TV.'",
+        "answer": "I have been watching TV.",
+        "type": "normal"
+      },
+      {
+        "prompt": "Fill in the blank: 'They _______ (work) on this project for a few months now.'",
+        "answer": "have been working",
+        "type": "normal"
+      },
+      {
+        "prompt": "Spot the mistake: 'He have been reading a book for two hours.'",
+        "answer": "have been (has been reading)",
+        "type": "normal"
+      },
+      {
+        "prompt": "Change the sentence to present perfect continuous tense: 'She sings.'",
+        "answer": "She has been singing.",
+        "type": "normal"
+      },
+      {
+        "prompt": "Fill in the blank: 'The dog _______ (bark) for the last 10 minutes.'",
+        "answer": "has been barking",
+        "type": "normal"
+      },
+      {
+        "prompt": "Spot the mistake: 'You has been playing soccer since afternoon.'",
+        "answer": "has been (have been playing)",
+        "type": "normal"
+      }
+    ]
+}

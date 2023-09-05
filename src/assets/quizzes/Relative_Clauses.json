@@ -1,0 +1,105 @@
+{
+    "title": "Relative Clauses Quiz",
+    "questions": [
+      {
+        "prompt": "Fill in the blank: 'The man _______ (who/whom) you met yesterday is my uncle.'",
+        "answer": "who",
+        "type": "normal"
+      },
+      {
+        "prompt": "Spot the mistake: 'The book which is it on the table is mine.'",
+        "answer": "which is it (which is)",
+        "type": "normal"
+      },
+      {
+        "prompt": "Change the sentence to include a relative clause: 'She has a new phone. It is very advanced.'",
+        "answer": "She has a new phone that is very advanced.",
+        "type": "normal"
+      },
+      {
+        "prompt": "Fill in the blank: 'The movie _______ (which/who) we watched was excellent.'",
+        "answer": "which",
+        "type": "normal"
+      },
+      {
+        "prompt": "Spot the mistake: 'The girl whom sings is my sister.'",
+        "answer": "whom sings (who sings)",
+        "type": "normal"
+      },
+      {
+        "prompt": "Change the sentence to include a relative clause: 'I read a book. It was interesting.'",
+        "answer": "I read a book that was interesting.",
+        "type": "normal"
+      },
+      {
+        "prompt": "Fill in the blank: 'The person _______ (whose/who) car was stolen reported it to the police.'",
+        "answer": "whose",
+        "type": "normal"
+      },
+      {
+        "prompt": "Spot the mistake: 'The city which I live is beautiful.'",
+        "answer": "which I live (where I live)",
+        "type": "normal"
+      },
+      {
+        "prompt": "Change the sentence to include a relative clause: 'The musician is very skilled. You mentioned him.'",
+        "answer": "The musician whom you mentioned is very skilled.",
+        "type": "normal"
+      },
+      {
+        "prompt": "Fill in the blank: 'The building _______ (where/which) they work is old.'",
+        "answer": "where",
+        "type": "normal"
+      },
+      {
+        "prompt": "Spot the mistake: 'She is the one whose her bag was stolen.'",
+        "answer": "whose her (whose)",
+        "type": "normal"
+      },
+      {
+        "prompt": "Change the sentence to include a relative clause: 'I like the painting. It hangs in the museum.'",
+        "answer": "I like the painting that hangs in the museum.",
+        "type": "normal"
+      },
+      {
+        "prompt": "Fill in the blank: 'The movie _______ (which/whose) director won an award was a blockbuster.'",
+        "answer": "whose",
+        "type": "normal"
+      },
+      {
+        "prompt": "Spot the mistake: 'The house which roof is red needs repairs.'",
+        "answer": "which roof (whose roof)",
+        "type": "normal"
+      },
+      {
+        "prompt": "Change the sentence to include a relative clause: 'She is the athlete. She won three medals.'",
+        "answer": "She is the athlete who won three medals.",
+        "type": "normal"
+      },
+      {
+        "prompt": "Fill in the blank: 'The conference _______ (that/whom) you attended was helpful.'",
+        "answer": "that",
+        "type": "normal"
+      },
+      {
+        "prompt": "Spot the mistake: 'The cake which you made it is delicious.'",
+        "answer": "which you made it (which you made)",
+        "type": "normal"
+      },
+      {
+        "prompt": "Change the sentence to include a relative clause: 'This is the place. We first met here.'",
+        "answer": "This is the place where we first met.",
+        "type": "normal"
+      },
+      {
+        "prompt": "Fill in the blank: 'He is the scientist _______ (whose/which) research has been groundbreaking.'",
+        "answer": "whose",
+        "type": "normal"
+      },
+      {
+        "prompt": "Spot the mistake: 'The team that they won the championship disbanded.'",
+        "answer": "that they won (that won)",
+        "type": "normal"
+      }
+    ]
+}

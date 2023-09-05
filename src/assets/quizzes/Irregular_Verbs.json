@@ -1,0 +1,105 @@
+{
+    "title": "Irregular Verbs Quiz",
+    "questions": [
+      {
+        "prompt": "Fill in the blank: 'She has never _______ (swim) in the ocean.'",
+        "answer": "swum",
+        "type": "normal"
+      },
+      {
+        "prompt": "Spot the mistake: 'They have already ate.'",
+        "answer": "ate",
+        "type": "normal"
+      },
+      {
+        "prompt": "Change the sentence to past tense: 'She sings beautifully.'",
+        "answer": "She sang beautifully.",
+        "type": "normal"
+      },
+      {
+        "prompt": "Fill in the blank: 'He _______ (begin) his new job last week.'",
+        "answer": "began",
+        "type": "normal"
+      },
+      {
+        "prompt": "Spot the mistake: 'She has gone to the store, she will be back shorty.'",
+        "answer": "shorty",
+        "type": "normal"
+      },
+      {
+        "prompt": "Change the sentence to past tense: 'The teacher gives the students homework.'",
+        "answer": "The teacher gave the students homework.",
+        "type": "normal"
+      },
+      {
+        "prompt": "Fill in the blank: 'I have never _______ (break) a bone.'",
+        "answer": "broken",
+        "type": "normal"
+      },
+      {
+        "prompt": "Spot the mistake: 'They have drank all the water.'",
+        "answer": "drank",
+        "type": "normal"
+      },
+      {
+        "prompt": "Change the sentence to past tense: 'She writes a letter.'",
+        "answer": "She wrote a letter.",
+        "type": "normal"
+      },
+      {
+        "prompt": "Fill in the blank: 'I have _______ (choose) the red dress for the party.'",
+        "answer": "chosen",
+        "type": "normal"
+      },
+      {
+        "prompt": "Spot the mistake: 'He has draw a beautiful painting.'",
+        "answer": "draw",
+        "type": "normal"
+      },
+      {
+        "prompt": "Change the sentence to past tense: 'I read the news.'",
+        "answer": "I read the news.",
+        "type": "normal"
+      },
+      {
+        "prompt": "Fill in the blank: 'By the time we arrived, the movie had already _______ (begin).'",
+        "answer": "begun",
+        "type": "normal"
+      },
+      {
+        "prompt": "Spot the mistake: 'I have wrote a letter to my parents.'",
+        "answer": "wrote",
+        "type": "normal"
+      },
+      {
+        "prompt": "Change the sentence to past tense: 'They come to visit us often.'",
+        "answer": "They came to visit us often.",
+        "type": "normal"
+      },
+      {
+        "prompt": "Fill in the blank: 'The story _______ (begin) interestingly.'",
+        "answer": "began",
+        "type": "normal"
+      },
+      {
+        "prompt": "Spot the mistake: 'I have never ate sushi.'",
+        "answer": "ate",
+        "type": "normal"
+      },
+      {
+        "prompt": "Change the sentence to past tense: 'She usually wears a hat.'",
+        "answer": "She usually wore a hat.",
+        "type": "normal"
+      },
+      {
+        "prompt": "Fill in the blank: 'They have _______ (swim) across the lake.'",
+        "answer": "swum",
+        "type": "normal"
+      },
+      {
+        "prompt": "Spot the mistake: 'We have ran out of milk.'",
+        "answer": "ran",
+        "type": "normal"
+      }
+    ]
+}

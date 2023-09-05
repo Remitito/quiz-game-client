@@ -16,7 +16,8 @@ export const SearchOfficial = () => {
         "Country_Names", "First_and_Second_Conditional", "Past_Participles", 
         "Past_Simple_vs_Past_Continuous", "Present_Perfect", "Just_Yet_Already", "Mixed_Future_Tenses",
         "Past_Continuous", "Present_Simple_Passive", "Reported_Speech", "Zero_Conditional",
-        "Future_Continuous", "Future_Passive"
+        "Future_Continuous", "Future_Passive", "Future_Perfect", "Irregular_Verbs", "Adverbs", 
+        "Past_Perfect_Continuous", "Present_Perfect_Continuous", "Relative_Clauses"
     ]);
     const [pageNum, setPageNum] = useState(1)
     const pages = (Math.ceil(quizzes.length / 8))
