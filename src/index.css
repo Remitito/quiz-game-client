@@ -1,5 +1,5 @@
 body {
-  background-image: url('../public/space.jpg');
+  background-image: url('/space.jpg');
   margin: 0;
 }
 
