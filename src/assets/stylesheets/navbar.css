@@ -27,6 +27,8 @@
     display: inline-block;
     animation: scaleAnimation 1.5s infinite alternate;
     padding: 15px;
+    font-size: 70px;
+    color:#E40C2B;
 }
 @keyframes scaleAnimation {
     from {
@@ -60,4 +62,20 @@
     font-family: 'Bruno Ace SC', cursive;
     font-size: 50px;
     text-align: center;
+}
+
+@media only screen and (max-width: 767px) {
+    .accountCont, .findCont {
+        display: none;
+    }
+
+    .titleCont {
+        font-size: 15px;
+    }
+    .animatedTitle {
+        font-size: 30px;
+    }
+    .navbarCont {
+        height: 70px;
+    }
 }

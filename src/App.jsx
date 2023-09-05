@@ -1,8 +1,6 @@
-import { useState } from 'react'
 import store from './store/store'
 import {Navbar} from './components/Navbar.jsx'
 import './App.css'
-import React from 'react';
 import {BrowserRouter, Routes, Route, Link} from "react-router-dom";
 import { Setup } from './components/Setup.jsx'
 import { Grid } from './components/Grid.jsx';
@@ -13,7 +11,9 @@ import { Testing } from './components/Testing.jsx';
 import { Finish } from './components/Finish.jsx';
 import { Col, Row } from 'antd';
 import { useSelector } from 'react-redux';
+import React, { useState } from 'react';
 import { Play } from './components/Play';
+import './App.css'
 
 
 function App() {
@@ -34,6 +34,7 @@ function App() {
             <Route path="/grid" element={<Grid/>} />
           </Routes>
         </div>
+        <div className='mobileWarning'>This app is designed for classrooms so is not for mobile use</div>
         </BrowserRouter>
   )
 }
