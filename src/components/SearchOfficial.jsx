@@ -12,7 +12,6 @@ import {RiExchangeFill} from "react-icons/ri"
 
 
 export const SearchOfficial = () => {
-    // set them manually to save initial load time
     const [quizzes, setQuizzes] = useState([
         "Country_Names", "First_and_Second_Conditional", "Past_Participles", 
         "Past_Simple_vs_Past_Continuous", "Present_Perfect", "Just_Yet_Already", "Mixed_Future_Tenses",
@@ -20,7 +19,7 @@ export const SearchOfficial = () => {
         "Future_Continuous", "Future_Passive"
     ]);
     const [pageNum, setPageNum] = useState(1)
-    const pages = (Math.ceil(quizzes.length / 10))
+    const pages = (Math.ceil(quizzes.length / 8))
     const dispatch = useDispatch();
     const navigate = useNavigate()
 
