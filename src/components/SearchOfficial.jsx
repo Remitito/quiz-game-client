@@ -30,7 +30,7 @@ export const SearchOfficial = () => {
     const [searchResults, setSearchResults] = useState([])
     const [warning, setWarning] = useState("")
     const [pageNum, setPageNum] = useState(1)
-    const pages = (Math.ceil(quizzes.length / 8))
+    const pages = (Math.ceil(quizzes.length / 9))
     const dispatch = useDispatch();
     const navigate = useNavigate()
 
@@ -86,8 +86,8 @@ export const SearchOfficial = () => {
           });
       };
 
-      const startIndex = (pageNum - 1) * 8;
-      const endIndex = pageNum * 8;
+      const startIndex = (pageNum - 1) * 9;
+      const endIndex = pageNum * 9;
       
       const officialQuizItems = quizzes.slice(startIndex, endIndex).map((quiz, index) => {
           const className = index % 2 === 0 ? 'quizEven' : 'quizOdd';

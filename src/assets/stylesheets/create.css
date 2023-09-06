@@ -31,12 +31,15 @@
     padding: 3%;
     text-align: center;
     width: 70%;
-}
+    box-shadow: inset 0 0 30px #000;
+    
+  }
+
 
 .createTitle {
     color: #1d1d2c;
     font-size: 4rem;
-    font-family: 'Kanit', sans-serif;
+    font-family: 'Bebas Neue';
 }
 
 .errorMsg {
@@ -53,7 +56,7 @@
 }
 
 .exampleInput {
-    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-family: 'Comic';
     margin: auto;
     width: 100%;
 }
@@ -66,8 +69,16 @@
     width: 20%;
 }
 
+.createSubHeader {
+    font-family: 'Comic';
+    font-weight: bolder;
+    font-size: 3rem;
+    text-decoration: underline;
+}
+
 .singleLineInput {
     font-size: 2rem;
+    font-family: 'Comic';
     padding: 1%;
     width: 80%;
 }
@@ -95,6 +106,7 @@
 
 .questionInput {
     margin: auto;
+    font-family: 'Comic';
     margin-top: 30px;
     min-height: 200px;
     width: 80%;

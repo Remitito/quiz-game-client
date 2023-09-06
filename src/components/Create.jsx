@@ -100,13 +100,13 @@ export const Create = () => {
                 <>
                     <h1 className='createTitle'>Create a Quiz</h1>
                     <div className='sectionRow'>
-                        <label className='sectionName'>Title:</label>
-                        <input value={quizName} onChange={(e) => updateName(e.target.value)} className='singleLineInput'/>
+                        <input placeholder='Enter a title...' 
+                        value={quizName} onChange={(e) => updateName(e.target.value)} className='singleLineInput'/>
                     </div>
                     <div className='questionSection'>
                         {errorMsg.length === 0 ?
                             <div className='exampleCont'>
-                                <label style={{marginBottom: "10px"}}>Enter 1 question per line in this format:</label>
+                                <label className='createSubHeader'>Enter 1 question per line in this format</label>
                                 <label className='exampleInput'>
                                     {'What is 1 + 1? --- 2'}
                                 </label>

@@ -10,29 +10,21 @@ import { useNavigate } from 'react-router'
 import {BsFillArrowLeftCircleFill} from 'react-icons/bs'
 import {BsFillArrowRightCircleFill} from 'react-icons/bs'
 import {RiExchangeFill} from "react-icons/ri"
-
+import {SearchOutlined} from '@ant-design/icons'
 
 export const SearchUser = () => {
+    const [originalList, setOriginalList] = useState([])
     const [quizzes, setQuizzes] = useState([]);
-    const [retryCount, setRetryCount] = useState(0)
+    const [warning, setWarning] = useState("")
     const dispatch = useDispatch();
     const navigate = useNavigate()
     const [pageNum, setPageNum] = useState(1)
-    const pages = (Math.ceil(quizzes.length / 8))
+    const pages = (Math.ceil(quizzes.length / 9))
     useEffect(() => {
         setTimeout(() => {
             getUserQuizNames()
         }, 2000)
     }, []);
-
-    useEffect(() => {
-        const retryTimer = setTimeout(() => {
-            if (quizzes.length === 0) {
-              getUserQuizNames()
-            }
-          }, 2000);
-          return () => clearTimeout(retryTimer)
-    }, [quizzes.length, retryCount])
 
     const nextPage = () => {
         if(pageNum + 1 <= pages) {
@@ -46,10 +38,37 @@ export const SearchUser = () => {
         }
     }
 
+    const handleSearch = (searchTerm) => {
+        if(searchTerm.length === 0) {
+            setQuizzes(originalList)
+        }
+        else {
+            let output = []
+            originalList.forEach((quiz) => {
+                let quizName = quiz.name.split(' ')
+                quizName.forEach((word) => {
+                    console.log(word.toLowerCase())
+                    console.log(searchTerm.toLowerCase())
+                    if(word.toLowerCase().includes(searchTerm.toLowerCase())) {
+                        output.push(quiz)
+                    }
+                })
+            })
+            if(output.length > 0) {
+                setQuizzes([...new Set(output)])
+                setWarning("")
+            }
+            else {
+                setWarning("There are no quizzes on this topic sorry!")
+            }
+        }
+    }
+
     const getUserQuizNames = () => {
         axios
         .get("https://inquizitive-api.onrender.com/names/user")
         .then((response) => {
+            setOriginalList(response.data)
             setQuizzes(response.data);
         })
         .catch((error) => {
@@ -74,8 +93,8 @@ export const SearchUser = () => {
         })
         };
 
-        const startIndex = (pageNum - 1) * 8;
-        const endIndex = pageNum * 8;
+        const startIndex = (pageNum - 1) * 9;
+        const endIndex = pageNum * 9;
         
         const userQuizItems = quizzes.slice(startIndex, endIndex).map((quiz, index) => {
             const className = index % 2 === 0 ? 'quizEven' : 'quizOdd';
@@ -109,6 +128,15 @@ export const SearchUser = () => {
                         <RiExchangeFill className='changeLogo'/>
                         <label>Official Quizzes</label>
                         </button>
+                    </div>
+                </div>
+                <div className='searchSecondRow'>
+                    <div className='searchBar'>
+                        <input className='searchInput'
+                        placeholder='Enter a quiz name'
+                        onChange={(e) => handleSearch(e.target.value)}
+                        />
+                        <SearchOutlined className='searchLogo'/>
                     </div>
                 </div>
                         <div className='quizList'>
