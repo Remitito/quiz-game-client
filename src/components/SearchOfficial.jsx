@@ -9,9 +9,17 @@ import { LoadingContainer, LoadingSpinner } from '../assets/styledComponents/Loa
 import {BsFillArrowLeftCircleFill} from 'react-icons/bs'
 import {BsFillArrowRightCircleFill} from 'react-icons/bs'
 import {RiExchangeFill} from "react-icons/ri"
+import {SearchOutlined} from '@ant-design/icons'
 
 
 export const SearchOfficial = () => {
+    const originalList = [
+        "Country_Names", "First_and_Second_Conditional", "Past_Participles", 
+        "Past_Simple_vs_Past_Continuous", "Present_Perfect", "Just_Yet_Already", "Mixed_Future_Tenses",
+        "Past_Continuous", "Present_Simple_Passive", "Reported_Speech", "Zero_Conditional",
+        "Future_Continuous", "Future_Passive", "Future_Perfect", "Irregular_Verbs", "Adverbs", 
+        "Past_Perfect_Continuous", "Present_Perfect_Continuous", "Relative_Clauses"
+    ]
     const [quizzes, setQuizzes] = useState([
         "Country_Names", "First_and_Second_Conditional", "Past_Participles", 
         "Past_Simple_vs_Past_Continuous", "Present_Perfect", "Just_Yet_Already", "Mixed_Future_Tenses",
@@ -19,6 +27,8 @@ export const SearchOfficial = () => {
         "Future_Continuous", "Future_Passive", "Future_Perfect", "Irregular_Verbs", "Adverbs", 
         "Past_Perfect_Continuous", "Present_Perfect_Continuous", "Relative_Clauses"
     ]);
+    const [searchResults, setSearchResults] = useState([])
+    const [warning, setWarning] = useState("")
     const [pageNum, setPageNum] = useState(1)
     const pages = (Math.ceil(quizzes.length / 8))
     const dispatch = useDispatch();
@@ -33,6 +43,32 @@ export const SearchOfficial = () => {
     const lastPage = () => {
         if(pageNum - 1 > 0) {
             setPageNum(pageNum - 1)
+        }
+    }
+
+    const handleSearch = (searchTerm) => {
+        if(searchTerm.length === 0) {
+            setQuizzes(originalList)
+        }
+        else {
+            let output = []
+            originalList.forEach((quiz) => {
+                let quizName = quiz.split('_')
+                quizName.forEach((word) => {
+                    console.log(word.toLowerCase())
+                    console.log(searchTerm.toLowerCase())
+                    if(word.toLowerCase().includes(searchTerm.toLowerCase())) {
+                        output.push(quiz)
+                    }
+                })
+            })
+            if(output.length > 0) {
+                setQuizzes([...new Set(output)])
+                setWarning("")
+            }
+            else {
+                setWarning("There are no quizzes on this topic sorry!")
+            }
         }
     }
 
@@ -83,16 +119,22 @@ export const SearchOfficial = () => {
                         </button>
                     </div>
                 </div>
+                <div className='searchSecondRow'>
+                    <div className='searchBar'>
+                        <input className='searchInput'
+                        placeholder='Enter a grammar topic'
+                        onChange={(e) => handleSearch(e.target.value)}
+                        />
+                        <SearchOutlined className='searchLogo'/>
+                    </div>
+                </div>
                 <>
-                    {quizzes.length > 0 ? 
+                    {warning.length === 0 ? 
                         <div className='quizList'>
                             {officialQuizItems}
                         </div>
                     :
-                    <LoadingContainer>
-                        <label className='loadingLabel'>Loading</label>
-                        <LoadingSpinner/>
-                    </LoadingContainer>
+                        <label className='warningLabel'>{warning}</label>
                     }
                 </>  
             </Col>

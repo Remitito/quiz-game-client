@@ -127,10 +127,6 @@ export const Create = () => {
                 :
                 <>
                     <h1 className='createTitle'>Quiz Created!</h1>
-                    {/* <div className='copyCont' onClick={() => copyToClipboard(quizId)}>
-                        {copyText}
-                        <CopyOutlined />
-                    </div> */}
                     <div className='playCont' 
                     onClick={() => playNow()}>
                         Play Now
