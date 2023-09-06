@@ -83,6 +83,7 @@
     border-radius: 2rem;
     color: #1d1d2c;
     display: flex;
+    justify-content: flex-start;
     flex-direction: column;
     height: 620px;
     margin-top: 90px;
@@ -127,12 +128,13 @@
 }
 
 .quizEven, .quizOdd {
+    align-self: flex-start;
     border: solid;
     border-radius: 2rem;
     font-family: 'Oswald';
     font-size: 1.8rem;
+    margin: 0 auto 20px auto; 
     padding: 20px;
-    margin: auto;
     margin-bottom: 20px;
     width: 25%;
 }
@@ -147,6 +149,7 @@
 }
 
 .quizList {
+    align-items: flex-start;
     margin-bottom: 20px;
     display: flex;
     flex-wrap: wrap;
