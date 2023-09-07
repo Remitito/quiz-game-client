@@ -21,7 +21,7 @@
 }
 
 .pageCont {
-    font-family: 'Comic';
+    font-family: 'Oswald';
     font-size: 2rem;
     width: 30%;
 }
@@ -58,7 +58,7 @@
     color: #F7F4E9;
     border-radius: 2rem;
     font-size: 2rem;
-    font-family: 'Comic';
+    font-family: 'Oswald';
     min-height: 80px;
     padding: 10px;
 }
@@ -86,9 +86,9 @@
     justify-content: flex-start;
     flex-direction: column;
     height: 620px;
-    margin-top: 90px;
+    margin-top: 140px;
     text-align: center;
-    box-shadow: inset 0 0 20px #000;
+    box-shadow: inset 0 0 10px #000;
 }
 
 .searchTopRow {
@@ -117,35 +117,41 @@
     border-radius: 2rem;
     padding: 7px;
 }
+.searchLogo:hover {
+    background-color: darkgray;
+}
 
 
 .sectionName {
     color: #1d1d2c !important;
     font-family: "Bebas Neue" !important;
-    font-size: 4rem !important;
+    font-size: 3rem !important;
     height: 60px !important;
     width: 50% !important;
 }
 
 .quizEven, .quizOdd {
     align-self: flex-start;
+    color: #1d1d2c;
     border: solid;
     border-radius: 2rem;
     font-family: 'Oswald';
-    font-size: 1.8rem;
+    font-size: 1.5rem;
     margin: 0 auto 20px auto; 
     padding: 20px;
     margin-bottom: 20px;
     width: 25%;
+    animation: shadowIn 0.5s forwards;
 }
+@keyframes shadowIn {
+    to {
+        box-shadow: 10px 10px 5px grey;
+    }
+}
+
 .quizEven:hover, .quizOdd:hover {
-    color: red;
-}
-.quizEven {
-    background-color: #f2e6ff;
-}
-.quizOdd {
-    background-color: #ffece6;
+    background-color: #1d1d2c;
+    color: #F7F4E9;
 }
 
 .quizList {
