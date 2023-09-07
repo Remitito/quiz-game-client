@@ -22,4 +22,3 @@ The live version can be found at: https://inquizitive-l7wp.onrender.com
 **Tech Stack**
 
 - This app uses React on the front end, with Redux used for state management, Axios used to make calls to the Node server, and Ant Design used sparingly to speed up styling
-- The back end was done using Node and Express, with Mongoose used to make interactions with MongoDB (where quizzes are stored) easier  
