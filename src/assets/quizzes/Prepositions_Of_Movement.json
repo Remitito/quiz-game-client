@@ -1,0 +1,105 @@
+{
+    "title": "Prepositions of Movement Quiz",
+    "questions": [
+      {
+        "prompt": "Fill in the blank: 'She is walking _______ the park (to/into).'",
+        "answer": "to",
+        "type": "normal"
+      },
+      {
+        "prompt": "Spot the mistake: 'He jumped to the river.'",
+        "answer": "to (into)",
+        "type": "normal"
+      },
+      {
+        "prompt": "Change the sentence to include a preposition of movement: 'He went the room.'",
+        "answer": "He went into the room.",
+        "type": "normal"
+      },
+      {
+        "prompt": "Fill in the blank: 'They are hiking _______ the mountain (up/into).'",
+        "answer": "up",
+        "type": "normal"
+      },
+      {
+        "prompt": "Spot the mistake: 'She ran through the door.'",
+        "answer": "through (out of or into, depending on context)",
+        "type": "normal"
+      },
+      {
+        "prompt": "Change the sentence to include a preposition of movement: 'The bird flew the window.'",
+        "answer": "The bird flew through the window.",
+        "type": "normal"
+      },
+      {
+        "prompt": "Fill in the blank: 'He dived _______ the pool (in/into).'",
+        "answer": "into",
+        "type": "normal"
+      },
+      {
+        "prompt": "Spot the mistake: 'The cat is climbing up the tree.'",
+        "answer": "No mistake.",
+        "type": "normal"
+      },
+      {
+        "prompt": "Change the sentence to include a preposition of movement: 'The kids ran the playground.'",
+        "answer": "The kids ran to the playground.",
+        "type": "normal"
+      },
+      {
+        "prompt": "Fill in the blank: 'She is heading _______ the airport (to/towards).'",
+        "answer": "to",
+        "type": "normal"
+      },
+      {
+        "prompt": "Spot the mistake: 'The train goes towards the tunnel.'",
+        "answer": "towards (into or through, depending on context)",
+        "type": "normal"
+      },
+      {
+        "prompt": "Change the sentence to include a preposition of movement: 'He walked the street.'",
+        "answer": "He walked down the street.",
+        "type": "normal"
+      },
+      {
+        "prompt": "Fill in the blank: 'She moved _______ the countryside (to/in).'",
+        "answer": "to",
+        "type": "normal"
+      },
+      {
+        "prompt": "Spot the mistake: 'He fell down the stairs.'",
+        "answer": "No mistake.",
+        "type": "normal"
+      },
+      {
+        "prompt": "Change the sentence to include a preposition of movement: 'She went the museum.'",
+        "answer": "She went to the museum.",
+        "type": "normal"
+      },
+      {
+        "prompt": "Fill in the blank: 'The ball rolled _______ the hill (down/into).'",
+        "answer": "down",
+        "type": "normal"
+      },
+      {
+        "prompt": "Spot the mistake: 'The airplane flew above the clouds.'",
+        "answer": "No mistake.",
+        "type": "normal"
+      },
+      {
+        "prompt": "Change the sentence to include a preposition of movement: 'She is swimming the lake.'",
+        "answer": "She is swimming in the lake.",
+        "type": "normal"
+      },
+      {
+        "prompt": "Fill in the blank: 'He is cycling _______ the bridge (over/under).'",
+        "answer": "over",
+        "type": "normal"
+      },
+      {
+        "prompt": "Spot the mistake: 'They walked across the park.'",
+        "answer": "No mistake.",
+        "type": "normal"
+      }
+    ]
+}

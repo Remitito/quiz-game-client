@@ -1,0 +1,105 @@
+{
+    "title": "So and Such Quiz",
+    "questions": [
+      {
+        "prompt": "Fill in the blank: 'It was _______ a beautiful day (so/such).'",
+        "answer": "such",
+        "type": "normal"
+      },
+      {
+        "prompt": "Spot the mistake: 'She was such happy about the news.'",
+        "answer": "such (so)",
+        "type": "normal"
+      },
+      {
+        "prompt": "Change the sentence to include the correct word: 'It was a cold day.'",
+        "answer": "It was such a cold day.",
+        "type": "normal"
+      },
+      {
+        "prompt": "Fill in the blank: 'He is _______ a talented musician (so/such).'",
+        "answer": "such",
+        "type": "normal"
+      },
+      {
+        "prompt": "Spot the mistake: 'It was so a great movie.'",
+        "answer": "so (such)",
+        "type": "normal"
+      },
+      {
+        "prompt": "Change the sentence to include the correct word: 'She was excited.'",
+        "answer": "She was so excited.",
+        "type": "normal"
+      },
+      {
+        "prompt": "Fill in the blank: 'It's _______ an interesting book (so/such).'",
+        "answer": "such",
+        "type": "normal"
+      },
+      {
+        "prompt": "Spot the mistake: 'I have never seen such beautiful.'",
+        "answer": "such (so)",
+        "type": "normal"
+      },
+      {
+        "prompt": "Change the sentence to include the correct word: 'The challenge was tough.'",
+        "answer": "The challenge was so tough.",
+        "type": "normal"
+      },
+      {
+        "prompt": "Fill in the blank: 'The weather is _______ nice today (so/such).'",
+        "answer": "so",
+        "type": "normal"
+      },
+      {
+        "prompt": "Spot the mistake: 'It was such warm this morning.'",
+        "answer": "such (so)",
+        "type": "normal"
+      },
+      {
+        "prompt": "Change the sentence to include the correct word: 'It was a boring lecture.'",
+        "answer": "It was such a boring lecture.",
+        "type": "normal"
+      },
+      {
+        "prompt": "Fill in the blank: 'He was _______ tired that he couldn't stay awake (so/such).'",
+        "answer": "so",
+        "type": "normal"
+      },
+      {
+        "prompt": "Spot the mistake: 'She was so a nice person.'",
+        "answer": "so (such)",
+        "type": "normal"
+      },
+      {
+        "prompt": "Change the sentence to include the correct word: 'They were happy.'",
+        "answer": "They were so happy.",
+        "type": "normal"
+      },
+      {
+        "prompt": "Fill in the blank: 'It's _______ a relief to be done with the project (so/such).'",
+        "answer": "such",
+        "type": "normal"
+      },
+      {
+        "prompt": "Spot the mistake: 'The news was so unexpected.'",
+        "answer": "No mistake.",
+        "type": "normal"
+      },
+      {
+        "prompt": "Change the sentence to include the correct word: 'It was a terrible storm.'",
+        "answer": "It was such a terrible storm.",
+        "type": "normal"
+      },
+      {
+        "prompt": "Fill in the blank: 'She was _______ upset about the result (so/such).'",
+        "answer": "so",
+        "type": "normal"
+      },
+      {
+        "prompt": "Spot the mistake: 'It was such a fascinating experience.'",
+        "answer": "No mistake.",
+        "type": "normal"
+      }
+    ]
+}

@@ -1,0 +1,105 @@
+{
+    "title": "Quantifiers Quiz",
+    "questions": [
+      {
+        "prompt": "Fill in the blank: 'There are _______ apples in the basket (a few/few).'",
+        "answer": "a few",
+        "type": "normal"
+      },
+      {
+        "prompt": "Spot the mistake: 'There are little people at the party.'",
+        "answer": "little (few)",
+        "type": "normal"
+      },
+      {
+        "prompt": "Change the sentence to include a quantifier: 'I have pens in my bag.'",
+        "answer": "I have a few pens in my bag.",
+        "type": "normal"
+      },
+      {
+        "prompt": "Fill in the blank: 'She has _______ friends in this city (a lot of/little).'",
+        "answer": "a lot of",
+        "type": "normal"
+      },
+      {
+        "prompt": "Spot the mistake: 'I have few milk for my coffee.'",
+        "answer": "few (a little)",
+        "type": "normal"
+      },
+      {
+        "prompt": "Change the sentence to include a quantifier: 'They bought books.'",
+        "answer": "They bought some books.",
+        "type": "normal"
+      },
+      {
+        "prompt": "Fill in the blank: 'He drank _______ water during his workout (a lot of/a little).'",
+        "answer": "a lot of",
+        "type": "normal"
+      },
+      {
+        "prompt": "Spot the mistake: 'She ate a little cakes at the party.'",
+        "answer": "a little (a few)",
+        "type": "normal"
+      },
+      {
+        "prompt": "Change the sentence to include a quantifier: 'They have money.'",
+        "answer": "They have a lot of money.",
+        "type": "normal"
+      },
+      {
+        "prompt": "Fill in the blank: 'There are _______ mistakes in your essay (few/a few).'",
+        "answer": "a few",
+        "type": "normal"
+      },
+      {
+        "prompt": "Spot the mistake: 'I need a lot of advice for my project.'",
+        "answer": "a lot of (some or any, because 'advice' is uncountable)",
+        "type": "normal"
+      },
+      {
+        "prompt": "Change the sentence to include a quantifier: 'There are problems in the system.'",
+        "answer": "There are some problems in the system.",
+        "type": "normal"
+      },
+      {
+        "prompt": "Fill in the blank: 'There is _______ oil left in the bottle (a little/little).'",
+        "answer": "a little",
+        "type": "normal"
+      },
+      {
+        "prompt": "Spot the mistake: 'She has little knowledge about the subject.'",
+        "answer": "No mistake.",
+        "type": "normal"
+      },
+      {
+        "prompt": "Change the sentence to include a quantifier: 'I need help with this task.'",
+        "answer": "I need some help with this task.",
+        "type": "normal"
+      },
+      {
+        "prompt": "Fill in the blank: 'There are _______ cookies left on the plate (a few/few).'",
+        "answer": "a few",
+        "type": "normal"
+      },
+      {
+        "prompt": "Spot the mistake: 'There are a few water in the glass.'",
+        "answer": "a few (a little)",
+        "type": "normal"
+      },
+      {
+        "prompt": "Change the sentence to include a quantifier: 'There is time before the meeting.'",
+        "answer": "There is some time before the meeting.",
+        "type": "normal"
+      },
+      {
+        "prompt": "Fill in the blank: 'There is _______ bread in the pantry (some/a few).'",
+        "answer": "some",
+        "type": "normal"
+      },
+      {
+        "prompt": "Spot the mistake: 'They have a lot of information about the topic.'",
+        "answer": "No mistake.",
+        "type": "normal"
+      }
+    ]
+}

@@ -1,0 +1,105 @@
+{
+    "title": "Prepositions of Space Quiz",
+    "questions": [
+      {
+        "prompt": "Fill in the blank: 'The cat is sitting _______ the table (on/over).'",
+        "answer": "on",
+        "type": "normal"
+      },
+      {
+        "prompt": "Spot the mistake: 'The dog is besides the couch.'",
+        "answer": "besides (beside)",
+        "type": "normal"
+      },
+      {
+        "prompt": "Change the sentence to include a preposition of space: 'The keys are the drawer.'",
+        "answer": "The keys are in the drawer.",
+        "type": "normal"
+      },
+      {
+        "prompt": "Fill in the blank: 'The book is placed _______ the two vases (between/beyond).'",
+        "answer": "between",
+        "type": "normal"
+      },
+      {
+        "prompt": "Spot the mistake: 'The picture is hanged on the wall.'",
+        "answer": "hanged (hung)",
+        "type": "normal"
+      },
+      {
+        "prompt": "Change the sentence to include a preposition of space: 'The ball is the box.'",
+        "answer": "The ball is in the box.",
+        "type": "normal"
+      },
+      {
+        "prompt": "Fill in the blank: 'The bird is flying _______ the trees (through/over).'",
+        "answer": "through",
+        "type": "normal"
+      },
+      {
+        "prompt": "Spot the mistake: 'She is standing at the corner of the street.'",
+        "answer": "at (on)",
+        "type": "normal"
+      },
+      {
+        "prompt": "Change the sentence to include a preposition of space: 'The painting is the wall.'",
+        "answer": "The painting is on the wall.",
+        "type": "normal"
+      },
+      {
+        "prompt": "Fill in the blank: 'The car is parked _______ the garage (in/on).'",
+        "answer": "in",
+        "type": "normal"
+      },
+      {
+        "prompt": "Spot the mistake: 'The kids are playing into the park.'",
+        "answer": "into (in)",
+        "type": "normal"
+      },
+      {
+        "prompt": "Change the sentence to include a preposition of space: 'The shoes are the shelf.'",
+        "answer": "The shoes are on the shelf.",
+        "type": "normal"
+      },
+      {
+        "prompt": "Fill in the blank: 'The lamp is placed _______ the table and the bed (between/beside).'",
+        "answer": "between",
+        "type": "normal"
+      },
+      {
+        "prompt": "Spot the mistake: 'The cat is sleeping over the bed.'",
+        "answer": "over (on)",
+        "type": "normal"
+      },
+      {
+        "prompt": "Change the sentence to include a preposition of space: 'The cookies are the jar.'",
+        "answer": "The cookies are in the jar.",
+        "type": "normal"
+      },
+      {
+        "prompt": "Fill in the blank: 'The stars are shining _______ the sky (in/on).'",
+        "answer": "in",
+        "type": "normal"
+      },
+      {
+        "prompt": "Spot the mistake: 'The books are kept besides the lamp.'",
+        "answer": "besides (beside)",
+        "type": "normal"
+      },
+      {
+        "prompt": "Change the sentence to include a preposition of space: 'The glasses are the counter.'",
+        "answer": "The glasses are on the counter.",
+        "type": "normal"
+      },
+      {
+        "prompt": "Fill in the blank: 'The tree is planted _______ the house (beside/between).'",
+        "answer": "beside",
+        "type": "normal"
+      },
+      {
+        "prompt": "Spot the mistake: 'The dog jumped over the fence and is now in the garden.'",
+        "answer": "No mistake.",
+        "type": "normal"
+      }
+    ]
+}

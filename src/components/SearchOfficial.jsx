@@ -14,18 +14,18 @@ import {SearchOutlined} from '@ant-design/icons'
 
 export const SearchOfficial = () => {
     const originalList = [
-        "Country_Names", "First_and_Second_Conditional", "Past_Participles", 
-        "Past_Simple_vs_Past_Continuous", "Present_Perfect", "Just_Yet_Already", "Mixed_Future_Tenses",
-        "Past_Continuous", "Present_Simple_Passive", "Reported_Speech", "Zero_Conditional",
-        "Future_Continuous", "Future_Passive", "Future_Perfect", "Irregular_Verbs", "Adverbs", 
-        "Past_Perfect_Continuous", "Present_Perfect_Continuous", "Relative_Clauses"
+        "Country_Names", "First_and_Second_Conditional", "Past_Participles", "Suffixes", "Too_VS_Enough", "Prepositions_Of_Space",
+        "Past_Simple_vs_Past_Continuous", "Present_Perfect", "Just_Yet_Already", "Mixed_Future_Tenses", "Prepositions_Of_Time",
+        "Past_Continuous", "Present_Simple_Passive", "Reported_Speech", "Zero_Conditional", "Prepositions_Of_Movement",
+        "Future_Continuous", "Future_Passive", "Future_Perfect", "Irregular_Verbs", "Adverbs", "Quantifiers",
+        "Past_Perfect_Continuous", "Present_Perfect_Continuous", "Relative_Clauses", "So_VS_Such"
     ]
     const [quizzes, setQuizzes] = useState([
-        "Country_Names", "First_and_Second_Conditional", "Past_Participles", 
-        "Past_Simple_vs_Past_Continuous", "Present_Perfect", "Just_Yet_Already", "Mixed_Future_Tenses",
-        "Past_Continuous", "Present_Simple_Passive", "Reported_Speech", "Zero_Conditional",
-        "Future_Continuous", "Future_Passive", "Future_Perfect", "Irregular_Verbs", "Adverbs", 
-        "Past_Perfect_Continuous", "Present_Perfect_Continuous", "Relative_Clauses"
+        "Country_Names", "First_and_Second_Conditional", "Past_Participles", "Suffixes", "Too_VS_Enough", "Prepositions_Of_Space",
+        "Past_Simple_vs_Past_Continuous", "Present_Perfect", "Just_Yet_Already", "Mixed_Future_Tenses", "Prepositions_Of_Time",
+        "Past_Continuous", "Present_Simple_Passive", "Reported_Speech", "Zero_Conditional", "Prepositions_Of_Movement",
+        "Future_Continuous", "Future_Passive", "Future_Perfect", "Irregular_Verbs", "Adverbs", "Quantifiers",
+        "Past_Perfect_Continuous", "Present_Perfect_Continuous", "Relative_Clauses", "So_VS_Such"
     ]);
     const [searchResults, setSearchResults] = useState([])
     const [warning, setWarning] = useState("")

@@ -1,0 +1,105 @@
+{
+    "title": "Prepositions of Time Quiz",
+    "questions": [
+      {
+        "prompt": "Fill in the blank: 'I will meet you _______ 5 o'clock (at/on).'",
+        "answer": "at",
+        "type": "normal"
+      },
+      {
+        "prompt": "Spot the mistake: 'She is arriving in Tuesday.'",
+        "answer": "in (on)",
+        "type": "normal"
+      },
+      {
+        "prompt": "Change the sentence to include a preposition of time: 'Her birthday is April.'",
+        "answer": "Her birthday is in April.",
+        "type": "normal"
+      },
+      {
+        "prompt": "Fill in the blank: 'They will go for a vacation _______ summer (in/on).'",
+        "answer": "in",
+        "type": "normal"
+      },
+      {
+        "prompt": "Spot the mistake: 'He usually jogs at the morning.'",
+        "answer": "at (in)",
+        "type": "normal"
+      },
+      {
+        "prompt": "Change the sentence to include a preposition of time: 'The event takes place May.'",
+        "answer": "The event takes place in May.",
+        "type": "normal"
+      },
+      {
+        "prompt": "Fill in the blank: 'She will return _______ the afternoon (in/on).'",
+        "answer": "in",
+        "type": "normal"
+      },
+      {
+        "prompt": "Spot the mistake: 'I have a meeting on 10:30 am.'",
+        "answer": "on (at)",
+        "type": "normal"
+      },
+      {
+        "prompt": "Change the sentence to include a preposition of time: 'We have a family gathering Christmas.'",
+        "answer": "We have a family gathering at Christmas.",
+        "type": "normal"
+      },
+      {
+        "prompt": "Fill in the blank: 'His presentation is scheduled _______ Monday (on/in).'",
+        "answer": "on",
+        "type": "normal"
+      },
+      {
+        "prompt": "Spot the mistake: 'We will visit our grandparents at the weekend.'",
+        "answer": "at (on)",
+        "type": "normal"
+      },
+      {
+        "prompt": "Change the sentence to include a preposition of time: 'The concert will be held the evening.'",
+        "answer": "The concert will be held in the evening.",
+        "type": "normal"
+      },
+      {
+        "prompt": "Fill in the blank: 'The store is closed _______ Sundays (on/in).'",
+        "answer": "on",
+        "type": "normal"
+      },
+      {
+        "prompt": "Spot the mistake: 'She was born in 1995, in April.'",
+        "answer": "No mistake.",
+        "type": "normal"
+      },
+      {
+        "prompt": "Change the sentence to include a preposition of time: 'The workshop starts 9 am.'",
+        "answer": "The workshop starts at 9 am.",
+        "type": "normal"
+      },
+      {
+        "prompt": "Fill in the blank: 'I like to read _______ the evenings (on/in).'",
+        "answer": "in",
+        "type": "normal"
+      },
+      {
+        "prompt": "Spot the mistake: 'He will be here on a moment.'",
+        "answer": "on (in)",
+        "type": "normal"
+      },
+      {
+        "prompt": "Change the sentence to include a preposition of time: 'We usually have a meeting Tuesday mornings.'",
+        "answer": "We usually have a meeting on Tuesday mornings.",
+        "type": "normal"
+      },
+      {
+        "prompt": "Fill in the blank: 'She has an appointment _______ the 15th of July (on/in).'",
+        "answer": "on",
+        "type": "normal"
+      },
+      {
+        "prompt": "Spot the mistake: 'I usually take a nap at the afternoon.'",
+        "answer": "at (in)",
+        "type": "normal"
+      }
+    ]
+}

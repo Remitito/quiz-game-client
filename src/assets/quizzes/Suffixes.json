@@ -1,0 +1,105 @@
+{
+    "title": "Suffixes Quiz",
+    "questions": [
+      {
+        "prompt": "Fill in the blank: 'The quality of being kind is called _______ (kindness/kindly).'",
+        "answer": "kindness",
+        "type": "normal"
+      },
+      {
+        "prompt": "Spot the mistake: 'His arrival was unexpectedness.'",
+        "answer": "unexpectedness (unexpected)",
+        "type": "normal"
+      },
+      {
+        "prompt": "Change the word to include a suffix: 'beauty'",
+        "answer": "beautiful",
+        "type": "normal"
+      },
+      {
+        "prompt": "Fill in the blank: 'Someone who reads a lot can be described as _______ (reader/readable).'",
+        "answer": "reader",
+        "type": "normal"
+      },
+      {
+        "prompt": "Spot the mistake: 'The process was simpleness.'",
+        "answer": "simpleness (simplicity)",
+        "type": "normal"
+      },
+      {
+        "prompt": "Change the word to include a suffix: 'hope'",
+        "answer": "hopeful",
+        "type": "normal"
+      },
+      {
+        "prompt": "Fill in the blank: 'Someone who writes is a _______ (writely/writer).'",
+        "answer": "writer",
+        "type": "normal"
+      },
+      {
+        "prompt": "Spot the mistake: 'His action showed carely.'",
+        "answer": "carely (carefulness)",
+        "type": "normal"
+      },
+      {
+        "prompt": "Change the word to include a suffix: 'use'",
+        "answer": "useful",
+        "type": "normal"
+      },
+      {
+        "prompt": "Fill in the blank: 'A product that can be consumed is _______ (consumable/consumed).'",
+        "answer": "consumable",
+        "type": "normal"
+      },
+      {
+        "prompt": "Spot the mistake: 'She has a lot of knowly about the subject.'",
+        "answer": "knowly (knowledge)",
+        "type": "normal"
+      },
+      {
+        "prompt": "Change the word to include a suffix: 'color'",
+        "answer": "colorful",
+        "type": "normal"
+      },
+      {
+        "prompt": "Fill in the blank: 'Someone who runs is called a _______ (runner/runnable).'",
+        "answer": "runner",
+        "type": "normal"
+      },
+      {
+        "prompt": "Spot the mistake: 'The result was satisfactor.'",
+        "answer": "satisfactor (satisfactory)",
+        "type": "normal"
+      },
+      {
+        "prompt": "Change the word to include a suffix: 'joy'",
+        "answer": "joyful",
+        "type": "normal"
+      },
+      {
+        "prompt": "Fill in the blank: 'An act that can be forgiven is _______ (forgivable/forgived).'",
+        "answer": "forgivable",
+        "type": "normal"
+      },
+      {
+        "prompt": "Spot the mistake: 'She has a lot of creativeity.'",
+        "answer": "creativeity (creativity)",
+        "type": "normal"
+      },
+      {
+        "prompt": "Change the word to include a suffix: 'comfort'",
+        "answer": "comfortable",
+        "type": "normal"
+      },
+      {
+        "prompt": "Fill in the blank: 'The quality of being real is _______ (realness/realism).'",
+        "answer": "realism",
+        "type": "normal"
+      },
+      {
+        "prompt": "Spot the mistake: 'His ability to predict is predictly.'",
+        "answer": "predictly (predictability)",
+        "type": "normal"
+      }
+    ]
+}

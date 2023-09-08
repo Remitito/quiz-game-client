@@ -25,19 +25,11 @@
 
 .animatedTitle {
     display: inline-block;
-    animation: scaleAnimation 1.5s infinite alternate;
-    padding: 15px;
     font-size: 70px;
     color:#E40C2B;
+    line-height: 170%;
 }
-@keyframes scaleAnimation {
-    from {
-      transform: scale(1);
-    }
-    to {
-      transform: scale(1.2);
-    }
-  }
+
 
 .findCont {
     display: flex;
