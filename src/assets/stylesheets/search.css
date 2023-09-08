@@ -132,6 +132,7 @@
 
 .quizEven, .quizOdd {
     align-self: flex-start;
+    box-shadow: 10px 10px 5px grey;
     color: #1d1d2c;
     border: solid;
     border-radius: 2rem;
@@ -141,12 +142,34 @@
     padding: 20px;
     margin-bottom: 20px;
     width: 25%;
-    animation: shadowIn 0.5s forwards;
+    animation-duration: 2s; 
+    animation-iteration-count: infinite; 
 }
-@keyframes shadowIn {
-    to {
-        box-shadow: 10px 10px 5px grey;
+
+@keyframes growAndShrink {
+    0%, 100% {
+        transform: scale(0.7); 
     }
+    50% {
+        transform: scale(1); 
+    }
+}
+
+
+@keyframes shrinkAndGrow {
+    0%, 100% {
+        transform: scale(1); 
+    }
+    50% {
+        transform: scale(0.7); 
+    }
+}
+.quizEven {
+    animation-name: growAndShrink;
+}
+
+.quizOdd {
+    animation-name: shrinkAndGrow;
 }
 
 .quizEven:hover, .quizOdd:hover {

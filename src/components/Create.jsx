@@ -57,17 +57,6 @@ export const Create = () => {
           setQuestionArray(questionsArray);
           return questionsArray;
       };
-    
-    const copyToClipboard = (id) => {
-        const quizUrl = `https://inquizitive-api.onrender.com/play/${id}`
-        navigator.clipboard.writeText(quizUrl)
-      .then(() => {
-        setCopyText("URL Copied!");
-      })
-      .catch((error) => {
-        console.error("Failed to copy to clipboard:", error);
-      });
-    }
 
     const playNow = () => {
         dispatch(setQuestions(questionArray))
