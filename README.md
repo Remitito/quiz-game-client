@@ -12,6 +12,10 @@ To run it locally: 1) Clone the repo 2) Enter 'npm install' in the terminal 3) E
 
 The live version can be found at: https://inquizitive-l7wp.onrender.com
 
+**API / Backend**
+
+The backend/API can be found at: https://github.com/Remitito/quiz-game-api
+
 **Features**
 
 - Users can browse existing official quizzes (made by me) or user quizzes (made by former students/colleagues)
