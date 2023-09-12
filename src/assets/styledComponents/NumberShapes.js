@@ -22,7 +22,7 @@ export const GridSquare = styled.div `
     border-radius: 1rem;
     font-size: ${props => props.font};
     margin: auto;
-    margin-bottom: ${props => props.size ===  40 ? "5px" : "15px"};
+    margin-bottom: ${props => props.size ===  40 ? "40px" : "15px"};
     margin-top: ${props => props.size ===  40 ? "5px" : "15px"};
     padding: ${props => props.size ===  40 ? "5px" : "10px"};
     text-align: center;
