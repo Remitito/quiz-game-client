@@ -3,7 +3,6 @@ import '../assets/stylesheets/navbar.css'
 import { setCurrentScreen, resetAllScores } from '../slices/gameSlice';
 import { useSelector, useDispatch } from 'react-redux';
 import {UserOutlined, SearchOutlined} from '@ant-design/icons'
-import 'animate.css';
 import { useNavigate } from 'react-router';
 
 export const Navbar = () => {
