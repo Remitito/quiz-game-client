@@ -11,7 +11,6 @@ import {BsFillArrowRightCircleFill} from 'react-icons/bs'
 import {RiExchangeFill} from "react-icons/ri"
 import {SearchOutlined} from '@ant-design/icons'
 
-
 export const SearchOfficial = () => {
     const originalList = [
         "Country_Names", "First_and_Second_Conditional", "Past_Participles", "Suffixes", "Too_VS_Enough", "Prepositions_Of_Space",
@@ -47,6 +46,7 @@ export const SearchOfficial = () => {
     }
 
     const handleSearch = (searchTerm) => {
+        setPageNum(1)
         if(searchTerm.length === 0) {
             setQuizzes(originalList)
         }

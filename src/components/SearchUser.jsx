@@ -39,6 +39,7 @@ export const SearchUser = () => {
     }
 
     const handleSearch = (searchTerm) => {
+        setPageNum(1)
         if(searchTerm.length === 0) {
             setQuizzes(originalList)
         }

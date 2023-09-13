@@ -28,18 +28,27 @@
     color: #1d1d2c;
     margin: auto;
     margin-top: 90px;
-    padding: 3%;
+    margin-bottom: 90px;
+    padding: 1%;
     text-align: center;
     width: 70%;
     box-shadow: inset 0 0 30px #000;
-    
-  }
+    transform: translateX(-200vh);
+    animation: slideIn 1s forwards;
+}
+
+@keyframes slideIn {
+    to {
+        transform: translateX(0);
+    }
+}
 
 
 .createTitle {
     color: #1d1d2c;
-    font-size: 4rem;
-    font-family: 'Bebas Neue';
+    font-family: "Bebas Neue" !important;
+    font-size: 3rem !important;
+    font-weight: 100;
 }
 
 .errorMsg {
@@ -52,27 +61,20 @@
     display: flex;
     flex-direction: column;
     justify-content: center;    
-    height: 200px;
+    height: 100px;
 }
 
 .exampleInput {
     font-family: 'Comic';
     margin: auto;
+    font-size: 2rem;
     width: 100%;
-}
-
-.sectionName {
-    color: #1d1d2c;
-    font-size: 3rem;
-    font-family: 'Kanit', sans-serif;
-    height: 100%;
-    width: 20%;
 }
 
 .createSubHeader {
     font-family: 'Comic';
     font-weight: bolder;
-    font-size: 3rem;
+    font-size: 2.5rem;
     text-decoration: underline;
 }
 
