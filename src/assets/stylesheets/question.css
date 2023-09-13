@@ -12,7 +12,7 @@
 .answer {
     color: #438945;
     font-family: 'Kanit', sans-serif;
-    font-size: 4rem;
+    font-size: 5vw;
 }
 
 .correctWrongCont {
@@ -69,7 +69,7 @@
 
 .questionPrompt {
     color: #1d1d2c;
-    font-size: 3rem;
+    font-size: 3vw;
     font-family: 'Kanit', sans-serif;
     font-weight: 1000;
     margin-bottom: 10px;

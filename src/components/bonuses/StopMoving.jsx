@@ -50,7 +50,7 @@ export const StopMoving = ({finishTurn}) => {
             setBoxOneClass("pointsBoxFlash");
             setBoxThreeClass("pointsBox");
             playBoxAnimationOne();
-          }, 100)
+          }, 150)
         );
       }
     };
@@ -63,7 +63,7 @@ export const StopMoving = ({finishTurn}) => {
             setBoxThreeClass("pointsBoxFlash");
             setBoxTwoClass("pointsBox");
             playBoxAnimationThree();
-          }, 100)
+          }, 150)
         );
       }
     };
@@ -76,7 +76,7 @@ export const StopMoving = ({finishTurn}) => {
             setBoxTwoClass("pointsBoxFlash");
             setBoxOneClass("pointsBox");
             playBoxAnimationTwo();
-          }, 100)
+          }, 150)
         );
       }
     };
@@ -115,7 +115,7 @@ export const StopMoving = ({finishTurn}) => {
           setBoxTwoClass("pointsBoxFlash");
           setBoxOneClass("pointsBox");
           playBoxAnimationTwo();
-        }, 100)
+        }, 150)
       );
   
       return () => {
@@ -137,9 +137,9 @@ export const StopMoving = ({finishTurn}) => {
                     <div>
                         <label className='bonusTitle'>Press Stop At the Right Time</label>
                         <div className="boxCont">
-                            <label onClick={() => handleClick(0)} className={boxOneClass}>-50</label>
-                            <label onClick={() => handleClick(1)} className={boxTwoClass}>0</label>
-                            <label onClick={() => handleClick(2)} className={boxThreeClass}>+50</label>
+                            <div onClick={() => handleClick(0)} className={boxOneClass}>-50</div>
+                            <div onClick={() => handleClick(1)} className={boxTwoClass}>0</div>
+                            <div onClick={() => handleClick(2)} className={boxThreeClass}>+50</div>
                         </div>
                     </div>
                     <button onClick={() => handleStop()} className="stopButton">STOP</button>
