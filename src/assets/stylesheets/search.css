@@ -15,9 +15,16 @@
     src: url('../fonts/Oswald-VariableFont_wght.ttf');
 }
 
+.loadingCont {
+    height: 70%;
+    margin: auto;
+    width: 50%;
+}
+
 .loadingLabel {
+    font-size: larger;
     margin-right: 20px;
-    font-family: 'Comic';
+    font-family: 'Oswald';
 }
 
 .pageCont {

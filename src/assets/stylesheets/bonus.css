@@ -58,11 +58,10 @@
     margin-top: 5px;
 }
 
-.errorMessage {
+.errorMsg {
     color: #e40c2b;
     font-family: 'Kanit', sans-serif;
-    font-size: 3.5rem;
-    margin: 30px 10px 30px 10px;
+    font-size: 3rem !important;
 }
 
 @keyframes flip {

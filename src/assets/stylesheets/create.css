@@ -1,24 +1,36 @@
-.copyCont, .playCont {
+.playCont, .anotherCont {
     background-color: #1d1d2c;
-    border-radius: 2rem;
+    border-radius: 5rem;
     display: flex;
-    font-size: 3rem;
+    font-size: 4rem;
     justify-content: space-evenly;
     margin: auto;
-    margin-top: 30px;
-    padding: 5px;
+    padding: 15px;
     width: 50%;
 }
 
-.copyCont {
-    color: white;
+
+
+.finishedCont {
+    display: flex;
+    flex-direction: column;
+    height: 80%;
+}
+.finishedIcon {
+    width: 30%;
+}
+.finishedLabel {
+    width: 70%;
 }
 
+.anotherCont {
+    color: pink;
+}
 .playCont {
     color: lightgreen;
 }
 
-.copyCont:hover, .playCont:hover {
+.playCont:hover, .anotherCont:hover {
     color: red;
 }
 
@@ -26,6 +38,9 @@
     background-color: #F7F4E9;
     border-radius: 2rem;
     color: #1d1d2c;
+    display: flex;
+    flex-direction: column;
+    height: 700px;
     margin: auto;
     margin-top: 90px;
     margin-bottom: 90px;
@@ -49,6 +64,7 @@
     font-family: "Bebas Neue" !important;
     font-size: 3rem !important;
     font-weight: 100;
+    margin-top: 50px;
 }
 
 .errorMsg {
@@ -82,11 +98,10 @@
     font-size: 2rem;
     font-family: 'Comic';
     padding: 1%;
-    width: 80%;
+    width: 70%;
 }
 
 .sectionRow {
-
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -111,7 +126,7 @@
     font-family: 'Comic';
     margin-top: 30px;
     min-height: 200px;
-    width: 80%;
+    width: 100%;
     font-size: 2rem;
     padding: 1%;
 }
@@ -124,6 +139,7 @@
     font-family: 'Kanit', sans-serif;
     margin: auto;
     margin-top: 30px;
+    width: 70%;
 }
 
 .createButton {
@@ -132,8 +148,10 @@
     box-shadow: 5px 5px #1d1d2c;
     font-size: 2rem;
     font-family: 'Sigmar', cursive;
+    margin: auto;
     margin-top: 20px;
     padding: 15px;
+    width: 30%;
 }
 .createButton:hover {
     border-color: #e40c2b;

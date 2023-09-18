@@ -2,7 +2,7 @@ import '../assets/stylesheets/create.css'
 import { useState } from 'react'
 import axios from 'axios'
 import { CopyOutlined } from '@ant-design/icons'
-import { IoLogoGameControllerA } from "react-icons/io";
+import { IoLogoGameControllerA, IoMdCreate } from "react-icons/io";
 import { useNavigate } from 'react-router';
 import { setQuestions } from '../slices/setupSlice';
 import { useDispatch } from 'react-redux';
@@ -13,7 +13,6 @@ export const Create = () => {
     const [errorMsg, setErrorMsg] = useState('')
     const [questions, setQuestionsLocal] = useState('')
     const [questionArray, setQuestionArray] = useState([])
-    const [copyText, setCopyText] = useState('Copy URL')
 
     const navigate = useNavigate()
     const dispatch = useDispatch()
@@ -82,6 +81,13 @@ export const Create = () => {
         setErrorMsg('')
     } 
 
+    const createAnother = () => {
+        setQuizId('')
+        setQuizName('')
+        setErrorMsg('')
+        setQuestionsLocal('')
+    } 
+
     return (
         <div className='createCont'>
             <>
@@ -114,14 +120,19 @@ export const Create = () => {
                     <button onClick={() => createQuiz()} className='createButton'>Create</button>
                 </>
                 :
-                <>
+                <div className='finishedCont'>
                     <h1 className='createTitle'>Quiz Created!</h1>
                     <div className='playCont' 
                     onClick={() => playNow()}>
-                        Play Now
-                        <IoLogoGameControllerA/>
+                        <label className='finishedLabel'>Play Now</label>
+                        <IoLogoGameControllerA className='finishedIcon'/>
                     </div>
-                </>}
+                    <div className='anotherCont' 
+                    onClick={() => createAnother()}>
+                        <label className='finishedLabel'>Create Another</label>
+                        <IoMdCreate className='finishedIcon'/>
+                    </div>
+                </div>}
             </>
         </div>
     )
