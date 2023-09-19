@@ -110,7 +110,7 @@ export const SearchUser = () => {
         <Row>
             <Col span={2}/>
             <Col className='searchCont' span={20}>
-            {quizzes.length < 0 ? 
+            {quizzes.length > 0 ? 
             <>
             <div className='searchTopRow'>
             <div className='sectionNameMobile'>Official Quizzes</div>
