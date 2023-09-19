@@ -157,3 +157,10 @@
     border-color: #e40c2b;
     color: #e40c2b;
 }
+
+@media only screen and (max-width: 767px) {
+    .createSubHeader {
+        font-size: 1.5rem;
+    }
+
+}

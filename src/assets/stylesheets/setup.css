@@ -70,3 +70,31 @@
 .teamOptionSelected {
     background-color: #EBA63F;
 }
+
+@media only screen and (max-width: 767px) {
+    .setupColumn {
+        display: flex;
+        flex-direction: column;
+    }
+    .setupRow {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .setupCont {
+        display: flex;
+        flex-direction: column;
+        margin-top: 40px;
+    }
+
+    .startGameButton {
+        margin-top: -20px;
+
+    }
+
+    .teamContainer {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+    }
+}

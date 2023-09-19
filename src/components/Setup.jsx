@@ -57,7 +57,7 @@ export const Setup = () => {
     return (
         <Row>
             <Col span={4}/>
-            <Col className='setupCont' span={16}>
+            <Col className='setupCont' span={18}>
                 <Row className='setupRow'>
                     <Col span={12} className='setupColumn'>
                         <label className='sectionName' span={7}>Teams</label>

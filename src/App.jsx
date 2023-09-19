@@ -15,8 +15,6 @@ import React, { useState } from 'react';
 import { Play } from './components/Play';
 import './App.css'
 
-// Music by <a href="https://pixabay.com/users/alexiaction-26977400/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=162753">Alexi Action</a> from <a href="https://pixabay.com/music//?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=162753">Pixabay</a>
-
 function App() {
   return (
         <BrowserRouter>
@@ -33,7 +31,6 @@ function App() {
             <Route path="/grid" element={<Grid/>} />
           </Routes>
         </div>
-        <div className='mobileWarning'>This app is designed for classrooms so is not for mobile use</div>
         </BrowserRouter>
   )
 }

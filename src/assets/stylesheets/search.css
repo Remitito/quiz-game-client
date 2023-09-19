@@ -137,12 +137,16 @@
 }
 
 
-.sectionName {
+.sectionName, .sectionNameMobile {
     color: #1d1d2c !important;
     font-family: "Bebas Neue" !important;
     font-size: 3rem !important;
     height: 60px !important;
     width: 50% !important;
+}
+
+.sectionNameMobile {
+    display: none;
 }
 
 .quizEven, .quizOdd {
@@ -204,4 +208,63 @@
     font-size: 2.5rem;
     font-family: 'Comic';
     margin-bottom: 50px;
+}
+
+@media only screen and (max-width: 767px) {
+    .pageCont {
+        width: 40%;
+    }
+
+    .quizEven, .quizOdd {
+        animation: none;
+        align-items: center;
+        display: flex;
+        font-size: 1rem;
+        height: 40%;
+        padding: 0px;
+        margin: auto;
+        margin-bottom: 5px;
+        width: 25%;
+    }
+
+    .sectionName {
+        display: none;
+    }
+
+    .searchButtonCont {
+        margin-bottom: 0px;
+        margin-top: 0px;
+        width: 50%;
+    }
+
+    .sectionNameMobile {
+        display: flex;
+        justify-content: center;
+        text-align: center !important;
+        width: 100% !important;
+    }
+
+    .searchLogo {
+        display: none;
+    }
+
+    .searchCont {
+        margin-top: 40px;
+    }
+
+    .searchInput {
+        font-size: 1.5rem;
+        font-family: 'Oswald';
+    }
+
+    .searchBar {
+        margin-left: -80px;
+    }
+
+    .searchSecondRow {
+        margin-top: 20px;
+        margin-bottom: 20px;
+        width: 30%;
+    }
+
 }

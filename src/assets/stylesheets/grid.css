@@ -3,7 +3,7 @@
     background-color: #F7F4E9;
     border-radius: 2rem;
     color: #1d1d2c;
-    height: 700px;
+    height: 50%;
     justify-content: center;
     margin-right: 5vw;
     margin-top: 50px;
@@ -18,6 +18,8 @@
 }
 
 .scoresCont {
+    display: flex;
+    flex-direction: column;
     margin: auto;
     width: 50%;
 }
@@ -51,4 +53,62 @@
 
 .teamScore {
     font-size: 4rem;
+}
+
+@media screen and (max-width: 900px) {
+    .gridScoreCont {
+        flex-direction: column;
+    }
+    .mainCont {
+        height: 60vh;
+        margin: auto;
+        margin-top: 50px;
+        width: 90%;
+    }
+    .scoresCont {
+        flex-direction: row;
+        justify-content: space-evenly;
+        width: 100%;
+    }
+    .teamName {
+        font-size: 1.7rem;
+    }
+    .teamScore {
+        font-size: 2rem;
+    }
+    .teamCont, .teamContSelected {
+        padding: 5px;
+    }
+    .teamContSelected {
+        border: 5px solid #F7F4E9;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .gridScoreCont {
+        flex-direction: column;
+    }
+    .mainCont {
+        height: auto;
+        margin: auto;
+        margin-top: 50px;
+        width: 90%;
+    }
+    .scoresCont {
+        flex-direction: row;
+        justify-content: space-evenly;
+        width: 100%;
+    }
+    .teamName {
+        font-size: 1.7rem;
+    }
+    .teamScore {
+        font-size: 2rem;
+    }
+    .teamCont, .teamContSelected {
+        padding: 5px;
+    }
+    .teamContSelected {
+        border: 5px solid #F7F4E9;
+    }
 }

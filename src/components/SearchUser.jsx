@@ -113,6 +113,7 @@ export const SearchUser = () => {
             {quizzes.length < 0 ? 
             <>
             <div className='searchTopRow'>
+            <div className='sectionNameMobile'>Official Quizzes</div>
                     <div className='pageCont'>Page {pageNum} / {pages}
                         <div className='arrowsCont'>
                             <BsFillArrowLeftCircleFill onClick={() => lastPage()}

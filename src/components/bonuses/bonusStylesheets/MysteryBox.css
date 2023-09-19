@@ -61,3 +61,14 @@
     padding: 10px;
     min-width: 50%;
   }
+
+  @media only screen and (max-width: 767px) {
+
+    .pointsTotal {
+      font-size: 2rem;
+    }
+
+    .boxPointsCont {
+      width: 200px; 
+       }
+}

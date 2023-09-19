@@ -37,6 +37,9 @@
     font-family: "Bebas Neue";
     font-size: 2rem;
 }
+.findContMobile {
+    display: none;
+}
 
 .navbarCont {
     background-color: #F7F4E9;
@@ -56,6 +59,9 @@
 .navbarIcon:hover {
     background-color: #1d1d2c;
 }
+.navbarIconMobile:hover {
+    background-color: #1d1d2c;
+}
 
 .titleCont {
     color: #E40C2B;
@@ -66,17 +72,34 @@
 }
 
 @media only screen and (max-width: 767px) {
-    .accountCont, .findCont {
+    .titleCont {
+        font-size: 20px;
+    }
+    .accountContMobile {
+        align-items: center;
+        display: flex;
+        font-family: 'Bebas Neue';
+        font-size: 1rem;
+        height: 100%;
+    }
+    .accountCont {
         display: none;
     }
-
-    .titleCont {
-        font-size: 15px;
+    .findContMobile {
+        align-items: center;
+        display: flex;
+        font-family: 'Bebas Neue';
+        font-size: 1rem;
+        height: 100%;
+    }
+    .findCont {
+        display: none;
     }
     .animatedTitle {
         font-size: 30px;
     }
     .navbarCont {
-        height: 70px;
+        height: 50px;
     }
 }
+

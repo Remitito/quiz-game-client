@@ -34,12 +34,20 @@ export const GridSquare = styled.div `
         font-size: 4;
         width: 15%;
     }
+    @media screen and (max-width: 1200px) {
+        font-size: 2rem;
+        height: 50px;
+    }
+    @media only screen and (max-width: 767px){
+        font-size: 1.3rem;
+        height: 25px;
+    }
 `
 
 export const GridSquareCont = styled.div `
     display: flex;
     flex-direction: row;
-`
+    `
 
 export const SetupSquare = styled.div `
     background-color: ${props => props.selected ? "#EBA63F" : ""};
@@ -50,6 +58,11 @@ export const SetupSquare = styled.div `
     padding: 10px;
     :hover {
         background-color: #EBA63F;
+    }
+
+    @media only screen and (max-width: 767px){
+        font-size: 2.5rem;
+        height: 70px;
     }
 `
 

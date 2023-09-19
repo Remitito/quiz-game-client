@@ -81,7 +81,7 @@ export const MysteryBox = ({ correctSound, currentTeam, finishTurn, wrongSound }
           </div>
         )}
       </div>
-      <button className="okayButton" onClick={finishOpening}>
+      <button className="okayButton"W onClick={finishOpening}>
         Finish
       </button>
     </div>

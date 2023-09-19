@@ -55,8 +55,6 @@ export const SearchOfficial = () => {
             originalList.forEach((quiz) => {
                 let quizName = quiz.split('_')
                 quizName.forEach((word) => {
-                    console.log(word.toLowerCase())
-                    console.log(searchTerm.toLowerCase())
                     if(word.toLowerCase().includes(searchTerm.toLowerCase())) {
                         output.push(quiz)
                     }
@@ -102,6 +100,7 @@ export const SearchOfficial = () => {
         <Row>
             <Col span={2}/>
             <Col className='searchCont' span={20}>
+            <div className='sectionNameMobile'>Official Quizzes</div>
                 <div className='searchTopRow'>
                     <div className='pageCont'>Page {pageNum} / {pages}
                         <div className='arrowsCont'>
@@ -123,8 +122,7 @@ export const SearchOfficial = () => {
                     <div className='searchBar'>
                         <input className='searchInput'
                         placeholder='Enter a grammar topic'
-                        onChange={(e) => handleSearch(e.target.value)}
-                        />
+                        onChange={(e) => handleSearch(e.target.value)}/>
                         <SearchOutlined className='searchLogo'/>
                     </div>
                 </div>
