@@ -124,3 +124,28 @@
   flex-direction: row;
   justify-content: space-evenly;
 }
+
+@media only screen and (max-width: 767px) {
+
+  .finishCont {
+    margin-top: 0px;
+  
+  }
+
+  .revealButton {
+    font-size: 2rem;
+    width: 80%;
+  }
+
+  .saxManGif {
+    position: fixed;
+    bottom: 0;
+    height: 40%;
+    width: 80%;
+  }
+
+  .winnerMessage {
+    font-size: 2rem;
+  }
+
+}

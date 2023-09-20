@@ -61,12 +61,14 @@ export const TakePoints = ({points, finishTurn, teamColors}) => {
         <div className='bonusSubCont'>
                 {points > 0 ?
                     <>
-                        <h4 className='bonusTitle'>Give {points} Points to another team</h4>
+                        <h4 className='mobileGiveTake'>Give {points} points to another team</h4>
+                        <h4 className='bonusTitle'>Give {points} points to another team</h4>
                         <FaGift className='spinIcon' style={{color: "#438945"}}/>
                     </>
                 :
                     <>
-                        <h4 className='bonusTitle'>Take {points} Points from another team</h4>
+                        <h4 className='mobileGiveTake'>Take {points.toString().slice(1)} points from another team</h4>
+                        <h4 className='bonusTitle'>Take {points.toString().slice(1)} points from another team</h4>
                         <BsMagnetFill className='spinIcon' style={{color: "#E40C2B"}}/>
                     </>
                 }

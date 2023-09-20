@@ -68,6 +68,7 @@ export const Setup = () => {
                 </Row>
                 <Row className='setupRow'>
                     <Col span={12} className='setupColumn'>
+                    <label className='labelMobile'>Teams</label>
                         <div className='teamContainer'>
                             <div className={numberOfTeams === 2 ? 'teamOptionSelected' : 'teamOption'}
                             onClick={() => handleSettingChange(() => setNumberOfTeams(2))}>
@@ -90,6 +91,7 @@ export const Setup = () => {
                         </div>
                     </Col>
                 <Col span={12} className='setupColumn'>
+                    <label className='labelMobile'>Squares</label>
                         <SetupSquareCont>
                             <SetupSquare selected={squares === 20} onClick={() => handleSettingChange(() => setSquaresLocal(20))}>20</SetupSquare>
                             <SetupSquare selected={squares === 30} onClick={() => handleSettingChange(() => setSquaresLocal(30))}>30</SetupSquare>
@@ -99,13 +101,12 @@ export const Setup = () => {
                 </Row>
                 <Row className='setupRow'>
                     <Col span={12} className='setupColumn'> 
-                        <div>
+                        <div className='bonusToggle'>
                             <label className='sectionName'>Bonuses</label>
                                 <Toggle translate={45} sliderWidth={25} width={80} height={40} 
                                 backgroundColorChecked={"#EBA63F"} backgroundColorUnchecked={"#1d1d2c"}
-                                backgroundColorButton={"#F7F4E9"} checked={bonusSquares} 
-                                onChange={() => handleSettingChange(() => setBonusSquaresLocal(currentState => !currentState))}
-                                />
+                                backgroundColorButton={"#F7F4E9"} checked={bonusSquares}
+                                onChange={() => handleSettingChange(() => setBonusSquaresLocal(currentState => !currentState))}/>
                         </div>
                     </Col>
                     <Col span={12} className='setupColumn'>

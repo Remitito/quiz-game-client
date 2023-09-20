@@ -62,3 +62,42 @@
     font-family: 'Sigmar', cursive;
     padding: 25px;
 }
+
+@media only screen and (max-width: 767px) {
+    
+
+
+    /* .boxCont {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        margin-top: 5vh;
+        width: 60vw;
+    }
+    
+    .pointsBox, .pointsBoxFlash, .pointsBoxRed, .pointsBoxBlue, .pointsBoxGreen {
+        align-items: center;
+        border: solid;
+        border-radius: 5rem;
+        display: flex;
+        font-size: 4rem;
+        height: 15vh;
+        justify-content: center;
+        margin-bottom: 30px;
+        width: 15%;
+    } */
+
+    .boxCont {
+        width: 100vw;
+    }
+
+    .pointsBox, .pointsBoxFlash, .pointsBoxRed, .pointsBoxBlue, .pointsBoxGreen {
+        font-size: 3rem;
+        padding: 15px;
+        
+    }
+
+    .stopButton {
+        font-size: 2rem;
+    }
+}

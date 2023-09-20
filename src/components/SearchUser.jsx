@@ -112,8 +112,8 @@ export const SearchUser = () => {
             <Col className='searchCont' span={20}>
             {quizzes.length > 0 ? 
             <>
+            <div className='sectionNameMobile'>User Quizzes</div>
             <div className='searchTopRow'>
-            <div className='sectionNameMobile'>Official Quizzes</div>
                     <div className='pageCont'>Page {pageNum} / {pages}
                         <div className='arrowsCont'>
                             <BsFillArrowLeftCircleFill onClick={() => lastPage()}

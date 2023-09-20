@@ -1,3 +1,9 @@
+
+@font-face {
+    font-family: 'Kanit';
+    src: url('../fonts/Kanit-Bold.ttf');
+  }
+
 .bonusTitle {
     font-size: 2.5rem;
 }
@@ -11,6 +17,9 @@
 .statusMessage {
     font-size: 2rem;
 }
+.statusMessageMobile {
+    display: none;
+}
 
 .rpsGif {
     border-radius: 2rem;
@@ -18,7 +27,30 @@
 }
 
 @media only screen and (max-width: 767px) {
+    .bonusTitle {
+        display: none;
+        font-size: 1.5rem;
+    }
+
+    .bonusTeamOption {
+        align-items: center;
+        display: flex;
+        font-size: 1rem !important;
+        justify-content: center;
+        height: 12vw;
+    }
+
     .rpsGif {
         width: 70%;
+    }
+
+    .statusMessage {
+        display: none;
+    }
+
+    .statusMessageMobile {
+        display: block;
+        font-family: 'Kanit';
+        font-size: 1.5rem;
     }
 }

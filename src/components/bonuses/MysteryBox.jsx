@@ -54,11 +54,12 @@ export const MysteryBox = ({ correctSound, currentTeam, finishTurn, wrongSound }
       <audio ref={soundRef} />
       {!finished ? (
         <label className="statusMessage">Touch to get points! But don't be greedy!</label>
-      ) : (
+        ) : (
         <label style={{ color: "red" }} className="statusMessage">
           The box has been locked!
         </label>
       )}
+      <label className="statusMessageMobile">Touch to get points! But don't be greedy!</label>
       <label className="pointsTotal">Points gained: {totalPoints}</label>
       <div className="boxPointsCont">
         {!pointsVisible ? (

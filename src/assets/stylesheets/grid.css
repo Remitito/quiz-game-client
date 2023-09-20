@@ -100,7 +100,8 @@
         width: 100%;
     }
     .teamName {
-        font-size: 1.7rem;
+        font-size: 0.8rem;
+        padding: 5px;
     }
     .teamScore {
         font-size: 2rem;

@@ -82,6 +82,10 @@
     transform-origin: center;
   }
 
+  .mobileGiveTake {
+    display: none;
+  }
+
 .okayButton {
     background-color: #EBA63F;
     border-radius: 2rem;
@@ -156,8 +160,34 @@
     padding: 3px;
   }
 
-    .okayButton {
-      font-size: 2rem !important;
-      padding: 5px !important;
-    }
+  .bonusSubCont {
+    height: 130vw;
+  }
+
+  .bonusIcon {
+    font-size: 6rem;
+  }
+
+  .okayButton {
+    font-size: 2rem !important;
+    padding: 5px !important;
+  }
+
+  .scaleIcon {
+    font-size: 20vw;
+  }
+
+  .spinIcon {
+    font-size: 10rem;
+  }
+
+  .mobileGiveTake {
+    display: block;
+    font-size: 1.5rem;
+  }
+
+  .teamSelect {
+    font-size: 1.5rem
+  };
+
 }

@@ -50,7 +50,7 @@
 .questionCont {
     display: flex;
     flex-direction: column;
-    height: 100%;
+    height: 100vw;
     justify-content: space-evenly;
 }
 .questionSubCont {
@@ -90,4 +90,26 @@
 }
 .showAnswer:hover {
     color: #e40c2b;
+}
+
+@media only screen and (max-width: 767px) {
+    .answer {
+        font-size: 8vw;
+    }
+    .correctIcon, .wrongIcon {
+        font-size: 3rem;
+    }
+    .correctMessage, .wrongMessage {
+        font-size: 15vw;
+    }
+    .questionIcon {
+        font-size: 5rem;
+    }
+
+    .questionPrompt {
+        font-size: 6vw;
+    }
+    .showAnswer {
+        font-size: 1rem;
+    }
 }

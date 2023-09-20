@@ -101,11 +101,11 @@ export const Create = () => {
                     <div className='questionSection'>
                         {errorMsg.length === 0 ?
                             <div className='exampleCont'>
-                                <label className='createSubHeader'>Enter 1 question per line in this format</label>
-                                <label className='exampleInput'>
+                                <label className='createSubHeader'>Enter 1 question per line in this format:</label>
+                                <label className='exampleInputOne'>
                                     {'What is 1 + 1? --- 2'}
                                 </label>
-                                <label className='exampleInput'>
+                                <label className='exampleInputTwo'>
                                     {'Name a European city --- Paris'}
                                 </label>
                             </div>

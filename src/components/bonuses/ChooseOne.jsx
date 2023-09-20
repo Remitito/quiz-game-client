@@ -50,6 +50,7 @@ export const ChooseOne = ({finishTurn, wrongSound, correctSound}) => {
                 {pointsMessage.length === 0 ?
                     <div>
                         <label className='bonusTitle'>Choose One</label>
+                        <label className="chooseOneMobile">Choose One</label>
                         <div className="boxCont">
                             <GiPresent onClick={() => handleClick(0)} style={{color: "red"}} className='giftIcon'/>
                             <GiPresent onClick={() => handleClick(1)} style={{color: "blue"}} className='giftIcon'/>

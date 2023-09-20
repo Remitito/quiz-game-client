@@ -27,6 +27,10 @@
     flex-direction: row;
 }
 
+.squaresMobile {
+    display: none;
+}
+
 .startGameButton {
     background-color: #EBA63F;
     border-radius: 2rem;
@@ -72,6 +76,9 @@
 }
 
 @media only screen and (max-width: 767px) {
+    .bonusToggle {
+        display: none;
+    }
     .setupColumn {
         display: flex;
         flex-direction: column;
@@ -87,14 +94,25 @@
         margin-top: 40px;
     }
 
+    .labelMobile {
+        display: block;
+        font-size: 1.5rem;
+        margin-top: -10px;
+        width: 60vw;
+    }
+
     .startGameButton {
-        margin-top: -20px;
+        font-size: 1.5rem;
+        margin-bottom: 0px;
+        margin-top: -70px;
+        width: 60vw;
 
     }
 
     .teamContainer {
         display: flex;
         justify-content: space-between;
-        width: 100%;
+        margin-bottom: 100px;
+        width: 60vw;
     }
 }
