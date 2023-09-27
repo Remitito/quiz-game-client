@@ -17,8 +17,8 @@ export const Grid = () => {
     const navigate = useNavigate()
     const squares = useSelector((state) => state.setup.squares)
     const squareValues = useSelector((state) => state.setup.squareValues)
-    const fonts = ["4rem", "3rem", "3rem"] // depending on total square number
-    const squaresPerRow = [5,6,8] // depending on total square number
+    const fonts = ["4rem", "3rem", "3rem"] // depending on number of squares
+    const squaresPerRow = [5,6,8] // depending on number of squares
 
     const loadSquare = (squareId) => {
         dispatch(setCurrentSquare(squareValues[squareId]))

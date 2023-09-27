@@ -11,6 +11,7 @@ export const RockPaperScissors = ({image, points, finishTurn, teamColors}) => {
     let currentTeam = useSelector((state) => state.game.currentTeam)
     const teamScores = useSelector((state) => state.game.teamScores)
 
+    // preload audio for smooth playback
     useEffect(() => {
         const audio = new Audio(winnerSound);
         audio.preload = 'auto';
@@ -28,7 +29,7 @@ export const RockPaperScissors = ({image, points, finishTurn, teamColors}) => {
 
     const showTeamOptions = () => {
         let teamElements = []
-        for(let i = 0; i < teams; i ++) { // add teams
+        for(let i = 0; i < teams; i ++) {
             teamElements.push(
                 <div className="bonusTeamOption" key={i + 1} style={{backgroundColor: teamColors[i]}}
                 onClick={() => handleTeamClick(i + 1)}>

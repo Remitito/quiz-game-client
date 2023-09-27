@@ -7,7 +7,6 @@ import { Grid } from './components/Grid.jsx';
 import { SearchOfficial } from './components/SearchOfficial.jsx';
 import { SearchUser } from './components/SearchUser.jsx';
 import { Create } from './components/Create.jsx';
-import { Testing } from './components/Testing.jsx';
 import { Finish } from './components/Finish.jsx';
 import { Col, Row } from 'antd';
 import { useSelector } from 'react-redux';

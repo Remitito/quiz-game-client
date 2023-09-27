@@ -17,6 +17,7 @@ export const StopMoving = ({finishTurn}) => {
     const [stop, setStop] = useState(false);
     const timeoutsRef = useRef([]);
   
+    // preload audio for smooth playback
     useEffect(() => {
       const audioWrong = new Audio(wrongSound);
       audioWrong.preload = 'auto';
@@ -42,6 +43,7 @@ export const StopMoving = ({finishTurn}) => {
       }
     };
   
+    // set previous box to inactive class and set this box to active class for 150 secs, then call next box's function
     const playBoxAnimationThree = () => {
       if (!stop) {
         setCurrentPoints(2)

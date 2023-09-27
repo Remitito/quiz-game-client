@@ -16,6 +16,7 @@ export const Question = ({ questionNumber }) => {
   const questions = useSelector((state) => state.setup.questions);
   const teamScores = useSelector((state) => state.game.teamScores);
 
+  // Preload audio for smoother playback
   useEffect(() => {
     const audioWrong = new Audio(wrongSound);
     audioWrong.preload = 'auto';
@@ -41,6 +42,8 @@ export const Question = ({ questionNumber }) => {
     }
   };
 
+  // Move to next team or back to first team if already on last team
+  // Then set the most recent square to empty (finished) and go back to the grid screen
   const finishTurn = () => {
     if (currentTeam + 1 > numOfTeams) {
       dispatch(setCurrentTeam(1));
@@ -59,7 +62,7 @@ export const Question = ({ questionNumber }) => {
     }, 1500);
   };
 
-  // just add 50 points per question for now
+  // 50 points per correct answer
   const correctAnswer = () => {
     playSound('correct');
     setPointsMessage("correct");
@@ -73,7 +76,7 @@ export const Question = ({ questionNumber }) => {
   // Check if the question exists before rendering
   const currentQuestion = questions[questionNumber];
   if (!currentQuestion) {
-    return null; // Or render an appropriate fallback component/error message
+    return null;
   }
 
   return (

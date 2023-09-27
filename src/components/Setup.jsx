@@ -22,6 +22,7 @@ export const Setup = () => {
     const dispatch = useDispatch()
     const navigate = useNavigate()
 
+    // preload audio for smooth playback
     useEffect(() => {
         const audio = new Audio(popSound);
         audio.preload = 'auto';

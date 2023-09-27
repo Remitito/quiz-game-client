@@ -9,6 +9,7 @@ export const Navbar = () => {
     const dispatch = useDispatch();
     const navigate = useNavigate();
   
+    // Reset game if User wants to Create or Find a new quiz 
     const handleClick = (page) => {
       dispatch(resetAllScores());
       navigate(page);
@@ -50,7 +51,7 @@ export const Navbar = () => {
                 <Row>
                     <Space>
                         <Avatar onClick={() => handleClick('create')} size="small" className="navbarIconMobile" icon={<UserOutlined/>}/>
-                        <label className='accountContMobile'>Create a Quiz</label>
+                        <label className='accountContMobile'>Create</label>
                     </Space>
                 </Row>
             </Col>

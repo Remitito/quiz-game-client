@@ -19,6 +19,7 @@ export const ChooseOne = ({finishTurn, wrongSound, correctSound}) => {
       audio.play();
     };
 
+    // Randomly mix up box contents
     useEffect(() => {
         const shuffledArray = [...boxContents]
         for (let i = shuffledArray.length - 1; i > 0; i--) {

@@ -12,6 +12,7 @@ import {RiExchangeFill} from "react-icons/ri"
 import {SearchOutlined} from '@ant-design/icons'
 
 export const SearchOfficial = () => {
+    // Original list is never modified
     const originalList = [
         "Country_Names", "First_and_Second_Conditional", "Past_Participles", "Suffixes", "Too_VS_Enough", "Prepositions_Of_Space",
         "Past_Simple_vs_Past_Continuous", "Present_Perfect", "Just_Yet_Already", "Mixed_Future_Tenses", "Prepositions_Of_Time",
@@ -19,6 +20,7 @@ export const SearchOfficial = () => {
         "Future_Continuous", "Future_Passive", "Future_Perfect", "Irregular_Verbs", "Adverbs", "Quantifiers",
         "Past_Perfect_Continuous", "Present_Perfect_Continuous", "Relative_Clauses", "So_VS_Such"
     ]
+    // The state quiz updates depending on page numbers and/or quizzes that match search terms
     const [quizzes, setQuizzes] = useState([
         "Country_Names", "First_and_Second_Conditional", "Past_Participles", "Suffixes", "Too_VS_Enough", "Prepositions_Of_Space",
         "Past_Simple_vs_Past_Continuous", "Present_Perfect", "Just_Yet_Already", "Mixed_Future_Tenses", "Prepositions_Of_Time",
@@ -45,6 +47,7 @@ export const SearchOfficial = () => {
         }
     }
 
+    // Automatically trigger search when text is entered into search bar instead of waiting for button click
     const handleSearch = (searchTerm) => {
         setPageNum(1)
         if(searchTerm.length === 0) {
@@ -72,8 +75,7 @@ export const SearchOfficial = () => {
 
     const selectOfficialQuiz = (quizIndex) => {
         const selectedQuiz = quizzes[quizIndex];
-        
-        import(`../assets/quizzes/${selectedQuiz}.json` /* @vite-ignore */)
+        import(`../assets/quizzes/${selectedQuiz}.json`)
           .then((module) => {
             const questions = module.default.questions;
             dispatch(setQuestions(questions));

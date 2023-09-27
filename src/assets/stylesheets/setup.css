@@ -1,4 +1,6 @@
-
+.labelMobile {
+    display: none;
+}
 
 .setupCont {
     background-color: #F7F4E9;

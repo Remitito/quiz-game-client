@@ -19,6 +19,8 @@ import correctSound from '../assets/audios/correct.mp3'
 
 export const Bonus = ({bonusNumber}) => {
     const dispatch = useDispatch()
+
+    // Prepare team data to pass on to bonus components
     const currentTeam = useSelector((state) => state.game.currentTeam)
     const numOfTeams = useSelector((state) => state.setup.teams)
     const teamColors = ["#3CBCC3","#EBA63F", "#438945", "#E40C2B"] 
@@ -53,6 +55,7 @@ export const Bonus = ({bonusNumber}) => {
     ]
 
     return (
+        // Commented out parts are for testing new bonus components
         <div className='bonusCont'>
             {bonusComponents[bonusNumber]}
             {/* {bonusComponents[bonusComponents.length - 1]} */}

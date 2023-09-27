@@ -20,6 +20,9 @@ export const MysteryBox = ({ correctSound, currentTeam, finishTurn, wrongSound }
     audio.play();
   };
 
+  // Randomly choose from 4 possible outcomes
+  // If it's not 0, play success sound and update total
+  // If it's 0, play wrong sound and disable box opening functionality
   const openBox = () => {
     const choice = Math.floor(Math.random() * possibleOutcomes.length)
     const points = possibleOutcomes[choice]

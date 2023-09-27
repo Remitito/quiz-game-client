@@ -13,8 +13,8 @@ import {RiExchangeFill} from "react-icons/ri"
 import {SearchOutlined} from '@ant-design/icons'
 
 export const SearchUser = () => {
-    const [originalList, setOriginalList] = useState([])
-    const [quizzes, setQuizzes] = useState([]);
+    const [originalList, setOriginalList] = useState([]) // never modified
+    const [quizzes, setQuizzes] = useState([]); // updates depending on search terms/page number
     const [warning, setWarning] = useState("")
     const dispatch = useDispatch();
     const navigate = useNavigate()
@@ -38,6 +38,7 @@ export const SearchUser = () => {
         }
     }
 
+    // Automatically trigger search when text is entered into search bar instead of waiting for button click
     const handleSearch = (searchTerm) => {
         setPageNum(1)
         if(searchTerm.length === 0) {

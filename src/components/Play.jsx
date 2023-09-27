@@ -4,6 +4,8 @@ import { useNavigate, useParams } from "react-router";
 import { setQuestions } from "../slices/setupSlice";
 import axios from "axios";
 
+// Gets quiz from backend, sets the questions via Redux and then navigates to setup screen
+
 export const Play = () => {
   const { id } = useParams();
   const dispatch = useDispatch()

@@ -48,6 +48,8 @@ export const Finish = () => {
       }
     };
   
+    // Triggered after user clicks "Reveal Winner" button
+    // It is not automatic because the winner song is triggered by a click
     const show = () => {
       findWinners();
       playSong(saxManSound);

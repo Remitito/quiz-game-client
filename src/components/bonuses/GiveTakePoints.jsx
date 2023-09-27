@@ -11,6 +11,7 @@ export const TakePoints = ({points, finishTurn, teamColors}) => {
     let currentTeam = useSelector((state) => state.game.currentTeam)
     const teamScores = useSelector((state) => state.game.teamScores)
 
+    // preload audio for smooth playback
     useEffect(() => {
         const audio = new Audio(magnetSound);
         audio.preload = 'auto';
@@ -37,7 +38,7 @@ export const TakePoints = ({points, finishTurn, teamColors}) => {
                 </div>
             )
         }
-        // remove current team from selection
+        // remove current team from selection as they cannot give/take points from themselves
         let toRemove = 0
         for(let i = 0; i < teams; i++) {
             if(teamElements[i].key == currentTeam) {

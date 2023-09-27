@@ -5,6 +5,8 @@ import {setCurrentScreen, setCurrentSquare } from "../slices/gameSlice";
 import '../assets/stylesheets/empty.css'
 
 
+// This page loads when bonuses are off and there are more grid squares than questions 
+
 export const Empty = () => {
     const dispatch = useDispatch()
 

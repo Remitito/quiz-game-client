@@ -17,6 +17,7 @@ export const SwitchScores = ({finishTurn, numOfTeams, teamColors}) => {
         teams.push(i)
     }
 
+    // trigger rotating icon
     useEffect(() => {
         const interval = setInterval(() => {
           setRotation((prevRotation) => (prevRotation === -1 ? 1 : -1));
@@ -28,7 +29,7 @@ export const SwitchScores = ({finishTurn, numOfTeams, teamColors}) => {
     const handleChange = (choiceFunction, team) => {
         choiceFunction(team)
         setErrorMessage("")
-        if(choiceFunction === setChoiceOne) { // doing it this way ensures the label is up to date
+        if(choiceFunction === setChoiceOne) { // ensures the label is up to date
             setStatusMessage(`Swap Team ${team}'s points with Team ${choiceTwo}'s points?`)
         }
         else {
