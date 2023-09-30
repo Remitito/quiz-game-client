@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate } from 'react-router'
 import { useEffect } from 'react'
 import { setCurrentScreen, setCurrentSquare, setCurrentTeam} from '../slices/gameSlice'
-import { GiveTakePoints } from './bonuses/TakePoints'
+import { GiveTakePoints } from './bonuses/GiveTakePoints'
 import { ResetAllScores } from './bonuses/ResetAllScores'
 import { SkipTurn } from './bonuses/SkipTurn'
 import { PickAgain } from './bonuses/PickAgain'
@@ -37,8 +37,8 @@ export const Bonus = ({bonusNumber}) => {
     }
 
     const bonusComponents = [
-        <TakePoints teamColors={teamColors} points={50} finishTurn={finishTurn} />,
-        <TakePoints teamColors={teamColors} points={-50} finishTurn={finishTurn} />,
+        <GiveTakePoints teamColors={teamColors} points={50} finishTurn={finishTurn} />,
+        <GiveTakePoints teamColors={teamColors} points={-50} finishTurn={finishTurn} />,
         <ResetAllScores finishTurn={finishTurn}/>,
         <SkipTurn finishTurn={finishTurn}/>,
         <PickAgain/>,

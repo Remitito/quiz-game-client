@@ -5,7 +5,7 @@ import { BsMagnetFill } from "react-icons/bs";
 import { useEffect } from 'react';
 import magnetSound from '../../assets/audios/magnet.mp3'
 
-export const TakePoints = ({points, finishTurn, teamColors}) => {
+export const GiveTakePoints = ({points, finishTurn, teamColors}) => {
     const dispatch = useDispatch()
     const teams = useSelector((state) => state.setup.teams)
     let currentTeam = useSelector((state) => state.game.currentTeam)
