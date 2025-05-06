@@ -10,7 +10,7 @@ To run it locally: 1) Clone the repo 2) Enter 'npm install' in the terminal 3) E
 
 **Live Version**
 
-The live version can be found at: https://inquizitive-l7wp.onrender.com
+_The live deployment has been removed as the website is no longer used since I quit teaching._ 
 
 **API / Backend**
 
